@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Amplifier</AssemblyName>
+    <RootNamespace>Amplifier</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Types\Vectors\" />
+  </ItemGroup>
+
+</Project>
