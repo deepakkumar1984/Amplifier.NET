@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.645
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29001.49
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amplifier", "Amplifier.Net\Amplifier.csproj", "{EF1DF4E4-50FB-4B90-8E53-0AE7BDD160A5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Amplifier", "Amplifier.Net\Amplifier.csproj", "{EF1DF4E4-50FB-4B90-8E53-0AE7BDD160A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmplifierExamples", "AmplifierExamples\AmplifierExamples.csproj", "{705C269B-9E3F-47BD-9979-5F7D49946A20}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{EF1DF4E4-50FB-4B90-8E53-0AE7BDD160A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EF1DF4E4-50FB-4B90-8E53-0AE7BDD160A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EF1DF4E4-50FB-4B90-8E53-0AE7BDD160A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{705C269B-9E3F-47BD-9979-5F7D49946A20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{705C269B-9E3F-47BD-9979-5F7D49946A20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{705C269B-9E3F-47BD-9979-5F7D49946A20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{705C269B-9E3F-47BD-9979-5F7D49946A20}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
