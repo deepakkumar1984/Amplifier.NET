@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace Amplifier
 {
@@ -231,8 +232,8 @@ namespace Amplifier
             result.AppendLine(cSharpDecompiler.DecompileAsString(kernelHandles)
                         .Replace("using Amplifier.OpenCL;", "")
                         .Replace("using System;", "")
-                        .Replace("[OpenCLKernel]", "")
-                        .Replace("public", "__kernel")
+                        .Replace("[OpenCLKernel]", "__kernel")
+                        .Replace("public", "")
                         .Replace("[Global]", "global")
                         .Replace("[]", "*"));
 
@@ -243,7 +244,15 @@ namespace Amplifier
                         .Replace("[Global]", "global")
                         .Replace("[]", "*"));
 
-            return result.ToString();
+            string resultCode = result.ToString();
+            Regex floatRegEx = new Regex(@"(\d+)(\.\d+)*f]?");
+            var matches = floatRegEx.Matches(resultCode);
+            foreach (Match match in matches)
+            {
+                resultCode = resultCode.Replace(match.Value, match.Value.Replace("f", ""));
+            }
+            
+            return resultCode;
         }
 
         /// <summary>

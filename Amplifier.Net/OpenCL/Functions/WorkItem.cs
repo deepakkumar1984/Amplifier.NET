@@ -8,7 +8,7 @@ using uintptr_t = System.UInt32;
 
 namespace Amplifier.OpenCL
 {
-    public partial class OpenCLFunctions
+    public partial class OpenCLFunctions<T> where T : struct
     {
         /// <summary>
         /// Global work item ID value
