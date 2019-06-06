@@ -9,6 +9,7 @@ namespace AmplifierExamples
         static void Main(string[] args)
         {
             var compiler = new OpenCLCompiler();
+            Console.WriteLine("\nList Devices----");
             foreach (var item in compiler.Devices)
             {
                 Console.WriteLine(item);
@@ -30,6 +31,12 @@ namespace AmplifierExamples
             var exec = compiler.GetExec<float>();
             exec.Fill(b, 0.5f);
             exec.add_float(a, b, r);
+
+            Console.WriteLine("\nResult----");
+            for(int i = 0;i<r.Length;i++)
+            {
+                Console.Write(r.GetValue(i) + " ");
+            }
 
             Console.ReadLine();
         }
