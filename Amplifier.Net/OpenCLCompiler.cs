@@ -9,6 +9,10 @@ using System.Text.RegularExpressions;
 
 namespace Amplifier
 {
+    /// <summary>
+    /// Compiler for OpenCL which will be used to compile kernel created in C# and execute them.
+    /// </summary>
+    /// <seealso cref="Amplifier.BaseCompiler" />
     public class OpenCLCompiler : BaseCompiler
     {
         #region Private Variables
@@ -39,6 +43,9 @@ namespace Amplifier
         #endregion
 
         #region Abstract Implementation
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OpenCLCompiler"/> class.
+        /// </summary>
         public OpenCLCompiler() : base("OpenCL")
         {
         }
@@ -229,7 +236,9 @@ namespace Amplifier
 
             var kernelHandles = kernelMethods.ToList().Select(x => (x.MetadataToken)).ToList();
             var nonKernelHandles = nonKernelMethods.ToList().Select(x => (x.MetadataToken)).ToList();
+            result.AppendLine("#ifdef cl_khr_fp64");
             result.AppendLine("#pragma OPENCL EXTENSION cl_khr_fp64 : enable");
+            result.AppendLine("#endif");
             result.AppendLine(cSharpDecompiler.DecompileAsString(kernelHandles));
 
             result.AppendLine(cSharpDecompiler.DecompileAsString(nonKernelHandles));

@@ -27,12 +27,23 @@ namespace Amplifier
     using System;
     using System.Runtime.Serialization;
 
+    /// <summary>
+    /// Catch the execution exception
+    /// </summary>
+    /// <seealso cref="System.Exception" />
     public class ExecutionException : Exception
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ExecutionException"/> class.
+        /// </summary>
         public ExecutionException()
         {
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ExecutionException"/> class.
+        /// </summary>
+        /// <param name="message">The message that describes the error.</param>
         public ExecutionException(string message) : base(message)
         {
             
