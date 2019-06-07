@@ -32,24 +32,23 @@ namespace AmplifierExamples
             }
 
             //Create variable a, b and r
-            Array a = new float[] { 1, 2, 3, 4 };
-            Array b = new float[4];
-            Array r = new float[4];
+            Array x = new float[] { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+            Array y = new float[9];
 
             //Get the execution engine
             var exec = compiler.GetExec<float>();
 
             //Execute fill kernel method
-            exec.Fill(b, 0.5f);
+            exec.Fill(y, 0.5f);
 
-            //Execuete add_float kermet method
-            exec.add_float(a, b, r);
+            //Execuete SAXPY kernel method
+            exec.SAXPY(x, y, 2f);
 
             //Print the result
             Console.WriteLine("\nResult----");
-            for(int i = 0;i<r.Length;i++)
+            for (int i = 0; i < y.Length; i++)
             {
-                Console.Write(r.GetValue(i) + " ");
+                Console.Write(y.GetValue(i) + " ");
             }
 
             Console.ReadLine();

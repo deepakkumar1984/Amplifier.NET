@@ -8,7 +8,7 @@ namespace AmplifierExamples.Kernels
     class SimpleKernels : OpenCLFunctions
     {
         [OpenCLKernel]
-        void add_float([Global]float[] a, [Global] float[] b, [Global]float[] r)
+        void AddData([Global]float[] a, [Global] float[] b, [Global]float[] r)
         {
             int i = get_global_id(0);
             b[i] = 0.5f * b[i];
@@ -21,6 +21,14 @@ namespace AmplifierExamples.Kernels
             int i = get_global_id(0);
             
             x[i] = value;
+        }
+
+        [OpenCLKernel]
+        void SAXPY([Global]float[] x, [Global] float[] y, float a)
+        {
+            int i = get_global_id(0);
+
+            y[i] += a * x[i];
         }
     }
 }
