@@ -62,6 +62,11 @@ for(int i = 0;i<r.Length;i++)
 }
 ```
 
+Result:
+[!img(https://ibb.co/TWxR3GX)]
+![](https://i.ibb.co/5KgvH3D/amplifier-sample.jpg)
+
+
 ## Documentation
 Coming soon....
 
