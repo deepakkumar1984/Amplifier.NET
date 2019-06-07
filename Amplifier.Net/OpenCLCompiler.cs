@@ -90,6 +90,7 @@ namespace Amplifier
         public override void CompileKernel(Type cls)
         {
             string code = GetKernelCode(cls);
+
             CreateKernels(cls.Name, code);
         }
 
@@ -229,29 +230,33 @@ namespace Amplifier
             var kernelHandles = kernelMethods.ToList().Select(x => (x.MetadataToken)).ToList();
             var nonKernelHandles = nonKernelMethods.ToList().Select(x => (x.MetadataToken)).ToList();
             result.AppendLine("#pragma OPENCL EXTENSION cl_khr_fp64 : enable");
-            result.AppendLine(cSharpDecompiler.DecompileAsString(kernelHandles)
-                        .Replace("using Amplifier.OpenCL;", "")
+            result.AppendLine(cSharpDecompiler.DecompileAsString(kernelHandles));
+
+            result.AppendLine(cSharpDecompiler.DecompileAsString(nonKernelHandles));
+
+            string resultCode = result.ToString();
+            resultCode = resultCode.Replace("using Amplifier.OpenCL;", "")
                         .Replace("using System;", "")
                         .Replace("[OpenCLKernel]", "__kernel")
                         .Replace("public", "")
                         .Replace("[Global]", "global")
-                        .Replace("[]", "*"));
+                        .Replace("[]", "*")
+                        .Replace("@", "v_");
 
-            result.AppendLine(cSharpDecompiler.DecompileAsString(nonKernelHandles)
-                        .Replace("using Amplifier.OpenCL;", "")
-                        .Replace("using System;", "")
-                        .Replace("public", "")
-                        .Replace("[Global]", "global")
-                        .Replace("[]", "*"));
-
-            string resultCode = result.ToString();
             Regex floatRegEx = new Regex(@"(\d+)(\.\d+)*f]?");
             var matches = floatRegEx.Matches(resultCode);
             foreach (Match match in matches)
             {
                 resultCode = resultCode.Replace(match.Value, match.Value.Replace("f", ""));
             }
-            
+
+            floatRegEx = new Regex(@"(\d+)(\.\d+)*u]?");
+            matches = floatRegEx.Matches(resultCode);
+            foreach (Match match in matches)
+            {
+                resultCode = resultCode.Replace(match.Value, match.Value.Replace("u", ""));
+            }
+
             return resultCode;
         }
 

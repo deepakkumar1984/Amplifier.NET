@@ -5,7 +5,7 @@ using System.Text;
 
 namespace AmplifierExamples.Kernels
 {
-    class SimpleKernels : OpenCLFunctions<float>
+    class SimpleKernels : OpenCLFunctions
     {
         [OpenCLKernel]
         void add_float([Global]float[] a, [Global] float[] b, [Global]float[] r)
@@ -16,16 +16,10 @@ namespace AmplifierExamples.Kernels
         }
 
         [OpenCLKernel]
-        void acos_double([Global] double[] x, [Global]double[] r)
-        {
-            int i = get_global_id(0);
-            r[i] = acos(x[i]);
-        }
-
-        [OpenCLKernel]
         void Fill([Global] float[] x, float value)
         {
             int i = get_global_id(0);
+            
             x[i] = value;
         }
     }
