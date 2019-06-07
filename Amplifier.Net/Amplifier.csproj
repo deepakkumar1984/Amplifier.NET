@@ -13,6 +13,8 @@
     <RepositoryUrl>https://github.com/tech-quantum/Amplifier.NET</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>OpenCL, Kernel, .NET GPU, CSharp GPU</PackageTags>
+    <PackageIconUrl>https://raw.githubusercontent.com/tech-quantum/Amplifier.NET/master/icon_32.png</PackageIconUrl>
+    <PackageId>Amplifier.NET</PackageId>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net46|AnyCPU'">
