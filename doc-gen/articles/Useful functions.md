@@ -1,4 +1,4 @@
-#Useful functions
+# Useful functions
 
 Following are the list of useful functions to build and run the kernel
 
