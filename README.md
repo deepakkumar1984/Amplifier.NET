@@ -68,6 +68,9 @@ Result:
 
 
 ## Documentation
-Coming soon....
+Base: https://tech-quantum.github.io/Amplifier.NET/
+Articles: https://tech-quantum.github.io/Amplifier.NET/articles/intro.html
+API Reference: https://tech-quantum.github.io/Amplifier.NET/api/Amplifier.html
 
 ## Any contribution is welcome
+Please fork the code and suggest improvements by raising PR. Raise issues so that I can make this library robust. 
