@@ -55,7 +55,7 @@ foreach (var item in compiler.Kernels)
 var exec = compiler.GetExec<float>();
 
 //Execuete SAXPY kernel method
-exec.SAXPY(x, y, 2f);
+exec.SAXPY(x, y, a);
 
 //Print the result
 Console.WriteLine("\nResult----");
