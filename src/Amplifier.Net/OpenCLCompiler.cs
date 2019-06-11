@@ -248,6 +248,7 @@ namespace Amplifier
                         .Replace("using System;", "")
                         .Replace("[OpenCLKernel]", "__kernel")
                         .Replace("public", "")
+                        .Replace("this.", "")
                         .Replace("[Global]", "global")
                         .Replace("[]", "*")
                         .Replace("@", "v_");
