@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Amplifier.Net\Amplifier.csproj" />
+    <ProjectReference Include="..\..\src\Amplifier.Net\Amplifier.csproj" />
   </ItemGroup>
 
 </Project>

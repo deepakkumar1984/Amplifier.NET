@@ -4,9 +4,9 @@
       "src": [
         {
           "files": [
-            "Amplifier.Net/**.csproj"
+            "/Amplifier.NET/**.csproj"
           ],
-          "src": "../"
+          "src": "../src"
         }
       ],
       "dest": "api",
