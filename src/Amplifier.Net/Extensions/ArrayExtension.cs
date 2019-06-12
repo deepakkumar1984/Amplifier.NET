@@ -26,13 +26,20 @@ SOFTWARE.
 namespace Amplifier.Extensions
 {
     using System;
-    using System.Collections.Generic;
     using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
 
+    /// <summary>
+    /// .NET array extension class to add extension methods for amplifier
+    /// </summary>
     public static class ArrayExtension
     {
+        /// <summary>
+        /// For loop for array which will invoke Amplifier code.
+        /// </summary>
+        /// <param name="x">The x.</param>
+        /// <param name="compiler">The compiler.</param>
+        /// <param name="kernelName">Name of the kernel.</param>
+        /// <param name="args">The arguments.</param>
         public static void AmplifyFor(this Array x, BaseCompiler compiler, string kernelName, params object[] args)
         {
             var arguments = args.ToList();

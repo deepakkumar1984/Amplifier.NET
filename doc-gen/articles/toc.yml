@@ -6,3 +6,7 @@
   href: Create a simple kernel.md
 - name: Run your first kernel
   href: Run your first kernel.md
+- name: Alternate methods to execute kernels
+  href: Execute Kernel Alternatives.md
+- name: Saving and loading compiler
+  href: Save and load.md

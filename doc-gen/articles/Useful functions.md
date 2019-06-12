@@ -11,3 +11,7 @@ Following are the list of useful functions to build and run the kernel
    2. args: List of arguments array or scalar values.
 
 6. **GetExecuter**: Get the executer for the compiler which can seemlesly invoke the kernel methods. Internally it calls the compiler Execute function.
+
+7. **Save**: Save the compiler in form of binary for reusablibity.
+
+8. **Load**: Load the saved bin compiler file. Avoids recompilation of kernel.

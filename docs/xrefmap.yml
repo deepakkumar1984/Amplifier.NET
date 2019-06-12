@@ -39,6 +39,19 @@ references:
   isSpec: "True"
   fullName: Amplifier.BaseCompiler.CompileKernel
   nameWithType: BaseCompiler.CompileKernel
+- uid: Amplifier.BaseCompiler.DeviceID
+  name: DeviceID
+  href: api/Amplifier.BaseCompiler.html#Amplifier_BaseCompiler_DeviceID
+  commentId: P:Amplifier.BaseCompiler.DeviceID
+  fullName: Amplifier.BaseCompiler.DeviceID
+  nameWithType: BaseCompiler.DeviceID
+- uid: Amplifier.BaseCompiler.DeviceID*
+  name: DeviceID
+  href: api/Amplifier.BaseCompiler.html#Amplifier_BaseCompiler_DeviceID_
+  commentId: Overload:Amplifier.BaseCompiler.DeviceID
+  isSpec: "True"
+  fullName: Amplifier.BaseCompiler.DeviceID
+  nameWithType: BaseCompiler.DeviceID
 - uid: Amplifier.BaseCompiler.Devices
   name: Devices
   href: api/Amplifier.BaseCompiler.html#Amplifier_BaseCompiler_Devices
@@ -65,6 +78,19 @@ references:
   isSpec: "True"
   fullName: Amplifier.BaseCompiler.Dispose
   nameWithType: BaseCompiler.Dispose
+- uid: Amplifier.BaseCompiler.Exec
+  name: Exec
+  href: api/Amplifier.BaseCompiler.html#Amplifier_BaseCompiler_Exec
+  commentId: P:Amplifier.BaseCompiler.Exec
+  fullName: Amplifier.BaseCompiler.Exec
+  nameWithType: BaseCompiler.Exec
+- uid: Amplifier.BaseCompiler.Exec*
+  name: Exec
+  href: api/Amplifier.BaseCompiler.html#Amplifier_BaseCompiler_Exec_
+  commentId: Overload:Amplifier.BaseCompiler.Exec
+  isSpec: "True"
+  fullName: Amplifier.BaseCompiler.Exec
+  nameWithType: BaseCompiler.Exec
 - uid: Amplifier.BaseCompiler.Execute*
   name: Execute
   href: api/Amplifier.BaseCompiler.html#Amplifier_BaseCompiler_Execute_
@@ -110,6 +136,19 @@ references:
   isSpec: "True"
   fullName: Amplifier.BaseCompiler.Kernels
   nameWithType: BaseCompiler.Kernels
+- uid: Amplifier.BaseCompiler.Load(System.String)
+  name: Load(String)
+  href: api/Amplifier.BaseCompiler.html#Amplifier_BaseCompiler_Load_System_String_
+  commentId: M:Amplifier.BaseCompiler.Load(System.String)
+  fullName: Amplifier.BaseCompiler.Load(System.String)
+  nameWithType: BaseCompiler.Load(String)
+- uid: Amplifier.BaseCompiler.Load*
+  name: Load
+  href: api/Amplifier.BaseCompiler.html#Amplifier_BaseCompiler_Load_
+  commentId: Overload:Amplifier.BaseCompiler.Load
+  isSpec: "True"
+  fullName: Amplifier.BaseCompiler.Load
+  nameWithType: BaseCompiler.Load
 - uid: Amplifier.BaseCompiler.Name
   name: Name
   href: api/Amplifier.BaseCompiler.html#Amplifier_BaseCompiler_Name
@@ -123,6 +162,19 @@ references:
   isSpec: "True"
   fullName: Amplifier.BaseCompiler.Name
   nameWithType: BaseCompiler.Name
+- uid: Amplifier.BaseCompiler.Save(System.String)
+  name: Save(String)
+  href: api/Amplifier.BaseCompiler.html#Amplifier_BaseCompiler_Save_System_String_
+  commentId: M:Amplifier.BaseCompiler.Save(System.String)
+  fullName: Amplifier.BaseCompiler.Save(System.String)
+  nameWithType: BaseCompiler.Save(String)
+- uid: Amplifier.BaseCompiler.Save*
+  name: Save
+  href: api/Amplifier.BaseCompiler.html#Amplifier_BaseCompiler_Save_
+  commentId: Overload:Amplifier.BaseCompiler.Save
+  isSpec: "True"
+  fullName: Amplifier.BaseCompiler.Save
+  nameWithType: BaseCompiler.Save
 - uid: Amplifier.BaseCompiler.UseDevice(System.Int32)
   name: UseDevice(Int32)
   href: api/Amplifier.BaseCompiler.html#Amplifier_BaseCompiler_UseDevice_System_Int32_
@@ -247,6 +299,32 @@ references:
   isSpec: "True"
   fullName: Amplifier.CUDACompiler.Kernels
   nameWithType: CUDACompiler.Kernels
+- uid: Amplifier.CUDACompiler.Load(System.String)
+  name: Load(String)
+  href: api/Amplifier.CUDACompiler.html#Amplifier_CUDACompiler_Load_System_String_
+  commentId: M:Amplifier.CUDACompiler.Load(System.String)
+  fullName: Amplifier.CUDACompiler.Load(System.String)
+  nameWithType: CUDACompiler.Load(String)
+- uid: Amplifier.CUDACompiler.Load*
+  name: Load
+  href: api/Amplifier.CUDACompiler.html#Amplifier_CUDACompiler_Load_
+  commentId: Overload:Amplifier.CUDACompiler.Load
+  isSpec: "True"
+  fullName: Amplifier.CUDACompiler.Load
+  nameWithType: CUDACompiler.Load
+- uid: Amplifier.CUDACompiler.Save(System.String)
+  name: Save(String)
+  href: api/Amplifier.CUDACompiler.html#Amplifier_CUDACompiler_Save_System_String_
+  commentId: M:Amplifier.CUDACompiler.Save(System.String)
+  fullName: Amplifier.CUDACompiler.Save(System.String)
+  nameWithType: CUDACompiler.Save(String)
+- uid: Amplifier.CUDACompiler.Save*
+  name: Save
+  href: api/Amplifier.CUDACompiler.html#Amplifier_CUDACompiler_Save_
+  commentId: Overload:Amplifier.CUDACompiler.Save
+  isSpec: "True"
+  fullName: Amplifier.CUDACompiler.Save
+  nameWithType: CUDACompiler.Save
 - uid: Amplifier.CUDACompiler.UseDevice(System.Int32)
   name: UseDevice(Int32)
   href: api/Amplifier.CUDACompiler.html#Amplifier_CUDACompiler_UseDevice_System_Int32_
@@ -467,6 +545,34 @@ references:
   isSpec: "True"
   fullName: Amplifier.ExecutionException.ExecutionException
   nameWithType: ExecutionException.ExecutionException
+- uid: Amplifier.Extensions
+  name: Amplifier.Extensions
+  href: api/Amplifier.Extensions.html
+  commentId: N:Amplifier.Extensions
+  fullName: Amplifier.Extensions
+  nameWithType: Amplifier.Extensions
+- uid: Amplifier.Extensions.ArrayExtension
+  name: ArrayExtension
+  href: api/Amplifier.Extensions.ArrayExtension.html
+  commentId: T:Amplifier.Extensions.ArrayExtension
+  fullName: Amplifier.Extensions.ArrayExtension
+  nameWithType: ArrayExtension
+- uid: Amplifier.Extensions.ArrayExtension.AmplifyFor(System.Array,Amplifier.BaseCompiler,System.String,System.Object[])
+  name: AmplifyFor(Array, BaseCompiler, String, Object[])
+  href: api/Amplifier.Extensions.ArrayExtension.html#Amplifier_Extensions_ArrayExtension_AmplifyFor_System_Array_Amplifier_BaseCompiler_System_String_System_Object___
+  commentId: M:Amplifier.Extensions.ArrayExtension.AmplifyFor(System.Array,Amplifier.BaseCompiler,System.String,System.Object[])
+  name.vb: AmplifyFor(Array, BaseCompiler, String, Object())
+  fullName: Amplifier.Extensions.ArrayExtension.AmplifyFor(System.Array, Amplifier.BaseCompiler, System.String, System.Object[])
+  fullName.vb: Amplifier.Extensions.ArrayExtension.AmplifyFor(System.Array, Amplifier.BaseCompiler, System.String, System.Object())
+  nameWithType: ArrayExtension.AmplifyFor(Array, BaseCompiler, String, Object[])
+  nameWithType.vb: ArrayExtension.AmplifyFor(Array, BaseCompiler, String, Object())
+- uid: Amplifier.Extensions.ArrayExtension.AmplifyFor*
+  name: AmplifyFor
+  href: api/Amplifier.Extensions.ArrayExtension.html#Amplifier_Extensions_ArrayExtension_AmplifyFor_
+  commentId: Overload:Amplifier.Extensions.ArrayExtension.AmplifyFor
+  isSpec: "True"
+  fullName: Amplifier.Extensions.ArrayExtension.AmplifyFor
+  nameWithType: ArrayExtension.AmplifyFor
 - uid: Amplifier.OpenCL
   name: Amplifier.OpenCL
   href: api/Amplifier.OpenCL.html
@@ -885,6 +991,38 @@ references:
   commentId: T:Amplifier.OpenCL.IVecDType
   fullName: Amplifier.OpenCL.IVecDType
   nameWithType: IVecDType
+- uid: Amplifier.OpenCL.KernelBin
+  name: KernelBin
+  href: api/Amplifier.OpenCL.KernelBin.html
+  commentId: T:Amplifier.OpenCL.KernelBin
+  fullName: Amplifier.OpenCL.KernelBin
+  nameWithType: KernelBin
+- uid: Amplifier.OpenCL.KernelBin.Binaries
+  name: Binaries
+  href: api/Amplifier.OpenCL.KernelBin.html#Amplifier_OpenCL_KernelBin_Binaries
+  commentId: P:Amplifier.OpenCL.KernelBin.Binaries
+  fullName: Amplifier.OpenCL.KernelBin.Binaries
+  nameWithType: KernelBin.Binaries
+- uid: Amplifier.OpenCL.KernelBin.Binaries*
+  name: Binaries
+  href: api/Amplifier.OpenCL.KernelBin.html#Amplifier_OpenCL_KernelBin_Binaries_
+  commentId: Overload:Amplifier.OpenCL.KernelBin.Binaries
+  isSpec: "True"
+  fullName: Amplifier.OpenCL.KernelBin.Binaries
+  nameWithType: KernelBin.Binaries
+- uid: Amplifier.OpenCL.KernelBin.Name
+  name: Name
+  href: api/Amplifier.OpenCL.KernelBin.html#Amplifier_OpenCL_KernelBin_Name
+  commentId: P:Amplifier.OpenCL.KernelBin.Name
+  fullName: Amplifier.OpenCL.KernelBin.Name
+  nameWithType: KernelBin.Name
+- uid: Amplifier.OpenCL.KernelBin.Name*
+  name: Name
+  href: api/Amplifier.OpenCL.KernelBin.html#Amplifier_OpenCL_KernelBin_Name_
+  commentId: Overload:Amplifier.OpenCL.KernelBin.Name
+  isSpec: "True"
+  fullName: Amplifier.OpenCL.KernelBin.Name
+  nameWithType: KernelBin.Name
 - uid: Amplifier.OpenCL.long16
   name: long16
   href: api/Amplifier.OpenCL.long16.html
@@ -1010,6 +1148,64 @@ references:
   fullName.vb: Amplifier.OpenCL.long8.Widening
   nameWithType: long8.Implicit
   nameWithType.vb: long8.Widening
+- uid: Amplifier.OpenCL.OpenCLBinary
+  name: OpenCLBinary
+  href: api/Amplifier.OpenCL.OpenCLBinary.html
+  commentId: T:Amplifier.OpenCL.OpenCLBinary
+  fullName: Amplifier.OpenCL.OpenCLBinary
+  nameWithType: OpenCLBinary
+- uid: Amplifier.OpenCL.OpenCLBinary.#ctor
+  name: OpenCLBinary()
+  href: api/Amplifier.OpenCL.OpenCLBinary.html#Amplifier_OpenCL_OpenCLBinary__ctor
+  commentId: M:Amplifier.OpenCL.OpenCLBinary.#ctor
+  fullName: Amplifier.OpenCL.OpenCLBinary.OpenCLBinary()
+  nameWithType: OpenCLBinary.OpenCLBinary()
+- uid: Amplifier.OpenCL.OpenCLBinary.#ctor*
+  name: OpenCLBinary
+  href: api/Amplifier.OpenCL.OpenCLBinary.html#Amplifier_OpenCL_OpenCLBinary__ctor_
+  commentId: Overload:Amplifier.OpenCL.OpenCLBinary.#ctor
+  isSpec: "True"
+  fullName: Amplifier.OpenCL.OpenCLBinary.OpenCLBinary
+  nameWithType: OpenCLBinary.OpenCLBinary
+- uid: Amplifier.OpenCL.OpenCLBinary.CompiledInstances
+  name: CompiledInstances
+  href: api/Amplifier.OpenCL.OpenCLBinary.html#Amplifier_OpenCL_OpenCLBinary_CompiledInstances
+  commentId: P:Amplifier.OpenCL.OpenCLBinary.CompiledInstances
+  fullName: Amplifier.OpenCL.OpenCLBinary.CompiledInstances
+  nameWithType: OpenCLBinary.CompiledInstances
+- uid: Amplifier.OpenCL.OpenCLBinary.CompiledInstances*
+  name: CompiledInstances
+  href: api/Amplifier.OpenCL.OpenCLBinary.html#Amplifier_OpenCL_OpenCLBinary_CompiledInstances_
+  commentId: Overload:Amplifier.OpenCL.OpenCLBinary.CompiledInstances
+  isSpec: "True"
+  fullName: Amplifier.OpenCL.OpenCLBinary.CompiledInstances
+  nameWithType: OpenCLBinary.CompiledInstances
+- uid: Amplifier.OpenCL.OpenCLBinary.DeviceID
+  name: DeviceID
+  href: api/Amplifier.OpenCL.OpenCLBinary.html#Amplifier_OpenCL_OpenCLBinary_DeviceID
+  commentId: P:Amplifier.OpenCL.OpenCLBinary.DeviceID
+  fullName: Amplifier.OpenCL.OpenCLBinary.DeviceID
+  nameWithType: OpenCLBinary.DeviceID
+- uid: Amplifier.OpenCL.OpenCLBinary.DeviceID*
+  name: DeviceID
+  href: api/Amplifier.OpenCL.OpenCLBinary.html#Amplifier_OpenCL_OpenCLBinary_DeviceID_
+  commentId: Overload:Amplifier.OpenCL.OpenCLBinary.DeviceID
+  isSpec: "True"
+  fullName: Amplifier.OpenCL.OpenCLBinary.DeviceID
+  nameWithType: OpenCLBinary.DeviceID
+- uid: Amplifier.OpenCL.OpenCLBinary.Kernels
+  name: Kernels
+  href: api/Amplifier.OpenCL.OpenCLBinary.html#Amplifier_OpenCL_OpenCLBinary_Kernels
+  commentId: P:Amplifier.OpenCL.OpenCLBinary.Kernels
+  fullName: Amplifier.OpenCL.OpenCLBinary.Kernels
+  nameWithType: OpenCLBinary.Kernels
+- uid: Amplifier.OpenCL.OpenCLBinary.Kernels*
+  name: Kernels
+  href: api/Amplifier.OpenCL.OpenCLBinary.html#Amplifier_OpenCL_OpenCLBinary_Kernels_
+  commentId: Overload:Amplifier.OpenCL.OpenCLBinary.Kernels
+  isSpec: "True"
+  fullName: Amplifier.OpenCL.OpenCLBinary.Kernels
+  nameWithType: OpenCLBinary.Kernels
 - uid: Amplifier.OpenCL.OpenCLFunctions
   name: OpenCLFunctions
   href: api/Amplifier.OpenCL.OpenCLFunctions.html
@@ -3361,6 +3557,32 @@ references:
   isSpec: "True"
   fullName: Amplifier.OpenCLCompiler.Kernels
   nameWithType: OpenCLCompiler.Kernels
+- uid: Amplifier.OpenCLCompiler.Load(System.String)
+  name: Load(String)
+  href: api/Amplifier.OpenCLCompiler.html#Amplifier_OpenCLCompiler_Load_System_String_
+  commentId: M:Amplifier.OpenCLCompiler.Load(System.String)
+  fullName: Amplifier.OpenCLCompiler.Load(System.String)
+  nameWithType: OpenCLCompiler.Load(String)
+- uid: Amplifier.OpenCLCompiler.Load*
+  name: Load
+  href: api/Amplifier.OpenCLCompiler.html#Amplifier_OpenCLCompiler_Load_
+  commentId: Overload:Amplifier.OpenCLCompiler.Load
+  isSpec: "True"
+  fullName: Amplifier.OpenCLCompiler.Load
+  nameWithType: OpenCLCompiler.Load
+- uid: Amplifier.OpenCLCompiler.Save(System.String)
+  name: Save(String)
+  href: api/Amplifier.OpenCLCompiler.html#Amplifier_OpenCLCompiler_Save_System_String_
+  commentId: M:Amplifier.OpenCLCompiler.Save(System.String)
+  fullName: Amplifier.OpenCLCompiler.Save(System.String)
+  nameWithType: OpenCLCompiler.Save(String)
+- uid: Amplifier.OpenCLCompiler.Save*
+  name: Save
+  href: api/Amplifier.OpenCLCompiler.html#Amplifier_OpenCLCompiler_Save_
+  commentId: Overload:Amplifier.OpenCLCompiler.Save
+  isSpec: "True"
+  fullName: Amplifier.OpenCLCompiler.Save
+  nameWithType: OpenCLCompiler.Save
 - uid: Amplifier.OpenCLCompiler.UseDevice(System.Int32)
   name: UseDevice(Int32)
   href: api/Amplifier.OpenCLCompiler.html#Amplifier_OpenCLCompiler_UseDevice_System_Int32_

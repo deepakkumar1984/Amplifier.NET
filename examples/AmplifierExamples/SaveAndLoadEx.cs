@@ -15,7 +15,7 @@ namespace AmplifierExamples
 
             //Once saved you can reuse the same bin instead of compiling from scratch. Save compilation time. Also the bin file is portable
             var compiler = new OpenCLCompiler();
-            compiler.Load("test.bin");
+            compiler.Load("amp_cl.bin");
 
             foreach (var item in compiler.Kernels)
             {
@@ -49,11 +49,11 @@ namespace AmplifierExamples
             var compiler = new OpenCLCompiler();
 
             //Select a default device
-            compiler.UseDevice(0);
+            compiler.UseDevice(1);
 
             //Compile the sample kernel
             compiler.CompileKernel(typeof(SimpleKernels));
-            compiler.Save("test.bin");
+            compiler.Save("amp_cl.bin");
         }
     }
 }
