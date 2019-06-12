@@ -1,14 +1,39 @@
-﻿using Amplifier.OpenCL.Cloo;
-using ICSharpCode.Decompiler.CSharp;
-using ICSharpCode.Decompiler.TypeSystem;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
+﻿/*
+MIT License
 
+Copyright (c) 2019 Tech Quantum
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+*/
 namespace Amplifier
 {
+    using Amplifier.OpenCL;
+    using Amplifier.OpenCL.Cloo;
+    using ICSharpCode.Decompiler.CSharp;
+    using ICSharpCode.Decompiler.TypeSystem;
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Linq;
+    using System.Text;
+    using System.Text.RegularExpressions;
+
     /// <summary>
     /// Compiler for OpenCL which will be used to compile kernel created in C# and execute them.
     /// </summary>
@@ -40,6 +65,12 @@ namespace Amplifier
         /// The computer context with 
         /// </summary>
         private static ComputeContext _context = null;
+
+        /// <summary>
+        /// The compiled instances
+        /// </summary>
+        private static List<string> _compiledInstances = new List<string>(); 
+    
         #endregion
 
         #region Abstract Implementation
@@ -98,7 +129,11 @@ namespace Amplifier
         {
             string code = GetKernelCode(cls);
 
+            if (_compiledInstances.Contains(cls.FullName))
+                throw new CompileException(string.Format("{0} is already compiled", cls.FullName));
+
             CreateKernels(cls.Name, code);
+            _compiledInstances.Add(cls.FullName);
         }
 
         /// <summary>
@@ -149,6 +184,47 @@ namespace Amplifier
         }
 
         /// <summary>
+        /// Saves the compiler to a file.
+        /// </summary>
+        /// <param name="filePath">The file path.</param>
+        /// <exception cref="System.NotImplementedException"></exception>
+        public override void Save(string filePath)
+        {
+            OpenCLBinary bin = new OpenCLBinary();
+            bin.CompiledInstances = _compiledInstances;
+            bin.DeviceID = DeviceID;
+
+            foreach (var item in _compiledKernels)
+            {
+                bin.Kernels.Add(new KernelBin() { Binaries = item.Program.Binaries.ToArray(), Name = item.FunctionName });
+            }
+
+            string json = Newtonsoft.Json.JsonConvert.SerializeObject(bin, Newtonsoft.Json.Formatting.Indented);
+            File.WriteAllText(filePath, json);
+        }
+
+        /// <summary>
+        /// Loads the compiler from the saved bin file.
+        /// </summary>
+        /// <param name="filePath">The file path for the saved binary.</param>
+        /// <exception cref="System.NotImplementedException"></exception>
+        public override void Load(string filePath)
+        {
+            string json = File.ReadAllText(filePath);
+            var bin = Newtonsoft.Json.JsonConvert.DeserializeObject<OpenCLBinary>(json);
+            _compiledInstances = bin.CompiledInstances;
+            DeviceID = bin.DeviceID;
+
+            UseDevice(DeviceID);
+
+            foreach (var item in bin.Kernels)
+            {
+                ComputeKernel computeKernel = new ComputeKernel(item.Name, new ComputeProgram(_context, item.Binaries.ToList(), new List<ComputeDevice>() { _defaultDevice }));
+                _compiledKernels.Add(computeKernel);
+            }
+        }
+
+        /// <summary>
         /// Uses the device for the compiler.
         /// </summary>
         /// <param name="deviceId">The device identifier.</param>
@@ -172,6 +248,7 @@ namespace Amplifier
             ComputeContextPropertyList properties = new ComputeContextPropertyList(_defaultPlatorm);
             _context = new ComputeContext(new ComputeDevice[] { _defaultDevice }, properties, null, IntPtr.Zero);
             Console.WriteLine("Selected device: " + _defaultDevice.Name);
+            DeviceID = deviceId;
         }
 
         /// <summary>

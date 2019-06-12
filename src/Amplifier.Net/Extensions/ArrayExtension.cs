@@ -22,44 +22,38 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  
 */
-namespace Amplifier
+
+namespace Amplifier.Extensions
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
 
-    public class CUDACompiler : BaseCompiler
+    public static class ArrayExtension
     {
-        public CUDACompiler() : base("CUDA")
+        public static void AmplifyFor(this Array x, BaseCompiler compiler, string kernelName, params object[] args)
         {
-        }
+            var arguments = args.ToList();
+            arguments.Insert(0, x);
 
-        public override List<Device> Devices => throw new NotImplementedException();
-
-        public override List<string> Kernels => throw new NotImplementedException();
-
-        public override void CompileKernel(Type cls)
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void Execute<TSource>(string functionName, params object[] args)
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void Load(string filePath)
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void Save(string filePath)
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void UseDevice(int deviceId = 0)
-        {
-            throw new NotImplementedException();
+            if (x.GetType().Name.StartsWith("Single"))
+            {
+                compiler.Execute<float>(kernelName, arguments.ToArray());
+            }
+            else if (x.GetType().Name.StartsWith("Double"))
+            {
+                compiler.Execute<double>(kernelName, arguments.ToArray());
+            }
+            else if (x.GetType().Name.StartsWith("Int32"))
+            {
+                compiler.Execute<int>(kernelName, arguments.ToArray());
+            }
+            else if (x.GetType().Name.StartsWith("Byte"))
+            {
+                compiler.Execute<byte>(kernelName, arguments.ToArray());
+            }
         }
     }
 }

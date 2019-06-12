@@ -1,9 +1,35 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿/*
+MIT License
 
+Copyright (c) 2019 Tech Quantum
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+*/
 namespace Amplifier
 {
+    using System;
+    using System.Collections.Generic;
+
+    /// <summary>
+    /// Abstract class for OpenCL and CUDA compiler
+    /// </summary>
+    /// <seealso cref="System.IDisposable" />
     public abstract class BaseCompiler : IDisposable
     {
         /// <summary>
@@ -13,6 +39,14 @@ namespace Amplifier
         /// The name.
         /// </value>
         public string Name { get; set; }
+
+        /// <summary>
+        /// Gets or sets the device identifier.
+        /// </summary>
+        /// <value>
+        /// The device identifier.
+        /// </value>
+        public int DeviceID { get; set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="BaseCompiler"/> class.
@@ -52,6 +86,20 @@ namespace Amplifier
         public abstract void CompileKernel(Type cls);
 
         /// <summary>
+        /// Gets the default executer with float as base data type.
+        /// </summary>
+        /// <value>
+        /// The execute.
+        /// </value>
+        public dynamic Exec
+        {
+            get
+            {
+                return new Executer<float>(this);
+            }
+        }
+
+        /// <summary>
         /// Executes the specified kernel function name.
         /// </summary>
         /// <typeparam name="TSource">The type of the source.</typeparam>
@@ -60,6 +108,18 @@ namespace Amplifier
         /// <param name="returnInputVariable">The return result.</param>
         /// <returns></returns>
         public abstract void Execute<TSource>(string functionName, params object[] args) where TSource : struct;
+
+        /// <summary>
+        /// Saves the compiler to a file.
+        /// </summary>
+        /// <param name="filePath">The file path to save the compiled binary.</param>
+        public abstract void Save(string filePath);
+
+        /// <summary>
+        /// Loads the compiler from the saved bin file.
+        /// </summary>
+        /// <param name="filePath">The file path for the saved binary.</param>
+        public abstract void Load(string filePath);
 
         /// <summary>
         /// Gets the execute.
