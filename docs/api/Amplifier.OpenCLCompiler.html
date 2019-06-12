@@ -16,13 +16,13 @@
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
     <link rel="stylesheet" href="../styles/docfx.css">
     <link rel="stylesheet" href="../styles/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
     <meta property="docfx:navrel" content="../toc.html">
     <meta property="docfx:tocrel" content="toc.html">
     
     
     
-  </head>
-  <body data-spy="scroll" data-target="#affix" data-offset="120">
+  </head>  <body data-spy="scroll" data-target="#affix" data-offset="120">
     <div id="wrapper">
       <header>
         
@@ -69,20 +69,23 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="Amplifier.OpenCLCompiler">
-  <h1 id="Amplifier_OpenCLCompiler" data-uid="Amplifier.OpenCLCompiler">Class OpenCLCompiler
+  
+  
+  <h1 id="Amplifier_OpenCLCompiler" data-uid="Amplifier.OpenCLCompiler" class="text-break">Class OpenCLCompiler
   </h1>
   <div class="markdown level0 summary"><p>Compiler for OpenCL which will be used to compile kernel created in C# and execute them.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
-  
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
     <div class="level1"><a class="xref" href="Amplifier.BaseCompiler.html">BaseCompiler</a></div>
     <div class="level2"><span class="xref">OpenCLCompiler</span></div>
   </div>
-  
-  
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">System.IDisposable</span></div>
+  </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
@@ -119,510 +122,414 @@
       <span class="xref">System.Object.ToString()</span>
     </div>
   </div>
-  
-  <h6><strong>Namespace</strong>: System.Dynamic.ExpandoObject</h6>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Amplifier.html">Amplifier</a></h6>
   <h6><strong>Assembly</strong>: Amplifier.dll</h6>
-  
   <h5 id="Amplifier_OpenCLCompiler_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public class OpenCLCompiler : BaseCompiler, IDisposable</code></pre>
   </div>
-  
-  
-  
-  
-  
   <h3 id="constructors">Constructors
   </h3>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/tech-quantum/Amplifier.NET/new/master/apiSpec/new?filename=Amplifier_OpenCLCompiler__ctor.md&amp;value=---%0Auid%3A%20Amplifier.OpenCLCompiler.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/tech-quantum/Amplifier.NET/new/master/apiSpec/new?filename=Amplifier_OpenCLCompiler__ctor.md&amp;value=---%0Auid%3A%20Amplifier.OpenCLCompiler.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tech-quantum/Amplifier.NET/blob/master/src/Amplifier.Net/OpenCLCompiler.cs/#L80" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/tech-quantum/Amplifier.NET/blob/master/src/Amplifier.Net/OpenCLCompiler.cs/#L80">View Source</a>
   </span>
-  
   <a id="Amplifier_OpenCLCompiler__ctor_" data-uid="Amplifier.OpenCLCompiler.#ctor*"></a>
-  
-  <h4 id="Amplifier_OpenCLCompiler__ctor" data-uid="Amplifier.OpenCLCompiler.#ctor"><a href="#collapsible-Amplifier_OpenCLCompiler__ctor" class="expander" data-toggle="collapse">OpenCLCompiler()</a></h4>
-  
-  <div id="collapsible-Amplifier_OpenCLCompiler__ctor" class="collapse in">
+  <h4 id="Amplifier_OpenCLCompiler__ctor" data-uid="Amplifier.OpenCLCompiler.#ctor">OpenCLCompiler()</h4>
   <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Amplifier.OpenCLCompiler.html">OpenCLCompiler</a> class.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public OpenCLCompiler()</code></pre>
   </div>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  </div>
   <h3 id="properties">Properties
   </h3>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/tech-quantum/Amplifier.NET/new/master/apiSpec/new?filename=Amplifier_OpenCLCompiler_Devices.md&amp;value=---%0Auid%3A%20Amplifier.OpenCLCompiler.Devices%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/tech-quantum/Amplifier.NET/new/master/apiSpec/new?filename=Amplifier_OpenCLCompiler_Devices.md&amp;value=---%0Auid%3A%20Amplifier.OpenCLCompiler.Devices%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tech-quantum/Amplifier.NET/blob/master/src/Amplifier.Net/OpenCLCompiler.cs/#L90" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/tech-quantum/Amplifier.NET/blob/master/src/Amplifier.Net/OpenCLCompiler.cs/#L90">View Source</a>
   </span>
-  
   <a id="Amplifier_OpenCLCompiler_Devices_" data-uid="Amplifier.OpenCLCompiler.Devices*"></a>
-  
-  <h4 id="Amplifier_OpenCLCompiler_Devices" data-uid="Amplifier.OpenCLCompiler.Devices"><a href="#collapsible-Amplifier_OpenCLCompiler_Devices" class="expander" data-toggle="collapse">Devices</a></h4>
-  
-  <div id="collapsible-Amplifier_OpenCLCompiler_Devices" class="collapse in">
+  <h4 id="Amplifier_OpenCLCompiler_Devices" data-uid="Amplifier.OpenCLCompiler.Devices">Devices</h4>
   <div class="markdown level1 summary"><p>Gets or sets the devices.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override List&lt;Device&gt; Devices { get; }</code></pre>
   </div>
-  
-  
-  
-  
-  
   <h5 class="propertyValue">Property Value</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="Amplifier.Device.html">Device</a>&gt;
-        <p><p>The devices.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="Amplifier.Device.html">Device</a>&gt;</td>
+        <td><p>The devices.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
-  
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="Amplifier.BaseCompiler.html#Amplifier_BaseCompiler_Devices">BaseCompiler.Devices</a></div>
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/tech-quantum/Amplifier.NET/new/master/apiSpec/new?filename=Amplifier_OpenCLCompiler_Kernels.md&amp;value=---%0Auid%3A%20Amplifier.OpenCLCompiler.Kernels%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/tech-quantum/Amplifier.NET/new/master/apiSpec/new?filename=Amplifier_OpenCLCompiler_Kernels.md&amp;value=---%0Auid%3A%20Amplifier.OpenCLCompiler.Kernels%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tech-quantum/Amplifier.NET/blob/master/src/Amplifier.Net/OpenCLCompiler.cs/#L119" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/tech-quantum/Amplifier.NET/blob/master/src/Amplifier.Net/OpenCLCompiler.cs/#L119">View Source</a>
   </span>
-  
   <a id="Amplifier_OpenCLCompiler_Kernels_" data-uid="Amplifier.OpenCLCompiler.Kernels*"></a>
-  
-  <h4 id="Amplifier_OpenCLCompiler_Kernels" data-uid="Amplifier.OpenCLCompiler.Kernels"><a href="#collapsible-Amplifier_OpenCLCompiler_Kernels" class="expander" data-toggle="collapse">Kernels</a></h4>
-  
-  <div id="collapsible-Amplifier_OpenCLCompiler_Kernels" class="collapse in">
+  <h4 id="Amplifier_OpenCLCompiler_Kernels" data-uid="Amplifier.OpenCLCompiler.Kernels">Kernels</h4>
   <div class="markdown level1 summary"><p>Gets the kernel functions for the compiler.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override List&lt;string&gt; Kernels { get; }</code></pre>
   </div>
-  
-  
-  
-  
-  
   <h5 class="propertyValue">Property Value</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">System.String</span>&gt;
-        <p><p>The kernels.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><p>The kernels.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
-  
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="Amplifier.BaseCompiler.html#Amplifier_BaseCompiler_Kernels">BaseCompiler.Kernels</a></div>
-  
-  
-  
-  
-  
-  </div>
   <h3 id="methods">Methods
   </h3>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/tech-quantum/Amplifier.NET/new/master/apiSpec/new?filename=Amplifier_OpenCLCompiler_CompileKernel_System_Type_.md&amp;value=---%0Auid%3A%20Amplifier.OpenCLCompiler.CompileKernel(System.Type)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/tech-quantum/Amplifier.NET/new/master/apiSpec/new?filename=Amplifier_OpenCLCompiler_CompileKernel_System_Type_.md&amp;value=---%0Auid%3A%20Amplifier.OpenCLCompiler.CompileKernel(System.Type)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tech-quantum/Amplifier.NET/blob/master/src/Amplifier.Net/OpenCLCompiler.cs/#L128" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/tech-quantum/Amplifier.NET/blob/master/src/Amplifier.Net/OpenCLCompiler.cs/#L128">View Source</a>
   </span>
-  
   <a id="Amplifier_OpenCLCompiler_CompileKernel_" data-uid="Amplifier.OpenCLCompiler.CompileKernel*"></a>
-  
-  <h4 id="Amplifier_OpenCLCompiler_CompileKernel_System_Type_" data-uid="Amplifier.OpenCLCompiler.CompileKernel(System.Type)"><a href="#collapsible-Amplifier_OpenCLCompiler_CompileKernel_System_Type_" class="expander" data-toggle="collapse">CompileKernel(Type)</a></h4>
-  
-  <div id="collapsible-Amplifier_OpenCLCompiler_CompileKernel_System_Type_" class="collapse in">
+  <h4 id="Amplifier_OpenCLCompiler_CompileKernel_System_Type_" data-uid="Amplifier.OpenCLCompiler.CompileKernel(System.Type)">CompileKernel(Type)</h4>
   <div class="markdown level1 summary"><p>Compiles the kernel.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override void CompileKernel(Type cls)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.Type</span></span>
-        <span class="parametername">cls</span>
-        <p><p>The CLS.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Type</span></td>
+        <td><span class="parametername">cls</span></td>
+        <td><p>The CLS.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="Amplifier.BaseCompiler.html#Amplifier_BaseCompiler_CompileKernel_System_Type_">BaseCompiler.CompileKernel(Type)</a></div>
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/tech-quantum/Amplifier.NET/new/master/apiSpec/new?filename=Amplifier_OpenCLCompiler_Dispose.md&amp;value=---%0Auid%3A%20Amplifier.OpenCLCompiler.Dispose%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/tech-quantum/Amplifier.NET/new/master/apiSpec/new?filename=Amplifier_OpenCLCompiler_Dispose.md&amp;value=---%0Auid%3A%20Amplifier.OpenCLCompiler.Dispose%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tech-quantum/Amplifier.NET/blob/master/src/Amplifier.Net/OpenCLCompiler.cs/#L257" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/tech-quantum/Amplifier.NET/blob/master/src/Amplifier.Net/OpenCLCompiler.cs/#L257">View Source</a>
   </span>
-  
   <a id="Amplifier_OpenCLCompiler_Dispose_" data-uid="Amplifier.OpenCLCompiler.Dispose*"></a>
-  
-  <h4 id="Amplifier_OpenCLCompiler_Dispose" data-uid="Amplifier.OpenCLCompiler.Dispose"><a href="#collapsible-Amplifier_OpenCLCompiler_Dispose" class="expander" data-toggle="collapse">Dispose()</a></h4>
-  
-  <div id="collapsible-Amplifier_OpenCLCompiler_Dispose" class="collapse in">
+  <h4 id="Amplifier_OpenCLCompiler_Dispose" data-uid="Amplifier.OpenCLCompiler.Dispose">Dispose()</h4>
   <div class="markdown level1 summary"><p>Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override void Dispose()</code></pre>
   </div>
-  
-  
-  
-  
-  
-  
-  
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="Amplifier.BaseCompiler.html#Amplifier_BaseCompiler_Dispose">BaseCompiler.Dispose()</a></div>
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/tech-quantum/Amplifier.NET/new/master/apiSpec/new?filename=Amplifier_OpenCLCompiler_Execute__1_System_String_System_Object___.md&amp;value=---%0Auid%3A%20Amplifier.OpenCLCompiler.Execute%60%601(System.String%2CSystem.Object%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/tech-quantum/Amplifier.NET/new/master/apiSpec/new?filename=Amplifier_OpenCLCompiler_Execute__1_System_String_System_Object___.md&amp;value=---%0Auid%3A%20Amplifier.OpenCLCompiler.Execute%60%601(System.String%2CSystem.Object%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tech-quantum/Amplifier.NET/blob/master/src/Amplifier.Net/OpenCLCompiler.cs/#L149" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/tech-quantum/Amplifier.NET/blob/master/src/Amplifier.Net/OpenCLCompiler.cs/#L149">View Source</a>
   </span>
-  
   <a id="Amplifier_OpenCLCompiler_Execute_" data-uid="Amplifier.OpenCLCompiler.Execute*"></a>
-  
-  <h4 id="Amplifier_OpenCLCompiler_Execute__1_System_String_System_Object___" data-uid="Amplifier.OpenCLCompiler.Execute``1(System.String,System.Object[])"><a href="#collapsible-Amplifier_OpenCLCompiler_Execute__1_System_String_System_Object___" class="expander" data-toggle="collapse">Execute&lt;TSource&gt;(String, Object[])</a></h4>
-  
-  <div id="collapsible-Amplifier_OpenCLCompiler_Execute__1_System_String_System_Object___" class="collapse in">
+  <h4 id="Amplifier_OpenCLCompiler_Execute__1_System_String_System_Object___" data-uid="Amplifier.OpenCLCompiler.Execute``1(System.String,System.Object[])">Execute&lt;TSource&gt;(String, Object[])</h4>
   <div class="markdown level1 summary"><p>Executes the specified kernel function name.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override void Execute&lt;TSource&gt;(string functionName, params object[] args)
     where TSource : struct</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">functionName</span>
-        <p><p>Name of the function.</p>
-</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.Object</span>[]</span>
-        <span class="parametername">args</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">functionName</span></td>
+        <td><p>Name of the function.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span>[]</td>
+        <td><span class="parametername">args</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
   <h5 class="typeParameters">Type Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="parametername">TSource</span>
-        <p><p>The type of the source.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TSource</span></td>
+        <td><p>The type of the source.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="Amplifier.BaseCompiler.html#Amplifier_BaseCompiler_Execute__1_System_String_System_Object___">BaseCompiler.Execute&lt;TSource&gt;(String, Object[])</a></div>
-  
-  
-  
-  
   <h5 class="exceptions">Exceptions</h5>
-  <table>
-    <tr>
-      <td>
-        <a class="xref" href="Amplifier.ExecutionException.html">ExecutionException</a>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Amplifier.ExecutionException.html">ExecutionException</a></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/tech-quantum/Amplifier.NET/new/master/apiSpec/new?filename=Amplifier_OpenCLCompiler_Load_System_String_.md&amp;value=---%0Auid%3A%20Amplifier.OpenCLCompiler.Load(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/tech-quantum/Amplifier.NET/new/master/apiSpec/new?filename=Amplifier_OpenCLCompiler_Load_System_String_.md&amp;value=---%0Auid%3A%20Amplifier.OpenCLCompiler.Load(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tech-quantum/Amplifier.NET/blob/master/src/Amplifier.Net/OpenCLCompiler.cs/#L211" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/tech-quantum/Amplifier.NET/blob/master/src/Amplifier.Net/OpenCLCompiler.cs/#L211">View Source</a>
   </span>
-  
   <a id="Amplifier_OpenCLCompiler_Load_" data-uid="Amplifier.OpenCLCompiler.Load*"></a>
-  
-  <h4 id="Amplifier_OpenCLCompiler_Load_System_String_" data-uid="Amplifier.OpenCLCompiler.Load(System.String)"><a href="#collapsible-Amplifier_OpenCLCompiler_Load_System_String_" class="expander" data-toggle="collapse">Load(String)</a></h4>
-  
-  <div id="collapsible-Amplifier_OpenCLCompiler_Load_System_String_" class="collapse in">
+  <h4 id="Amplifier_OpenCLCompiler_Load_System_String_" data-uid="Amplifier.OpenCLCompiler.Load(System.String)">Load(String)</h4>
   <div class="markdown level1 summary"><p>Loads the compiler from the saved bin file.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override void Load(string filePath)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">filePath</span>
-        <p><p>The file path for the saved binary.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">filePath</span></td>
+        <td><p>The file path for the saved binary.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="Amplifier.BaseCompiler.html#Amplifier_BaseCompiler_Load_System_String_">BaseCompiler.Load(String)</a></div>
-  
-  
-  
-  
   <h5 class="exceptions">Exceptions</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.NotImplementedException</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.NotImplementedException</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/tech-quantum/Amplifier.NET/new/master/apiSpec/new?filename=Amplifier_OpenCLCompiler_Save_System_String_.md&amp;value=---%0Auid%3A%20Amplifier.OpenCLCompiler.Save(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/tech-quantum/Amplifier.NET/new/master/apiSpec/new?filename=Amplifier_OpenCLCompiler_Save_System_String_.md&amp;value=---%0Auid%3A%20Amplifier.OpenCLCompiler.Save(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tech-quantum/Amplifier.NET/blob/master/src/Amplifier.Net/OpenCLCompiler.cs/#L191" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/tech-quantum/Amplifier.NET/blob/master/src/Amplifier.Net/OpenCLCompiler.cs/#L191">View Source</a>
   </span>
-  
   <a id="Amplifier_OpenCLCompiler_Save_" data-uid="Amplifier.OpenCLCompiler.Save*"></a>
-  
-  <h4 id="Amplifier_OpenCLCompiler_Save_System_String_" data-uid="Amplifier.OpenCLCompiler.Save(System.String)"><a href="#collapsible-Amplifier_OpenCLCompiler_Save_System_String_" class="expander" data-toggle="collapse">Save(String)</a></h4>
-  
-  <div id="collapsible-Amplifier_OpenCLCompiler_Save_System_String_" class="collapse in">
+  <h4 id="Amplifier_OpenCLCompiler_Save_System_String_" data-uid="Amplifier.OpenCLCompiler.Save(System.String)">Save(String)</h4>
   <div class="markdown level1 summary"><p>Saves the compiler to a file.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override void Save(string filePath)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">filePath</span>
-        <p><p>The file path.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">filePath</span></td>
+        <td><p>The file path.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="Amplifier.BaseCompiler.html#Amplifier_BaseCompiler_Save_System_String_">BaseCompiler.Save(String)</a></div>
-  
-  
-  
-  
   <h5 class="exceptions">Exceptions</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.NotImplementedException</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.NotImplementedException</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/tech-quantum/Amplifier.NET/new/master/apiSpec/new?filename=Amplifier_OpenCLCompiler_UseDevice_System_Int32_.md&amp;value=---%0Auid%3A%20Amplifier.OpenCLCompiler.UseDevice(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/tech-quantum/Amplifier.NET/new/master/apiSpec/new?filename=Amplifier_OpenCLCompiler_UseDevice_System_Int32_.md&amp;value=---%0Auid%3A%20Amplifier.OpenCLCompiler.UseDevice(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tech-quantum/Amplifier.NET/blob/master/src/Amplifier.Net/OpenCLCompiler.cs/#L234" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/tech-quantum/Amplifier.NET/blob/master/src/Amplifier.Net/OpenCLCompiler.cs/#L234">View Source</a>
   </span>
-  
   <a id="Amplifier_OpenCLCompiler_UseDevice_" data-uid="Amplifier.OpenCLCompiler.UseDevice*"></a>
-  
-  <h4 id="Amplifier_OpenCLCompiler_UseDevice_System_Int32_" data-uid="Amplifier.OpenCLCompiler.UseDevice(System.Int32)"><a href="#collapsible-Amplifier_OpenCLCompiler_UseDevice_System_Int32_" class="expander" data-toggle="collapse">UseDevice(Int32)</a></h4>
-  
-  <div id="collapsible-Amplifier_OpenCLCompiler_UseDevice_System_Int32_" class="collapse in">
+  <h4 id="Amplifier_OpenCLCompiler_UseDevice_System_Int32_" data-uid="Amplifier.OpenCLCompiler.UseDevice(System.Int32)">UseDevice(Int32)</h4>
   <div class="markdown level1 summary"><p>Uses the device for the compiler.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override void UseDevice(int deviceId = 0)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.Int32</span></span>
-        <span class="parametername">deviceId</span>
-        <p><p>The device identifier.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">deviceId</span></td>
+        <td><p>The device identifier.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="Amplifier.BaseCompiler.html#Amplifier_BaseCompiler_UseDevice_System_Int32_">BaseCompiler.UseDevice(Int32)</a></div>
-  
-  
-  
-  
   <h5 class="exceptions">Exceptions</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Exception</span>
-        <p><p>No device found. Please invoke Accelerator.Init with a device id to initialize. &quot; +
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Exception</span></td>
+        <td><p>No device found. Please invoke Accelerator.Init with a device id to initialize. &quot; +
 &quot;If you have done the Init and still getting the error please check if OpenCL is installed.</p>
-</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="xref">System.ArgumentException</span>
-        <p><p>Device ID out of range.</p>
-</p>
-      </td>
-    </tr>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.ArgumentException</span></td>
+        <td><p>Device ID out of range.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
+  <h3 id="implements">Implements</h3>
+  <div>
+      <span class="xref">System.IDisposable</span>
   </div>
-  
-  
   <h3 id="seealso">See Also</h3>
   <div class="seealso">
       <div><a class="xref" href="Amplifier.BaseCompiler.html">BaseCompiler</a></div>
   </div>
 </article>
           </div>
-          <div class="contribution-panel mobile-hide">
-              <a href="https://github.com/tech-quantum/Amplifier.NET/new/master/apiSpec/new?filename=Amplifier_OpenCLCompiler.md&amp;value=---%0Auid%3A%20Amplifier.OpenCLCompiler%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc" class="fab btn-warning pull-right"><i class="glyphicon glyphicon-pencil"></i></a>
-              <a href="https://github.com/tech-quantum/Amplifier.NET/blob/master/src/Amplifier.Net/OpenCLCompiler.cs/#L41" title="View Source" class="fab btn-info pull-right"><i class="fa fa-code"></i></a>
-          </div>
           
           <div class="hidden-sm col-md-2" role="complementary">
             <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/tech-quantum/Amplifier.NET/new/master/apiSpec/new?filename=Amplifier_OpenCLCompiler.md&amp;value=---%0Auid%3A%20Amplifier.OpenCLCompiler%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/tech-quantum/Amplifier.NET/blob/master/src/Amplifier.Net/OpenCLCompiler.cs/#L41" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
               </nav>
             </div>
           </div>
