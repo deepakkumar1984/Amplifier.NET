@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{18453BC6-B316-471A-B8BB-77ADA8789713}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Hybrid.MsilToOpenCL</RootNamespace>
+    <AssemblyName>Hybrid.MsilToOpenCL</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\Hybrid.MsilToOpenCL.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\Hybrid.MsilToOpenCL.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\Hybrid.MsilToOpenCL.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\Hybrid.MsilToOpenCL.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Instructions\CilLoadLocalAddressInstruction.cs" />
+    <Compile Include="Instructions\CilStoreFieldInstruction.cs" />
+    <Compile Include="Nodes\AndNode.cs" />
+    <Compile Include="Nodes\BasicBlock.cs" />
+    <Compile Include="Context\AccessPathEntry.cs" />
+    <Compile Include="Context\ArrayInfo.cs" />
+    <Compile Include="Context\CallContext.cs" />
+    <Compile Include="Context\HlGraph.cs" />
+    <Compile Include="Context\HlGraphEntry.cs" />
+    <Compile Include="Context\ILBB.cs" />
+    <Compile Include="Context\ILgraph.cs" />
+    <Compile Include="Context\InvokeArgument.cs" />
+    <Compile Include="Context\InvokeContext.cs" />
+    <Compile Include="Context\StackState.cs" />
+    <Compile Include="Enumerations\LocationFlags.cs" />
+    <Compile Include="Enumerations\LocationType.cs" />
+    <Compile Include="Enumerations\NodeType.cs" />
+    <Compile Include="HlGraphCache.cs" />
+    <Compile Include="Instructions\CilBinaryComparisonInstruction.cs" />
+    <Compile Include="Instructions\CilBinaryNumericInstruction.cs" />
+    <Compile Include="Instructions\CilBranchInstruction.cs" />
+    <Compile Include="Instructions\CilCallInstruction.cs" />
+    <Compile Include="Instructions\CilComparisonAndBranchInstruction.cs" />
+    <Compile Include="Instructions\CilConvertInstruction.cs" />
+    <Compile Include="Instructions\CilDupInstruction.cs" />
+    <Compile Include="Instructions\CilInstruction.cs" />
+    <Compile Include="Instructions\CilInstructionReader.cs" />
+    <Compile Include="Context\HlGraph.Optimization.cs" />
+    <Compile Include="Instructions\CilSwitchInstruction.cs" />
+    <Compile Include="Instructions\Instruction.cs" />
+    <Compile Include="Instructions\CilLoadArgumentInstruction.cs" />
+    <Compile Include="Instructions\CilLoadElementAddressInstruction.cs" />
+    <Compile Include="Instructions\CilLoadElementInstruction.cs" />
+    <Compile Include="Instructions\CilLoadFieldAddressInstruction.cs" />
+    <Compile Include="Instructions\CilLoadFieldInstruction.cs" />
+    <Compile Include="Instructions\CilLoadI4ConstantInstruction.cs" />
+    <Compile Include="Instructions\CilLoadLocalInstruction.cs" />
+    <Compile Include="Instructions\CilLoadObjectInstruction.cs" />
+    <Compile Include="Instructions\CilLoadR4ConstantInstruction.cs" />
+    <Compile Include="Instructions\CilLoadR8ConstantInstruction.cs" />
+    <Compile Include="Instructions\CilNopInstruction.cs" />
+    <Compile Include="Instructions\CilPopInstruction.cs" />
+    <Compile Include="Instructions\CilReturnInstruction.cs" />
+    <Compile Include="Instructions\CilStoreElementInstruction.cs" />
+    <Compile Include="Instructions\CilStoreLocalInstruction.cs" />
+    <Compile Include="Instructions\CilStoreObjectInstruction.cs" />
+    <Compile Include="Instructions\CilUnaryNumericInstruction.cs" />
+    <Compile Include="Instructions\CilConditionalBranchInstruction.cs" />
+    <Compile Include="Locations\Location.cs" />
+    <Compile Include="Locations\ArgumentLocation.cs" />
+    <Compile Include="Locations\LocalVariableLocation.cs" />
+    <Compile Include="Locations\StackLocation.cs" />
+    <Compile Include="Locations\StaticFieldLocation.cs" />
+    <Compile Include="Nodes\GreaterEqualsNode.cs" />
+    <Compile Include="Nodes\GreaterNode.cs" />
+    <Compile Include="Nodes\LessNode.cs" />
+    <Compile Include="Nodes\Node.cs" />
+    <Compile Include="Nodes\AddNode.cs" />
+    <Compile Include="Nodes\AddressOfNode.cs" />
+    <Compile Include="Nodes\ArrayAccessNode.cs" />
+    <Compile Include="Nodes\BinaryComparisonOperatorNode.cs" />
+    <Compile Include="Nodes\BinaryOperatorNode.cs" />
+    <Compile Include="Nodes\CallNode.cs" />
+    <Compile Include="Nodes\CastNode.cs" />
+    <Compile Include="Nodes\EqualsNode.cs" />
+    <Compile Include="Nodes\DerefNode.cs" />
+    <Compile Include="Nodes\DivNode.cs" />
+    <Compile Include="Nodes\DoubleConstantNode.cs" />
+    <Compile Include="Nodes\FloatConstantNode.cs" />
+    <Compile Include="Nodes\InstanceFieldNode.cs" />
+    <Compile Include="Nodes\IntegerConstantNode.cs" />
+    <Compile Include="Nodes\LessEqualsNode.cs" />
+    <Compile Include="Nodes\LocationNode.cs" />
+    <Compile Include="Nodes\LogicalNotNode.cs" />
+    <Compile Include="Nodes\ModNode.cs" />
+    <Compile Include="Nodes\MulNode.cs" />
+    <Compile Include="Nodes\NegNode.cs" />
+    <Compile Include="Nodes\NotEqualsNode.cs" />
+    <Compile Include="Nodes\OrNode.cs" />
+    <Compile Include="Nodes\StringConstantNode.cs" />
+    <Compile Include="Nodes\SubNode.cs" />
+    <Compile Include="Nodes\UnaryOperatorNode.cs" />
+    <Compile Include="Nodes\NamedFieldNode.cs" />
+    <Compile Include="Nodes\XorNode.cs" />
+    <Compile Include="OpenClAliasAttribute.cs" />
+    <Compile Include="OpenClFunctions.cs" />
+    <Compile Include="OpenClIn.cs" />
+    <Compile Include="OpenCLInterop.cs" />
+    <Compile Include="OpenClOut.cs" />
+    <Compile Include="Parallel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

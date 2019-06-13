@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.489
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29009.5
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Amplifier", "src\Amplifier.Net\Amplifier.csproj", "{59F3F20B-2A0C-4925-977C-FE0977F2B995}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AmplifierExamples", "examples\AmplifierExamples\AmplifierExamples.csproj", "{B139550F-BB6A-40DA-837B-7BF8C62C153D}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "doc-gen", "doc-gen\doc-gen.csproj", "{93053BBF-534D-4EBA-A5BD-177DEDB1D34F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Hybrid", "Hybrid", "{2B234C51-CA44-4836-A8CC-CD95692AC8C9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

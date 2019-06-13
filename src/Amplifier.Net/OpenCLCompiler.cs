@@ -178,7 +178,10 @@ namespace Amplifier
             KernelFunctions.Clear();
             foreach (var item in _compiledInstances)
             {
-                source.AppendLine(GetKernelCode(item));
+                if (item.IsLayoutSequential)
+                    source.AppendLine(GetStructCode(item));
+                else if (item.IsClass)
+                    source.AppendLine(GetKernelCode(item));
             }
 
             CreateKernels(source.ToString());
@@ -365,7 +368,7 @@ namespace Amplifier
         {
             string assemblyPath = kernalClass.Assembly.Location;
             CSharpDecompiler cSharpDecompiler
-                = new CSharpDecompiler(assemblyPath, new ICSharpCode.Decompiler.DecompilerSettings() { ThrowOnAssemblyResolveErrors = false });
+                = new CSharpDecompiler(assemblyPath, new ICSharpCode.Decompiler.DecompilerSettings() { ThrowOnAssemblyResolveErrors = false, ForEachStatement = false });
             StringBuilder result = new StringBuilder();
             ITypeDefinition typeInfo = cSharpDecompiler.TypeSystem.MainModule.Compilation.FindType(new FullTypeName(kernalClass.FullName)).GetDefinition();
 
@@ -426,6 +429,17 @@ namespace Amplifier
             }
 
             return resultCode;
+        }
+
+        private string GetStructCode(Type structInstance)
+        {
+            string assemblyPath = structInstance.Assembly.Location;
+            CSharpDecompiler cSharpDecompiler
+                = new CSharpDecompiler(assemblyPath, new ICSharpCode.Decompiler.DecompilerSettings() { ThrowOnAssemblyResolveErrors = false, ForEachStatement = false });
+
+            var tree = cSharpDecompiler.DecompileType(new FullTypeName(structInstance.FullName));
+
+            return cSharpDecompiler.DecompileTypeAsString(new FullTypeName(structInstance.FullName));
         }
 
         /// <summary>
