@@ -7,7 +7,7 @@ Install-Package Amplifier.NET
 
 If you have created .NET core application, you can add using command line:
 ```
-dotnet add package Amplifier.NET --version 0.4.2
+dotnet add package Amplifier.NET
 ```
 
 Nuget: https://www.nuget.org/packages/Amplifier.NET/
