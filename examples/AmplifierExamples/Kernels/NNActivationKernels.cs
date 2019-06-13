@@ -5,7 +5,7 @@ using System.Text;
 
 namespace AmplifierExamples.Kernels
 {
-    class ForLoopKernels : OpenCLFunctions
+    class NNActivationKernels : OpenCLFunctions
     {
         [OpenCLKernel]
         void Sigmoid([Global]float[] x)

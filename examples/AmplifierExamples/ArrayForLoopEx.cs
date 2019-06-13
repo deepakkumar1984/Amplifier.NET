@@ -16,10 +16,10 @@ namespace AmplifierExamples
             compiler1.UseDevice(0);
 
             var compiler2 = new OpenCLCompiler();
-            compiler1.UseDevice(1);
+            compiler2.UseDevice(1);
 
-            compiler1.CompileKernel(typeof(ForLoopKernels));
-            compiler2.CompileKernel(typeof(ForLoopKernels));
+            compiler1.CompileKernel(typeof(NNActivationKernels));
+            compiler2.CompileKernel(typeof(NNActivationKernels));
 
             float[] x = new float[] { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 

@@ -31,6 +31,7 @@ namespace Amplifier
     using System.Collections.Generic;
     using System.IO;
     using System.Linq;
+    using System.Runtime.InteropServices;
     using System.Text;
     using System.Text.RegularExpressions;
 
@@ -44,33 +45,44 @@ namespace Amplifier
         /// <summary>
         /// The device list
         /// </summary>
-        private static List<ComputeDevice> _devices = new List<ComputeDevice>();
+        private List<ComputeDevice> _devices = new List<ComputeDevice>();
 
         /// <summary>
         /// The default device for the accelerator
         /// </summary>
-        private static ComputeDevice _defaultDevice = null;
+        private ComputeDevice _defaultDevice = null;
 
         /// <summary>
         /// The default platorm for the accelerator
         /// </summary>
-        private static ComputePlatform _defaultPlatorm = null;
+        private ComputePlatform _defaultPlatorm = null;
 
         /// <summary>
         /// List of all compiled kernels
         /// </summary>
-        private static List<ComputeKernel> _compiledKernels = new List<ComputeKernel>();
+        private List<ComputeKernel> _compiledKernels = new List<ComputeKernel>();
 
         /// <summary>
         /// The computer context with 
         /// </summary>
-        private static ComputeContext _context = null;
+        private ComputeContext _context = null;
 
         /// <summary>
         /// The compiled instances
         /// </summary>
-        private static List<string> _compiledInstances = new List<string>(); 
-    
+        private List<Type> _compiledInstances = new List<Type>();
+
+        /// <summary>
+        /// The source code
+        /// </summary>
+        private string SourceCode = "";
+
+        /// <summary>
+        /// The replace empty list
+        /// </summary>
+        private string[] replaceEmptyList = new string[] { "using Amplifier.OpenCL;", "using System;", "public", "private", "protected", "<float>", "<double>", "<complex>",
+                                        "<int>", "<uint>", "<long>", "<byte>", "<sbyte>", "this.", "base." };
+
         #endregion
 
         #region Abstract Implementation
@@ -127,13 +139,50 @@ namespace Amplifier
         /// <param name="cls">The CLS.</param>
         public override void CompileKernel(Type cls)
         {
-            string code = GetKernelCode(cls);
-
-            if (_compiledInstances.Contains(cls.FullName))
+            StringBuilder source = new StringBuilder();
+            source.AppendLine("#ifdef cl_khr_fp64");
+            source.AppendLine("#pragma OPENCL EXTENSION cl_khr_fp64 : enable");
+            source.AppendLine("#endif");
+            if (_compiledInstances.Contains(cls))
                 throw new CompileException(string.Format("{0} is already compiled", cls.FullName));
 
-            CreateKernels(cls.Name, code);
-            _compiledInstances.Add(cls.FullName);
+            _compiledInstances.Add(cls);
+            KernelFunctions.Clear();
+            foreach (var item in _compiledInstances)
+            {
+                source.AppendLine(GetKernelCode(item));
+            }
+            
+            CreateKernels(source.ToString());
+            SourceCode = source.ToString();
+        }
+
+        /// <summary>
+        /// Compiles the kernel with the classes list
+        /// </summary>
+        /// <param name="classes">The classes.</param>
+        public override void CompileKernel(params Type[] classes)
+        {
+            StringBuilder source = new StringBuilder();
+            source.AppendLine("#ifdef cl_khr_fp64");
+            source.AppendLine("#pragma OPENCL EXTENSION cl_khr_fp64 : enable");
+            source.AppendLine("#endif");
+            foreach (var cls in classes)
+            {
+                if (_compiledInstances.Contains(cls))
+                    throw new CompileException(string.Format("{0} is already compiled", cls.FullName));
+
+                _compiledInstances.Add(cls);
+            }
+
+            KernelFunctions.Clear();
+            foreach (var item in _compiledInstances)
+            {
+                source.AppendLine(GetKernelCode(item));
+            }
+
+            CreateKernels(source.ToString());
+            SourceCode = source.ToString();
         }
 
         /// <summary>
@@ -141,13 +190,13 @@ namespace Amplifier
         /// </summary>
         /// <typeparam name="TSource">The type of the source.</typeparam>
         /// <param name="functionName">Name of the function.</param>
-        /// <param name="inputs">The inputs.</param>
-        /// <param name="returnInputVariable">The return result.</param>
-        /// <returns></returns>
+        /// <param name="args"></param>
         /// <exception cref="ExecutionException">
         /// </exception>
         public override void Execute<TSource>(string functionName, params object[] args)
         {
+            ValidateArgs<TSource>(functionName, args);
+
             ComputeKernel kernel = _compiledKernels.FirstOrDefault(x => (x.FunctionName == functionName));
             ComputeCommandQueue commands = new ComputeCommandQueue(_context, _defaultDevice, ComputeCommandQueueFlags.None);
 
@@ -159,7 +208,7 @@ namespace Amplifier
                 var ndobject = (TSource[])args.FirstOrDefault(x => (x.GetType() == typeof(TSource[])));
 
                 long length = ndobject != null ? ndobject.Length : 1;
-                
+
                 var buffers = BuildKernelArguments<TSource>(args, kernel, length);
                 commands.Execute(kernel, null, new long[] { length }, null, null);
 
@@ -167,7 +216,6 @@ namespace Amplifier
                 {
                     TSource[] r = (TSource[])args[item.Key];
                     commands.ReadFromBuffer(item.Value, ref r, true, null);
-                    //args[item.Key] = r;
                     item.Value.Dispose();
                 }
 
@@ -184,23 +232,51 @@ namespace Amplifier
         }
 
         /// <summary>
+        /// Validate the list of arguments
+        /// </summary>
+        /// <typeparam name="TSource">The type of the source.</typeparam>
+        /// <param name="functionName">Name of the function.</param>
+        /// <param name="args">The arguments.</param>
+        /// <exception cref="ExecutionException"></exception>
+        private void ValidateArgs<TSource>(string functionName, object[] args) where TSource : struct
+        {
+            var method = KernelFunctions.FirstOrDefault(x => (x.Name == functionName));
+
+            for (int i = 0; i < args.Length; i++)
+            {
+                if (args[i].GetType().IsPrimitive)
+                {
+                    args[i] = Convert.ChangeType(args[i], typeof(TSource));
+                }
+                else if (args[i].GetType().IsArray)
+                {
+                    var parameter = method.Parameters.ElementAt(i);
+                    if (parameter.Value != args[i].GetType().Name)
+                        throw new ExecutionException(string.Format("Data type mismatch for parameter {0}. Expected is {1} but got {2}",
+                                                        parameter.Key,
+                                                        (parameter.Value,
+                                                        args[i].GetType().Name)));
+                }
+            }
+        }
+
+        /// <summary>
         /// Saves the compiler to a file.
         /// </summary>
         /// <param name="filePath">The file path.</param>
-        /// <exception cref="System.NotImplementedException"></exception>
         public override void Save(string filePath)
         {
-            OpenCLBinary bin = new OpenCLBinary();
-            bin.CompiledInstances = _compiledInstances;
-            bin.DeviceID = DeviceID;
-
-            foreach (var item in _compiledKernels)
+            KernelBin bin = new KernelBin()
             {
-                bin.Kernels.Add(new KernelBin() { Binaries = item.Program.Binaries.ToArray(), Name = item.FunctionName });
-            }
+                Instances = _compiledInstances,
+                InstanceMethods = KernelFunctions,
+                SourceCode = SourceCode
+            };
 
             string json = Newtonsoft.Json.JsonConvert.SerializeObject(bin, Newtonsoft.Json.Formatting.Indented);
-            File.WriteAllText(filePath, json);
+            byte[] data = Encoding.UTF8.GetBytes(json);
+
+            File.WriteAllText(filePath, Convert.ToBase64String(data));
         }
 
         /// <summary>
@@ -208,20 +284,17 @@ namespace Amplifier
         /// </summary>
         /// <param name="filePath">The file path for the saved binary.</param>
         /// <exception cref="System.NotImplementedException"></exception>
-        public override void Load(string filePath)
+        public override void Load(string filePath, int deviceId = 0)
         {
-            string json = File.ReadAllText(filePath);
-            var bin = Newtonsoft.Json.JsonConvert.DeserializeObject<OpenCLBinary>(json);
-            _compiledInstances = bin.CompiledInstances;
-            DeviceID = bin.DeviceID;
-
-            UseDevice(DeviceID);
-
-            foreach (var item in bin.Kernels)
-            {
-                ComputeKernel computeKernel = new ComputeKernel(item.Name, new ComputeProgram(_context, item.Binaries.ToList(), new List<ComputeDevice>() { _defaultDevice }));
-                _compiledKernels.Add(computeKernel);
-            }
+            string base64Data= File.ReadAllText(filePath);
+            var data = Convert.FromBase64String(base64Data);
+            var json = Encoding.UTF8.GetString(data);
+            var bin = Newtonsoft.Json.JsonConvert.DeserializeObject<KernelBin>(json);
+            DeviceID = deviceId;
+            _compiledInstances = bin.Instances;
+            KernelFunctions = bin.InstanceMethods;
+            UseDevice(deviceId);
+            CreateKernels(bin.SourceCode);
         }
 
         /// <summary>
@@ -234,6 +307,7 @@ namespace Amplifier
         public override void UseDevice(int deviceId = 0)
         {
             _compiledKernels = new List<ComputeKernel>();
+            _compiledInstances = new List<Type>();
             LoadDevices();
 
             if (_devices.Count == 0)
@@ -270,7 +344,7 @@ namespace Amplifier
         /// <summary>
         /// Loads the devices.
         /// </summary>
-        private static void LoadDevices()
+        private void LoadDevices()
         {
             if (_devices.Count == 0)
             {
@@ -287,7 +361,7 @@ namespace Amplifier
         /// </summary>
         /// <param name="kernalClass">The kernal class.</param>
         /// <returns></returns>
-        private static string GetKernelCode(Type kernalClass)
+        private string GetKernelCode(Type kernalClass)
         {
             string assemblyPath = kernalClass.Assembly.Location;
             CSharpDecompiler cSharpDecompiler
@@ -309,26 +383,33 @@ namespace Amplifier
                 }
 
                 kernelMethods.Add(item);
+
+                var k = new KernelFunction() { Name = item.Name };
+                foreach (var p in item.Parameters)
+                {
+                    k.Parameters.Add(p.Name, p.Type.Name);
+                }
+
+                KernelFunctions.Add(k);
             }
 
             var kernelHandles = kernelMethods.ToList().Select(x => (x.MetadataToken)).ToList();
             var nonKernelHandles = nonKernelMethods.ToList().Select(x => (x.MetadataToken)).ToList();
-            result.AppendLine("#ifdef cl_khr_fp64");
-            result.AppendLine("#pragma OPENCL EXTENSION cl_khr_fp64 : enable");
-            result.AppendLine("#endif");
-            result.AppendLine(cSharpDecompiler.DecompileAsString(kernelHandles));
 
             result.AppendLine(cSharpDecompiler.DecompileAsString(nonKernelHandles));
+            result.AppendLine(cSharpDecompiler.DecompileAsString(kernelHandles));
 
             string resultCode = result.ToString();
-            resultCode = resultCode.Replace("using Amplifier.OpenCL;", "")
-                        .Replace("using System;", "")
+            resultCode = resultCode
                         .Replace("[OpenCLKernel]", "__kernel")
-                        .Replace("public", "")
-                        .Replace("this.", "")
                         .Replace("[Global]", "global")
                         .Replace("[]", "*")
                         .Replace("@", "v_");
+
+            foreach (var item in replaceEmptyList)
+            {
+                resultCode = resultCode.Replace(item, "");
+            }
 
             Regex floatRegEx = new Regex(@"(\d+)(\.\d+)*f]?");
             var matches = floatRegEx.Matches(resultCode);
@@ -353,7 +434,7 @@ namespace Amplifier
         /// <param name="name">The name.</param>
         /// <param name="code">The code.</param>
         /// <exception cref="CompileException"></exception>
-        private static void CreateKernels(string name, string code)
+        private void CreateKernels(string code)
         {
             var program = new ComputeProgram(_context, code);
             try
@@ -364,7 +445,7 @@ namespace Amplifier
             catch (Exception ex)
             {
                 string log = program.GetBuildLog(_defaultDevice);
-                throw new CompileException(string.Format("Failed building {0} with error code: {1} \n Message: {2}", name, ex.Message, log));
+                throw new CompileException(string.Format("Compilation error code: {0} \n Message: {1}", ex.Message, log));
             }
         }
 
@@ -377,20 +458,25 @@ namespace Amplifier
         /// <param name="length">The length.</param>
         /// <param name="returnInputVariable">The return result.</param>
         /// <returns></returns>
-        private static Dictionary<int, ComputeBuffer<TSource>> BuildKernelArguments<TSource>(object[] inputs, ComputeKernel kernel, long length, int? returnInputVariable = null) where TSource : struct
+        private Dictionary<int, ComputeBuffer<TSource>> BuildKernelArguments<TSource>(object[] inputs, ComputeKernel kernel, long length, int? returnInputVariable = null) where TSource : struct
         {
             int i = 0;
             Dictionary<int, ComputeBuffer<TSource>> result = new Dictionary<int, ComputeBuffer<TSource>>();
+            
             foreach (var item in inputs)
             {
-                if (item.GetType() == typeof(TSource[]))
+                if (item.GetType().IsArray)
                 {
-                    var buffer = new ComputeBuffer<TSource>(_context, ComputeMemoryFlags.ReadWrite | ComputeMemoryFlags.CopyHostPointer, ((TSource[])item));
+                    var datagch = GCHandle.Alloc(item, GCHandleType.Pinned);
+                    var buffer = new ComputeBuffer<TSource>(_context, ComputeMemoryFlags.ReadWrite | ComputeMemoryFlags.CopyHostPointer, length, datagch.AddrOfPinnedObject());
                     kernel.SetMemoryArgument(i, buffer);
                     result.Add(i, buffer);
                 }
                 else if (item.GetType().IsPrimitive)
-                    kernel.SetValueArgument(i, (TSource)item);
+                {
+                    var datagch = GCHandle.Alloc(item, GCHandleType.Pinned);
+                    kernel.SetArgument(i, new IntPtr(Marshal.SizeOf(item)), datagch.AddrOfPinnedObject());
+                }
 
                 i++;
             }
@@ -400,3 +486,4 @@ namespace Amplifier
         #endregion
     }
 }
+

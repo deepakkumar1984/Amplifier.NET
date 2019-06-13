@@ -1,5 +1,8 @@
-# Create a simple kernel
+# First GPGPU Program
 
+GPU Programing is not that scary, only if you understood the basic term called kernel and know how to modularize your code to simple funtions.
+
+## What is a kernel?
 Code that gets executed on a device is called a kernel in OpenCL. 
 The kernels are written in a C dialect, which is mostly straightforward C with a lot of built-in functions and additional data types. 
 For instance, 4-component vectors are a built-in type just as integers. For example, we’ll be implementing a simple SAXPY kernel.

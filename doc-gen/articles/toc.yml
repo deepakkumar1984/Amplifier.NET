@@ -2,11 +2,17 @@
   href: intro.md
 - name: Some useful functions
   href: Useful functions.md
-- name: Create a simple kernel
-  href: Create a simple kernel.md
-- name: Run your first kernel
-  href: Run your first kernel.md
-- name: Alternate methods to execute kernels
-  href: Execute Kernel Alternatives.md
+- name: First GPGPU Program
+  href: First GPGPU Program.md
+- name: Run your first GPU Program
+  href: Run your first GPU Program.md
+- name: Simple Kernel Calls
+  href: Simple Kernel Calls.md
+- name: Other Ways to Execute
+  href: Other Ways to Execute.md
 - name: Saving and loading compiler
   href: Save and load.md
+- name: Examples
+  items:
+    - name: Basic
+      href: Examples/Basic.md

@@ -23,6 +23,7 @@ SOFTWARE.
 */
 namespace Amplifier
 {
+    using ICSharpCode.Decompiler.TypeSystem;
     using System;
     using System.Collections.Generic;
 
@@ -32,6 +33,14 @@ namespace Amplifier
     /// <seealso cref="System.IDisposable" />
     public abstract class BaseCompiler : IDisposable
     {
+        /// <summary>
+        /// Gets or sets the kernel functions.
+        /// </summary>
+        /// <value>
+        /// The kernel functions.
+        /// </value>
+        public List<KernelFunction> KernelFunctions { get; set; } = new List<KernelFunction>();
+
         /// <summary>
         /// Gets or sets the name of the compiler.
         /// </summary>
@@ -86,6 +95,12 @@ namespace Amplifier
         public abstract void CompileKernel(Type cls);
 
         /// <summary>
+        /// Compiles the kernel with the classes list
+        /// </summary>
+        /// <param name="classes">The classes.</param>
+        public abstract void CompileKernel(params Type[] classes);
+
+        /// <summary>
         /// Gets the default executer with float as base data type.
         /// </summary>
         /// <value>
@@ -95,7 +110,7 @@ namespace Amplifier
         {
             get
             {
-                return new Executer<float>(this);
+                return new Executer<double>(this);
             }
         }
 
@@ -119,7 +134,8 @@ namespace Amplifier
         /// Loads the compiler from the saved bin file.
         /// </summary>
         /// <param name="filePath">The file path for the saved binary.</param>
-        public abstract void Load(string filePath);
+        /// <param name="deviceId">The device identifier.</param>
+        public abstract void Load(string filePath, int deviceId = 0);
 
         /// <summary>
         /// Gets the execute.

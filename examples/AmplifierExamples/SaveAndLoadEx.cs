@@ -52,7 +52,7 @@ namespace AmplifierExamples
             compiler.UseDevice(1);
 
             //Compile the sample kernel
-            compiler.CompileKernel(typeof(SimpleKernels));
+            compiler.CompileKernel(typeof(SimpleKernels), typeof(NNActivationKernels));
             compiler.Save("amp_cl.bin");
         }
     }

@@ -1,6 +1,6 @@
-# Alternate methods to execute kernels
+# Other Ways to Execute
 
-In the "Run your first kernel" guide, you have used the executer instance to run the compiler in a simple fashion. Here are more ways to execute and you can choose the way you like
+In the "Run your first GPU Program" guide, you have used the executer instance to run the compiler in a simple fashion. Here are more ways to execute and you can choose the way you like
 
 ## Using Array For Loop
 

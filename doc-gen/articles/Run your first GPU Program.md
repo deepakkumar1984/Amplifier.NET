@@ -1,4 +1,4 @@
-# Run your first kernel
+# Run your first GPU Program
 
 Let's try to run our first kernel SAXPY. If you see the method clealy, there are 3 parameters: float array of "x", float array of "y" and scalar float "a"
 

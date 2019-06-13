@@ -42,12 +42,17 @@ namespace Amplifier
             throw new NotImplementedException();
         }
 
+        public override void CompileKernel(params Type[] classes)
+        {
+            throw new NotImplementedException();
+        }
+
         public override void Execute<TSource>(string functionName, params object[] args)
         {
             throw new NotImplementedException();
         }
 
-        public override void Load(string filePath)
+        public override void Load(string filePath, int deviceId = 0)
         {
             throw new NotImplementedException();
         }

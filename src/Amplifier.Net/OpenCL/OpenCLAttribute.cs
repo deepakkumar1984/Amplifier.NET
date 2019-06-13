@@ -15,4 +15,10 @@ namespace Amplifier.OpenCL
     {
         
     }
+
+    [System.AttributeUsage(System.AttributeTargets.Struct)]
+    public class OpenCLStructAttribute : System.Attribute
+    {
+
+    }
 }

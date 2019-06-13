@@ -9,7 +9,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Amplifier.BaseCompiler.html",
-          "hash": "/V1pX6JYSccK+TytdMSVWA=="
+          "hash": "DmY6fk/sku8rqKKNWib14w=="
         }
       },
       "is_incremental": true,
@@ -21,7 +21,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Amplifier.CUDACompiler.html",
-          "hash": "8y8x6pO91fyL15hwLmFn0Q=="
+          "hash": "jMeiT+m7VSxkEI7hdyL08w=="
         }
       },
       "is_incremental": true,
@@ -33,7 +33,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Amplifier.CompileException.html",
-          "hash": "sGultYixaIYfrOUebCEcrQ=="
+          "hash": "qFosQ+gHlpOcDZNpS/8l/w=="
         }
       },
       "is_incremental": true,
@@ -45,7 +45,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Amplifier.Device.html",
-          "hash": "qGQgzzTVva8352GhvOM+yA=="
+          "hash": "p4gvVkdSrKHMzFdV2ucK0w=="
         }
       },
       "is_incremental": true,
@@ -57,7 +57,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Amplifier.DeviceArch.html",
-          "hash": "SRIiD6+7EqgiNVeCjPFEyA=="
+          "hash": "/mZHqX/Kl4/ieVpcpZITWA=="
         }
       },
       "is_incremental": true,
@@ -69,7 +69,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Amplifier.DeviceType.html",
-          "hash": "DTTfgg4S8LtRK3aECbPHzA=="
+          "hash": "8KeR6f92slpzjx2r7Oc6dA=="
         }
       },
       "is_incremental": true,
@@ -81,7 +81,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Amplifier.Executer-1.html",
-          "hash": "LdJofj5mrxvB+Ygr8WG+Fg=="
+          "hash": "LxRBhuNGbucwTXluAsYvmQ=="
         }
       },
       "is_incremental": true,
@@ -93,7 +93,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Amplifier.ExecutionException.html",
-          "hash": "Rk/qUZqtN6NZevzD3mjMlw=="
+          "hash": "xO9gpXw8LTnKMlASUyO1yA=="
         }
       },
       "is_incremental": true,
@@ -105,7 +105,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Amplifier.Extensions.ArrayExtension.html",
-          "hash": "xS4612KbvhFdIwRo17Ncwg=="
+          "hash": "6kFI+3XZORxClsQMTBmP7w=="
         }
       },
       "is_incremental": true,
@@ -117,7 +117,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Amplifier.Extensions.html",
-          "hash": "TX6hVdqqx0oV3SM1RTKRDA=="
+          "hash": "f0Y0Ilx9AKVaYLa4PHnOUA=="
         }
       },
       "is_incremental": true,
@@ -129,7 +129,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Amplifier.OpenCL.GlobalAttribute.html",
-          "hash": "LJoBni+MsTwLp+0EPcIyZg=="
+          "hash": "XzT8joGivC8+SQUrxUzQCQ=="
         }
       },
       "is_incremental": true,
@@ -141,7 +141,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Amplifier.OpenCL.IVecDType.html",
-          "hash": "KEmUJpKZIdoB+dSizwkvaw=="
+          "hash": "IvJgLvR1Lrr+Ty91L7nfog=="
         }
       },
       "is_incremental": true,
@@ -153,7 +153,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Amplifier.OpenCL.KernelBin.html",
-          "hash": "eH8fd7OOC6Ryf9b05Sy7Ww=="
+          "hash": "FN8iYeu2rD5KzfXTy14KKA=="
         }
       },
       "is_incremental": true,
@@ -165,7 +165,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Amplifier.OpenCL.OpenCLBinary.html",
-          "hash": "3oz/A64YwrlP5520HxjDQw=="
+          "hash": "bkr9D1tZK1pLnPBWKgRRkQ=="
         }
       },
       "is_incremental": true,
@@ -177,7 +177,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Amplifier.OpenCL.OpenCLFunctions.html",
-          "hash": "N3w+QLS78gLLtWlTrk5/Hg=="
+          "hash": "Q0nXTUYPuOUXVSxq5ojVaA=="
         }
       },
       "is_incremental": true,
@@ -189,7 +189,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Amplifier.OpenCL.OpenCLKernelAttribute.html",
-          "hash": "8/VjVLv1V6F76QTEA7hxdw=="
+          "hash": "OAxi/apX5/GAIDqkWP2+XQ=="
         }
       },
       "is_incremental": true,
@@ -201,7 +201,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Amplifier.OpenCL.double16.html",
-          "hash": "t3WJnMSbHaAC0SEpoz5o6w=="
+          "hash": "4DTAm4BRHAq2EgPP6tveNQ=="
         }
       },
       "is_incremental": true,
@@ -213,7 +213,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Amplifier.OpenCL.double2.html",
-          "hash": "zg3bzpIN/Vg3w6xNyXYPpQ=="
+          "hash": "6bDMuKN6hzVO0iuseJVsBg=="
         }
       },
       "is_incremental": true,
@@ -225,7 +225,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Amplifier.OpenCL.double3.html",
-          "hash": "M1kC7zZL67jrkj4aR01Dig=="
+          "hash": "Gy4ljiUlMHd0YVDPCDz61A=="
         }
       },
       "is_incremental": true,
@@ -237,7 +237,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Amplifier.OpenCL.double4.html",
-          "hash": "B5kPMI9NVZLvHzpuWYU6sg=="
+          "hash": "tVCro8kIq3o1sWbxaQrRrA=="
         }
       },
       "is_incremental": true,
@@ -249,7 +249,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Amplifier.OpenCL.double8.html",
-          "hash": "EE31EL7KJvGwLowYHQG1wg=="
+          "hash": "Pnn4V1EfF2pRKXx/Ggn6zQ=="
         }
       },
       "is_incremental": true,
@@ -261,7 +261,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Amplifier.OpenCL.float16.html",
-          "hash": "UkgtHqqv+cQdb3jhN9grSw=="
+          "hash": "1pL4ouuzyLV/Y9IW607QYA=="
         }
       },
       "is_incremental": true,
@@ -273,7 +273,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Amplifier.OpenCL.float2.html",
-          "hash": "EwE6BPzLDkeopRZVIbHiEg=="
+          "hash": "lwY3svrOL21BLBWEaZcZ+A=="
         }
       },
       "is_incremental": true,
@@ -285,7 +285,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Amplifier.OpenCL.float3.html",
-          "hash": "BY60Axo0nQ/dR3xlAky6Fw=="
+          "hash": "01GRTsP0R4w5UEwDAR4afg=="
         }
       },
       "is_incremental": true,
@@ -297,7 +297,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Amplifier.OpenCL.float4.html",
-          "hash": "AS0FHoiL/nuYShZtdJT86A=="
+          "hash": "QBnyfSD8Q77BPQjADlqqgg=="
         }
       },
       "is_incremental": true,
@@ -309,7 +309,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Amplifier.OpenCL.float8.html",
-          "hash": "oh9tc+ORgAUlSQh5Zh6U/Q=="
+          "hash": "m3jEznqw5Klua5WB+ohefQ=="
         }
       },
       "is_incremental": true,
@@ -321,7 +321,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Amplifier.OpenCL.int16.html",
-          "hash": "bpoJx/sVfLu6fvjm7+vbBQ=="
+          "hash": "a1Yjhej6YVNg38vVPMGizw=="
         }
       },
       "is_incremental": true,
@@ -333,7 +333,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Amplifier.OpenCL.int2.html",
-          "hash": "g0C4MOTnHr6Vvu8SmTKvUg=="
+          "hash": "iN0nW/8lfEBbf2s1B4wCrQ=="
         }
       },
       "is_incremental": true,
@@ -345,7 +345,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Amplifier.OpenCL.int3.html",
-          "hash": "OKPNDZWvjWSp/haGfdg/iA=="
+          "hash": "Y5lhTIqsg1trHbJ+OfrMXw=="
         }
       },
       "is_incremental": true,
@@ -357,7 +357,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Amplifier.OpenCL.int4.html",
-          "hash": "PSNKquhaCnElMlQGv6NEPg=="
+          "hash": "TXxXx6ifCdxxiBNSmD8xWA=="
         }
       },
       "is_incremental": true,
@@ -369,7 +369,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Amplifier.OpenCL.int8.html",
-          "hash": "HrFejovBrlbkvP7nqpTSpw=="
+          "hash": "oHy5BXVNdbwi3qJ4HwuPZw=="
         }
       },
       "is_incremental": true,
@@ -381,7 +381,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Amplifier.OpenCL.intptr_t.html",
-          "hash": "wJHacLK03nl3KOHD4mfkEA=="
+          "hash": "dE9gkdMv+L1H3P/chiEbPg=="
         }
       },
       "is_incremental": true,
@@ -393,7 +393,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Amplifier.OpenCL.long16.html",
-          "hash": "IqQzCWcM7kXggnqFrTBc4A=="
+          "hash": "fpwyZyxeO6Q2SCU4lZxSTA=="
         }
       },
       "is_incremental": true,
@@ -405,7 +405,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Amplifier.OpenCL.long2.html",
-          "hash": "Ks7iq2hRNq7HUmLCa5FlNA=="
+          "hash": "u4ZKxoudNV+SIDRj1ZYeQw=="
         }
       },
       "is_incremental": true,
@@ -417,7 +417,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Amplifier.OpenCL.long3.html",
-          "hash": "cBavQeWUkgW4GXwaJ4BJpw=="
+          "hash": "20XaJPMtz3oqbsILuJcwYg=="
         }
       },
       "is_incremental": true,
@@ -429,7 +429,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Amplifier.OpenCL.long4.html",
-          "hash": "BsjzivuEj7OCfsNzhyzRbg=="
+          "hash": "Cgf3KELKhWe0y7FSwhpGag=="
         }
       },
       "is_incremental": true,
@@ -441,7 +441,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Amplifier.OpenCL.long8.html",
-          "hash": "1GKoFifEL4N2ilJsPLfvcA=="
+          "hash": "E0RfVYtVoIwpD75Vp6UcRQ=="
         }
       },
       "is_incremental": true,
@@ -453,7 +453,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Amplifier.OpenCL.ptrdiff_t.html",
-          "hash": "Cs0tumKiZziMpSRyDe1gkw=="
+          "hash": "Uq3OxnaC95OqwnI72L0z4g=="
         }
       },
       "is_incremental": true,
@@ -465,7 +465,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Amplifier.OpenCL.short16.html",
-          "hash": "f1SEfN1OyqkVqP5yDK65Og=="
+          "hash": "s1w+9SOHILv7PUXIEgrgJQ=="
         }
       },
       "is_incremental": true,
@@ -477,7 +477,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Amplifier.OpenCL.short2.html",
-          "hash": "D0k1lAvu0zaqmT9ZE+UyDw=="
+          "hash": "dMBUTCzF+VwffUiTuT+Mtw=="
         }
       },
       "is_incremental": true,
@@ -489,7 +489,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Amplifier.OpenCL.short3.html",
-          "hash": "UN+Wm6SNBZ/o3mg8RnwUhA=="
+          "hash": "3jYUdeReyzKuh8lz7aYU9Q=="
         }
       },
       "is_incremental": true,
@@ -501,7 +501,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Amplifier.OpenCL.short4.html",
-          "hash": "Wln4y7QKBo5DWE7mL43S7g=="
+          "hash": "eYCZRFjE560LZiEk63sBHA=="
         }
       },
       "is_incremental": true,
@@ -513,7 +513,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Amplifier.OpenCL.short8.html",
-          "hash": "Pb/+FPdAQwTiuFSfzh7ILA=="
+          "hash": "M62jmeiBgd8BwQAa4dExew=="
         }
       },
       "is_incremental": true,
@@ -525,7 +525,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Amplifier.OpenCL.size_t.html",
-          "hash": "My7C5sASqhe0LhuJExKDRA=="
+          "hash": "IbGHrwL6d0AvgV2R+ghGGw=="
         }
       },
       "is_incremental": true,
@@ -537,7 +537,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Amplifier.OpenCL.uint16.html",
-          "hash": "MkAX4TpocQhmHhIbayr+Aw=="
+          "hash": "Ze1OUqWwTCGAY9MwLuGhzQ=="
         }
       },
       "is_incremental": true,
@@ -549,7 +549,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Amplifier.OpenCL.uint2.html",
-          "hash": "bpXad2hF+aKFh2r1iPoKwA=="
+          "hash": "lU5jy6nTORSEie6nXm9YuA=="
         }
       },
       "is_incremental": true,
@@ -561,7 +561,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Amplifier.OpenCL.uint3.html",
-          "hash": "iFKu4ydHfdRaqx/vjwyAFA=="
+          "hash": "YnJS0lFQujeRS9knWm6tBw=="
         }
       },
       "is_incremental": true,
@@ -573,7 +573,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Amplifier.OpenCL.uint4.html",
-          "hash": "4C0TOLYBBtDS8naMcZarbw=="
+          "hash": "J98k7tSKlFJqT1MHuD6QmA=="
         }
       },
       "is_incremental": true,
@@ -585,7 +585,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Amplifier.OpenCL.uint8.html",
-          "hash": "PsmTlFCZAFfOjCO3WQfMEA=="
+          "hash": "XFbg0Sa4tKGd18ds+HiE3A=="
         }
       },
       "is_incremental": true,
@@ -597,7 +597,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Amplifier.OpenCL.uintptr_t.html",
-          "hash": "akYtoxAknj3YyncjVIkV1Q=="
+          "hash": "hC7fe+ZFWYjjBgNs4F8gug=="
         }
       },
       "is_incremental": true,
@@ -609,7 +609,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Amplifier.OpenCL.ulong16.html",
-          "hash": "L4udi4eTXvBxMioshRgftA=="
+          "hash": "TbEUaBRH0tqcemt2HajViw=="
         }
       },
       "is_incremental": true,
@@ -621,7 +621,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Amplifier.OpenCL.ulong2.html",
-          "hash": "W4X2NxOlxiiDBvJWW3+DZg=="
+          "hash": "lix1TbUfCZ23ddmv+PJvvg=="
         }
       },
       "is_incremental": true,
@@ -633,7 +633,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Amplifier.OpenCL.ulong3.html",
-          "hash": "uzzbPPJnE/jNKIQ+m4V1vQ=="
+          "hash": "dFWlxbuy7eWOiwvALShIUg=="
         }
       },
       "is_incremental": true,
@@ -645,7 +645,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Amplifier.OpenCL.ulong4.html",
-          "hash": "Y6noRG0GFosKqRbCWmOf7Q=="
+          "hash": "IZZtYKbiXJQUE5EriTQRKg=="
         }
       },
       "is_incremental": true,
@@ -657,7 +657,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Amplifier.OpenCL.ulong8.html",
-          "hash": "i29Frz86LXGIYsCnBi5BHQ=="
+          "hash": "OB20Qg8qDROZjo9BNJqwOQ=="
         }
       },
       "is_incremental": true,
@@ -669,7 +669,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Amplifier.OpenCL.html",
-          "hash": "Tv/d6pnDBSGiGIfUPIm2Eg=="
+          "hash": "bWKGwjmmsn4HbY/OOYmXZA=="
         }
       },
       "is_incremental": true,
@@ -684,7 +684,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Amplifier.OpenCLCompiler.html",
-          "hash": "Je2cbv1XjycDsoJDTjAh9Q=="
+          "hash": "x2Fm+tFD7jCAh6y4F8cdmw=="
         }
       },
       "is_incremental": true,
@@ -696,7 +696,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Amplifier.html",
-          "hash": "5wKVbXXITs9pSgAnVJvXdA=="
+          "hash": "Tpj64/Pr+zT9KwVpzsVGow=="
         }
       },
       "is_incremental": true,
@@ -708,10 +708,10 @@
       "output": {
         ".html": {
           "relative_path": "api/index.html",
-          "hash": "9/xlwREKm1lcC2nHfYRdJQ=="
+          "hash": "OPjkmLuHizXWdQjAjw5/Aw=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -728,11 +728,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "articles/Create a simple kernel.md",
+      "source_relative_path": "articles/Examples/Basic.md",
       "output": {
         ".html": {
-          "relative_path": "articles/Create a simple kernel.html",
-          "hash": "pUyS7NMzk6PJecmlPSjdBw=="
+          "relative_path": "articles/Examples/Basic.html",
+          "hash": "M4hYP5lYeOFN++PT7uKsKw=="
         }
       },
       "is_incremental": true,
@@ -740,11 +740,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "articles/Execute Kernel Alternatives.md",
+      "source_relative_path": "articles/First GPGPU Program.md",
       "output": {
         ".html": {
-          "relative_path": "articles/Execute Kernel Alternatives.html",
-          "hash": "QtqiGmwoPilX9H+TPD2ClQ=="
+          "relative_path": "articles/First GPGPU Program.html",
+          "hash": "5G3U0+YJ4qn0m+V2PpLnoA=="
         }
       },
       "is_incremental": true,
@@ -752,11 +752,23 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "articles/Run your first kernel.md",
+      "source_relative_path": "articles/Other Ways to Execute.md",
       "output": {
         ".html": {
-          "relative_path": "articles/Run your first kernel.html",
-          "hash": "R7t7BzB+foMa+HLHL/1MOA=="
+          "relative_path": "articles/Other Ways to Execute.html",
+          "hash": "RIf4YERggO3C/Ed4tSHyhw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/Run your first GPU Program.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/Run your first GPU Program.html",
+          "hash": "SGdFZ/0Z4z8th/nWzRG21g=="
         }
       },
       "is_incremental": true,
@@ -768,7 +780,19 @@
       "output": {
         ".html": {
           "relative_path": "articles/Save and load.html",
-          "hash": "NQ7J51qteXK/uyD+KD6JYA=="
+          "hash": "S8hRo3/UXSrxuFEpgPxj6w=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/Simple Kernel Calls.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/Simple Kernel Calls.html",
+          "hash": "fXV/dB/vSqxj9/k4+p+Hsg=="
         }
       },
       "is_incremental": true,
@@ -780,7 +804,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/Useful functions.html",
-          "hash": "L1YVbntY4hmQO/TnxIJ7rg=="
+          "hash": "scdffB9yduqyRBSJ80wA3Q=="
         }
       },
       "is_incremental": true,
@@ -792,7 +816,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/intro.html",
-          "hash": "ezUQ8zWmsAsxxLbMCkYm0Q=="
+          "hash": "ztdCqiqqiFjGKtuLehc5uA=="
         }
       },
       "is_incremental": true,
@@ -804,7 +828,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/toc.html",
-          "hash": "C/sMSBI3Z9AB2mPWJaYb7A=="
+          "hash": "FFOOpasPp35anWrEDwXI+Q=="
         }
       },
       "is_incremental": false,
@@ -816,7 +840,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "BG0XmEe9HHiKU5NFsEM7lw=="
+          "hash": "Kd8GYQ+4iBAne7qeQcZakQ=="
         }
       },
       "is_incremental": true,
@@ -844,13 +868,6 @@
         "skipped_file_count": 0
       },
       "processors": {
-        "TocDocumentProcessor": {
-          "can_incremental": false,
-          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
-          "incrementalPhase": "build",
-          "total_file_count": 0,
-          "skipped_file_count": 0
-        },
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build",
@@ -860,8 +877,15 @@
         "ConceptualDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build",
-          "total_file_count": 8,
-          "skipped_file_count": 7
+          "total_file_count": 10,
+          "skipped_file_count": 10
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
         }
       }
     },
