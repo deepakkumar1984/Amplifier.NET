@@ -481,7 +481,7 @@ namespace Amplifier
                 int size = 0;
                 if(item.GetType().IsArray)
                 {
-                    size = Marshal.SizeOf(Type.GetTypeHandle(item));
+                    
                     var datagch = GCHandle.Alloc(item, GCHandleType.Pinned);
                     GenericArrayMemory mem = new GenericArrayMemory(_context, ComputeMemoryFlags.ReadWrite | ComputeMemoryFlags.CopyHostPointer, item);
                     kernel.SetMemoryArgument(i, mem);

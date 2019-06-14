@@ -14,7 +14,7 @@
     <PackageTags>OpenCL, Kernel, .NET GPU, CSharp GPU</PackageTags>
     <PackageIconUrl>https://raw.githubusercontent.com/tech-quantum/Amplifier.NET/master/icon_32.png</PackageIconUrl>
     <PackageId>Amplifier.NET</PackageId>
-    <TargetFrameworks>net46;netstandard2.0</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0</TargetFrameworks>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
   </PropertyGroup>
@@ -29,7 +29,11 @@
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DefineConstants>TRACE;DEBUG;NETSTANDARD;NETSTANDARD2_0</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;NETSTANDARD;NETSTANDARD2_0;OSX</DefineConstants>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Humanizer.Core" Version="2.6.2" />

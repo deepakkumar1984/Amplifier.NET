@@ -1,17 +1,823 @@
 {
   "homepages": [],
-  "source_base_path": "E:/DeepakProj/git/Amplifier.NET/doc-gen",
+  "source_base_path": "/Users/deepakbattini/work/git/Amplifier.NET/doc-gen",
   "xrefmap": "xrefmap.yml",
-  "files": [],
+  "files": [
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Amplifier.BaseCompiler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Amplifier.BaseCompiler.html",
+          "hash": "y4hesBb9+4VVcVZ3uUVDdQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Amplifier.CUDACompiler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Amplifier.CUDACompiler.html",
+          "hash": "ov/tBRDGEitaBgAip850Ow=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Amplifier.CompileException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Amplifier.CompileException.html",
+          "hash": "lQ673Mk0EC+ciAviTzV3Qg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Amplifier.Device.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Amplifier.Device.html",
+          "hash": "x0aDsIRbbN4PoVopTKlZ6A=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Amplifier.DeviceArch.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Amplifier.DeviceArch.html",
+          "hash": "kISwlQ18IaBbPyURkR1rIQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Amplifier.DeviceType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Amplifier.DeviceType.html",
+          "hash": "GpWn3cnUG49fOBkNtm846A=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Amplifier.Executer-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Amplifier.Executer-1.html",
+          "hash": "EdQOpgwdZLfQhFMwr8pqpw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Amplifier.ExecutionException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Amplifier.ExecutionException.html",
+          "hash": "m5X/0xWNgWzikeRVLwJPFw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Amplifier.OpenCL.GlobalAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Amplifier.OpenCL.GlobalAttribute.html",
+          "hash": "S3gi+cC1R8jUJzE0g6ePFQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Amplifier.OpenCL.IVecDType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Amplifier.OpenCL.IVecDType.html",
+          "hash": "2g84suj/glLscZnx8Tc4FQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Amplifier.OpenCL.OpenCLFunctions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Amplifier.OpenCL.OpenCLFunctions.html",
+          "hash": "rF1TGvjgQqtQA94F4ifbUw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Amplifier.OpenCL.OpenCLKernelAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Amplifier.OpenCL.OpenCLKernelAttribute.html",
+          "hash": "KL7wYhV4IMHzzo34FGbVDg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Amplifier.OpenCL.double16.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Amplifier.OpenCL.double16.html",
+          "hash": "wD8q95wpuuaLZZEfLgj1HQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Amplifier.OpenCL.double2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Amplifier.OpenCL.double2.html",
+          "hash": "BJK3+OLKT31wYOZTpyrKRg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Amplifier.OpenCL.double3.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Amplifier.OpenCL.double3.html",
+          "hash": "+/zgRLmuA+AyEUkjCMfkXQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Amplifier.OpenCL.double4.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Amplifier.OpenCL.double4.html",
+          "hash": "wgbwU7wjT75QVcySM95SFg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Amplifier.OpenCL.double8.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Amplifier.OpenCL.double8.html",
+          "hash": "smIU/6EUN7WD1M8ouxQafw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Amplifier.OpenCL.float16.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Amplifier.OpenCL.float16.html",
+          "hash": "64sWq9fRxSPy+1sJ3MTnMg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Amplifier.OpenCL.float2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Amplifier.OpenCL.float2.html",
+          "hash": "7qO+yKgc1YsRp0kxHCG/6A=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Amplifier.OpenCL.float3.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Amplifier.OpenCL.float3.html",
+          "hash": "xma18ZQ8XVTJCgD7UFWM4g=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Amplifier.OpenCL.float4.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Amplifier.OpenCL.float4.html",
+          "hash": "an+HgwbDtrPG5Drz5PSkIA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Amplifier.OpenCL.float8.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Amplifier.OpenCL.float8.html",
+          "hash": "vVjYz3EljTEn3ncDLTgnbg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Amplifier.OpenCL.int16.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Amplifier.OpenCL.int16.html",
+          "hash": "c8/mub6rMeiwOXQhLYiwLg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Amplifier.OpenCL.int2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Amplifier.OpenCL.int2.html",
+          "hash": "QzQXv0geZOqgDi2l/761Tw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Amplifier.OpenCL.int3.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Amplifier.OpenCL.int3.html",
+          "hash": "VKsP3NUzt4ntUgCI6c/uJQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Amplifier.OpenCL.int4.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Amplifier.OpenCL.int4.html",
+          "hash": "EY+1UhJTa3HPiKd3dAn5cQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Amplifier.OpenCL.int8.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Amplifier.OpenCL.int8.html",
+          "hash": "cbLPnQjQ169OfkB2//EXCA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Amplifier.OpenCL.intptr_t.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Amplifier.OpenCL.intptr_t.html",
+          "hash": "dePK9WVEA0sOAjsch6eSgg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Amplifier.OpenCL.long16.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Amplifier.OpenCL.long16.html",
+          "hash": "jaOziu8iKTcHnZMz/Zz3XQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Amplifier.OpenCL.long2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Amplifier.OpenCL.long2.html",
+          "hash": "25rK25iS/I1FdzFM8Tr3BA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Amplifier.OpenCL.long3.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Amplifier.OpenCL.long3.html",
+          "hash": "iLLXUdhGFIuRzlzv07w2JQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Amplifier.OpenCL.long4.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Amplifier.OpenCL.long4.html",
+          "hash": "TknVOIpmPv6R1ureBypyKA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Amplifier.OpenCL.long8.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Amplifier.OpenCL.long8.html",
+          "hash": "oRRvIGcxHJNEuNJdmofYaw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Amplifier.OpenCL.ptrdiff_t.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Amplifier.OpenCL.ptrdiff_t.html",
+          "hash": "v+ZIG2F9JpVF7W/PlKjdOg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Amplifier.OpenCL.short16.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Amplifier.OpenCL.short16.html",
+          "hash": "XSoOYxP3N3kbHNgoNLF7Sg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Amplifier.OpenCL.short2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Amplifier.OpenCL.short2.html",
+          "hash": "OZxvriEAtYbWfgZhwQssjw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Amplifier.OpenCL.short3.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Amplifier.OpenCL.short3.html",
+          "hash": "iupxCDCO2vinUQvWkEnfPQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Amplifier.OpenCL.short4.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Amplifier.OpenCL.short4.html",
+          "hash": "3DzmtTpARRTgdbGF36lubw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Amplifier.OpenCL.short8.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Amplifier.OpenCL.short8.html",
+          "hash": "xN39fmYWc52+crC6/07Brg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Amplifier.OpenCL.size_t.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Amplifier.OpenCL.size_t.html",
+          "hash": "lutAN3uhsX4Lg+Hqv0Lo3Q=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Amplifier.OpenCL.uint16.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Amplifier.OpenCL.uint16.html",
+          "hash": "PQbD4f5g8paXNrgcdGZeOw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Amplifier.OpenCL.uint2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Amplifier.OpenCL.uint2.html",
+          "hash": "zJzMK5HaPr19r4uMc4Fbwg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Amplifier.OpenCL.uint3.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Amplifier.OpenCL.uint3.html",
+          "hash": "IgBl+G1zwBq9b2vhzfSD7A=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Amplifier.OpenCL.uint4.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Amplifier.OpenCL.uint4.html",
+          "hash": "ezM987su0ofY9BgoDVO0Ag=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Amplifier.OpenCL.uint8.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Amplifier.OpenCL.uint8.html",
+          "hash": "DGjTT4q4Z21DSv/MUMsEDQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Amplifier.OpenCL.uintptr_t.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Amplifier.OpenCL.uintptr_t.html",
+          "hash": "GdsKeVSCdHr14U28kUa8rQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Amplifier.OpenCL.ulong16.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Amplifier.OpenCL.ulong16.html",
+          "hash": "asNrR3mfdX7tTzgQI2YTkg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Amplifier.OpenCL.ulong2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Amplifier.OpenCL.ulong2.html",
+          "hash": "ZZXFnU8L8UEOyvrqEL5ZHQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Amplifier.OpenCL.ulong3.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Amplifier.OpenCL.ulong3.html",
+          "hash": "TaQfOyHqLt/aytR1IIqgWw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Amplifier.OpenCL.ulong4.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Amplifier.OpenCL.ulong4.html",
+          "hash": "6twKaSV0BX7aPWZoqdUyOw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Amplifier.OpenCL.ulong8.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Amplifier.OpenCL.ulong8.html",
+          "hash": "4M4kWozSwvT9HkZ2NO6mWA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Amplifier.OpenCL.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Amplifier.OpenCL.html",
+          "hash": "knXfSaNtUcaCs19w0xmvdA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "ReferencedXrefPropertyNotString"
+      ],
+      "type": "ManagedReference",
+      "source_relative_path": "api/Amplifier.OpenCLCompiler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Amplifier.OpenCLCompiler.html",
+          "hash": "DO2ZMMrvO9DcfjzDQkl/sA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Amplifier.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Amplifier.html",
+          "hash": "HlE8hINUUXHWR297iJlErg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html",
+          "hash": "sPXOXyVWnskoA7rfuvyvxQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "UC9Y+VGwfoAxUUQFNgJOVQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/Examples/Basic.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/Examples/Basic.html",
+          "hash": "pRkD3rvoWavxik+vW+LkeQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/First GPGPU Program.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/First GPGPU Program.html",
+          "hash": "y8FueXQAsste3lgUt56ojA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/Other Ways to Execute.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/Other Ways to Execute.html",
+          "hash": "gzF7gctzuBqfkR3m632qVg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/Run your first GPU Program.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/Run your first GPU Program.html",
+          "hash": "gSRdR2S5sPfIs7f+EuH+Aw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/Save and load.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/Save and load.html",
+          "hash": "iz/91FryUTK/JCtBYnSKzw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/Simple Kernel Calls.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/Simple Kernel Calls.html",
+          "hash": "0uHM9YnSDlBCK0UsM5ihGQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/Useful functions.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/Useful functions.html",
+          "hash": "bAsS5guAkvUK2k75B0d8Kw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/intro.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/intro.html",
+          "hash": "7iiEUtDJA5FtBmG/Au1Gww=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "articles/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "articles/toc.html",
+          "hash": "FFOOpasPp35anWrEDwXI+Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "f8ytayY85EofefA92wot8g=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "k+/dkjFuwAVS32HduMpmBw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
   "incremental_info": [
     {
       "status": {
-        "can_incremental": false,
-        "details": "Cannot build incrementally because docfx version changed from 2.42.4.0 to 1.0.0.0.",
+        "can_incremental": true,
         "incrementalPhase": "build",
         "total_file_count": 0,
-        "skipped_file_count": 0,
-        "full_build_reason_code": "DocfxVersionChanged"
+        "skipped_file_count": 0
       },
       "processors": {
         "TocDocumentProcessor": {
@@ -21,11 +827,17 @@
           "total_file_count": 0,
           "skipped_file_count": 0
         },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 54,
+          "skipped_file_count": 54
+        },
         "ConceptualDocumentProcessor": {
-          "can_incremental": false,
+          "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 10,
-          "skipped_file_count": 0
+          "skipped_file_count": 10
         }
       }
     },

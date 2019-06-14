@@ -205,7 +205,7 @@ namespace Amplifier.Decompiler
 			try {
 				declaringTypeHandle = tr.GetDeclaringType();
 			} catch (BadImageFormatException) {
-				declaringTypeHandle = default;
+                declaringTypeHandle = default;
 			}
 			if (declaringTypeHandle.IsNil) {
 				string ns;
