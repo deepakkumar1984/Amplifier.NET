@@ -26,8 +26,8 @@ namespace Amplifier
     using Amplifier.OpenCL;
     using Amplifier.OpenCL.Cloo;
     using Amplifier.OpenCL.Cloo.Bindings;
-    using ICSharpCode.Decompiler.CSharp;
-    using ICSharpCode.Decompiler.TypeSystem;
+    using Amplifier.Decompiler.CSharp;
+    using Amplifier.Decompiler.TypeSystem;
     using System;
     using System.Collections.Generic;
     using System.IO;
@@ -392,7 +392,7 @@ namespace Amplifier
         {
             string assemblyPath = kernalClass.Assembly.Location;
             CSharpDecompiler cSharpDecompiler
-                = new CSharpDecompiler(assemblyPath, new ICSharpCode.Decompiler.DecompilerSettings() { ThrowOnAssemblyResolveErrors = false, ForEachStatement = false });
+                = new CSharpDecompiler(assemblyPath, new Amplifier.Decompiler.DecompilerSettings() { ThrowOnAssemblyResolveErrors = false, ForEachStatement = false });
             StringBuilder result = new StringBuilder();
             ITypeDefinition typeInfo = cSharpDecompiler.TypeSystem.MainModule.Compilation.FindType(new FullTypeName(kernalClass.FullName)).GetDefinition();
 
@@ -433,7 +433,7 @@ namespace Amplifier
         {
             string assemblyPath = structInstance.Assembly.Location;
             CSharpDecompiler cSharpDecompiler
-                = new CSharpDecompiler(assemblyPath, new ICSharpCode.Decompiler.DecompilerSettings() { ThrowOnAssemblyResolveErrors = false, ForEachStatement = false });
+                = new CSharpDecompiler(assemblyPath, new Amplifier.Decompiler.DecompilerSettings() { ThrowOnAssemblyResolveErrors = false, ForEachStatement = false });
 
             var tree = cSharpDecompiler.DecompileType(new FullTypeName(structInstance.FullName));
 

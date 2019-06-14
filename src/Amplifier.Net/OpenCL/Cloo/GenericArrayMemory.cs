@@ -1,5 +1,5 @@
 ﻿using Amplifier.OpenCL.Cloo.Bindings;
-using ICSharpCode.Decompiler.TypeSystem;
+using Amplifier.Decompiler.TypeSystem;
 using System;
 using System.Collections.Generic;
 using System.Linq;
