@@ -19,11 +19,15 @@ namespace AmplifierExamples
 
             //Compile the sample kernel
             compiler.CompileKernel(typeof(WithStructKernel), typeof(SampleStruct));
-            int size = Marshal.SizeOf(typeof(SampleStruct));
             var exec = compiler.GetExec();
             SampleStruct[] x = new SampleStruct[5];
 
             exec.Fill(x, 2.5);
+
+            foreach (var item in x)
+            {
+                Console.WriteLine("VarA: {0}, VarB: {1}", item.VarA, item.VarB);
+            }
         }
     }
 }
