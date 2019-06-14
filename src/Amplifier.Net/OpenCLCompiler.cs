@@ -25,12 +25,14 @@ namespace Amplifier
 {
     using Amplifier.OpenCL;
     using Amplifier.OpenCL.Cloo;
+    using Amplifier.OpenCL.Cloo.Bindings;
     using ICSharpCode.Decompiler.CSharp;
     using ICSharpCode.Decompiler.TypeSystem;
     using System;
     using System.Collections.Generic;
     using System.IO;
     using System.Linq;
+    using System.Reflection;
     using System.Runtime.InteropServices;
     using System.Text;
     using System.Text.RegularExpressions;
@@ -77,12 +79,7 @@ namespace Amplifier
         /// </summary>
         private string SourceCode = "";
 
-        /// <summary>
-        /// The replace empty list
-        /// </summary>
-        private string[] replaceEmptyList = new string[] { "using Amplifier.OpenCL;", "using System;", "public", "private", "protected", "<float>", "<double>", "<complex>",
-                                        "<int>", "<uint>", "<long>", "<byte>", "<sbyte>", "this.", "base." };
-
+      
         #endregion
 
         #region Abstract Implementation
@@ -143,14 +140,19 @@ namespace Amplifier
             source.AppendLine("#ifdef cl_khr_fp64");
             source.AppendLine("#pragma OPENCL EXTENSION cl_khr_fp64 : enable");
             source.AppendLine("#endif");
+            source.AppendLine("#define NELEMS(x)  (sizeof(x) / sizeof((x)[0]))");
             if (_compiledInstances.Contains(cls))
                 throw new CompileException(string.Format("{0} is already compiled", cls.FullName));
 
             _compiledInstances.Add(cls);
+            _compiledInstances = _compiledInstances.OrderByDescending(x => (x.IsLayoutSequential)).ToList();
             KernelFunctions.Clear();
             foreach (var item in _compiledInstances)
             {
-                source.AppendLine(GetKernelCode(item));
+                if (item.IsLayoutSequential)
+                    source.AppendLine(GetStructCode(item));
+                else if (item.IsClass)
+                    source.AppendLine(GetKernelCode(item));
             }
             
             CreateKernels(source.ToString());
@@ -167,6 +169,7 @@ namespace Amplifier
             source.AppendLine("#ifdef cl_khr_fp64");
             source.AppendLine("#pragma OPENCL EXTENSION cl_khr_fp64 : enable");
             source.AppendLine("#endif");
+            source.AppendLine("#define NELEMS(x)  (sizeof(x) / sizeof((x)[0]))");
             foreach (var cls in classes)
             {
                 if (_compiledInstances.Contains(cls))
@@ -174,6 +177,8 @@ namespace Amplifier
 
                 _compiledInstances.Add(cls);
             }
+
+            _compiledInstances = _compiledInstances.OrderByDescending(x => (x.IsLayoutSequential)).ToList();
 
             KernelFunctions.Clear();
             foreach (var item in _compiledInstances)
@@ -196,9 +201,9 @@ namespace Amplifier
         /// <param name="args"></param>
         /// <exception cref="ExecutionException">
         /// </exception>
-        public override void Execute<TSource>(string functionName, params object[] args)
+        public override void Execute(string functionName, params object[] args)
         {
-            ValidateArgs<TSource>(functionName, args);
+            ValidateArgs(functionName, args);
 
             ComputeKernel kernel = _compiledKernels.FirstOrDefault(x => (x.FunctionName == functionName));
             ComputeCommandQueue commands = new ComputeCommandQueue(_context, _defaultDevice, ComputeCommandQueueFlags.None);
@@ -208,18 +213,20 @@ namespace Amplifier
 
             try
             {
-                var ndobject = (TSource[])args.FirstOrDefault(x => (x.GetType() == typeof(TSource[])));
-
+                var ndobject = (Array)args.FirstOrDefault(x => (x.GetType().IsArray));
                 long length = ndobject != null ? ndobject.Length : 1;
 
-                var buffers = BuildKernelArguments<TSource>(args, kernel, length);
+                var buffers = BuildKernelArguments(args, kernel, length);
                 commands.Execute(kernel, null, new long[] { length }, null, null);
 
-                foreach (var item in buffers)
+                for(int i=0;i<args.Length;i++)
                 {
-                    TSource[] r = (TSource[])args[item.Key];
-                    commands.ReadFromBuffer(item.Value, ref r, true, null);
-                    item.Value.Dispose();
+                    if (!args[i].GetType().IsArray)
+                        continue;
+
+                    Array r = (Array)args[i];
+                    commands.ReadFromMemory(buffers[i], ref r, true, 0, null);
+                    buffers[i].Dispose();
                 }
 
                 commands.Finish();
@@ -234,6 +241,22 @@ namespace Amplifier
             }
         }
 
+        private int GetSizeOfObject(object obj)
+        {
+            object val = null;
+            int size = 0;
+            Type type = obj.GetType();
+            PropertyInfo[] info = type.GetProperties();
+            var datagch = GCHandle.Alloc(obj, GCHandleType.Pinned);
+            
+            foreach (PropertyInfo property in info)
+            {
+                val = property.GetValue(obj, null);
+                //size += sizeof(float);
+            }
+            return size;
+        }
+
         /// <summary>
         /// Validate the list of arguments
         /// </summary>
@@ -241,24 +264,25 @@ namespace Amplifier
         /// <param name="functionName">Name of the function.</param>
         /// <param name="args">The arguments.</param>
         /// <exception cref="ExecutionException"></exception>
-        private void ValidateArgs<TSource>(string functionName, object[] args) where TSource : struct
+        private void ValidateArgs(string functionName, object[] args)
         {
             var method = KernelFunctions.FirstOrDefault(x => (x.Name == functionName));
 
             for (int i = 0; i < args.Length; i++)
             {
+                var parameter = method.Parameters.ElementAt(i);
+
                 if (args[i].GetType().IsPrimitive)
                 {
-                    args[i] = Convert.ChangeType(args[i], typeof(TSource));
+                    args[i] = Convert.ChangeType(args[i], Type.GetType(parameter.Value));
                 }
                 else if (args[i].GetType().IsArray)
                 {
-                    var parameter = method.Parameters.ElementAt(i);
-                    if (parameter.Value != args[i].GetType().Name)
+                    if (parameter.Value != args[i].GetType().FullName)
                         throw new ExecutionException(string.Format("Data type mismatch for parameter {0}. Expected is {1} but got {2}",
                                                         parameter.Key,
                                                         (parameter.Value,
-                                                        args[i].GetType().Name)));
+                                                        args[i].GetType().FullName)));
                 }
             }
         }
@@ -390,7 +414,7 @@ namespace Amplifier
                 var k = new KernelFunction() { Name = item.Name };
                 foreach (var p in item.Parameters)
                 {
-                    k.Parameters.Add(p.Name, p.Type.Name);
+                    k.Parameters.Add(p.Name, p.Type.FullName);
                 }
 
                 KernelFunctions.Add(k);
@@ -402,33 +426,7 @@ namespace Amplifier
             result.AppendLine(cSharpDecompiler.DecompileAsString(nonKernelHandles));
             result.AppendLine(cSharpDecompiler.DecompileAsString(kernelHandles));
 
-            string resultCode = result.ToString();
-            resultCode = resultCode
-                        .Replace("[OpenCLKernel]", "__kernel")
-                        .Replace("[Global]", "global")
-                        .Replace("[]", "*")
-                        .Replace("@", "v_");
-
-            foreach (var item in replaceEmptyList)
-            {
-                resultCode = resultCode.Replace(item, "");
-            }
-
-            Regex floatRegEx = new Regex(@"(\d+)(\.\d+)*f]?");
-            var matches = floatRegEx.Matches(resultCode);
-            foreach (Match match in matches)
-            {
-                resultCode = resultCode.Replace(match.Value, match.Value.Replace("f", ""));
-            }
-
-            floatRegEx = new Regex(@"(\d+)(\.\d+)*u]?");
-            matches = floatRegEx.Matches(resultCode);
-            foreach (Match match in matches)
-            {
-                resultCode = resultCode.Replace(match.Value, match.Value.Replace("u", ""));
-            }
-
-            return resultCode;
+            return CodeTranslator.Translate(result.ToString());
         }
 
         private string GetStructCode(Type structInstance)
@@ -439,7 +437,8 @@ namespace Amplifier
 
             var tree = cSharpDecompiler.DecompileType(new FullTypeName(structInstance.FullName));
 
-            return cSharpDecompiler.DecompileTypeAsString(new FullTypeName(structInstance.FullName));
+            string code = cSharpDecompiler.DecompileTypeAsString(new FullTypeName(structInstance.FullName));
+            return CodeTranslator.Translate(code).Trim() + ";";
         }
 
         /// <summary>
@@ -472,24 +471,27 @@ namespace Amplifier
         /// <param name="length">The length.</param>
         /// <param name="returnInputVariable">The return result.</param>
         /// <returns></returns>
-        private Dictionary<int, ComputeBuffer<TSource>> BuildKernelArguments<TSource>(object[] inputs, ComputeKernel kernel, long length, int? returnInputVariable = null) where TSource : struct
+        private Dictionary<int, GenericArrayMemory> BuildKernelArguments(object[] inputs, ComputeKernel kernel, long length, int? returnInputVariable = null)
         {
             int i = 0;
-            Dictionary<int, ComputeBuffer<TSource>> result = new Dictionary<int, ComputeBuffer<TSource>>();
-            
+            Dictionary<int, GenericArrayMemory> result = new Dictionary<int, GenericArrayMemory>();
+
             foreach (var item in inputs)
             {
-                if (item.GetType().IsArray)
+                int size = 0;
+                if(item.GetType().IsArray)
                 {
+                    size = Marshal.SizeOf(Type.GetTypeHandle(item));
                     var datagch = GCHandle.Alloc(item, GCHandleType.Pinned);
-                    var buffer = new ComputeBuffer<TSource>(_context, ComputeMemoryFlags.ReadWrite | ComputeMemoryFlags.CopyHostPointer, length, datagch.AddrOfPinnedObject());
-                    kernel.SetMemoryArgument(i, buffer);
-                    result.Add(i, buffer);
+                    GenericArrayMemory mem = new GenericArrayMemory(_context, ComputeMemoryFlags.ReadWrite | ComputeMemoryFlags.CopyHostPointer, item);
+                    kernel.SetMemoryArgument(i, mem);
+                    result.Add(i, mem);
                 }
-                else if (item.GetType().IsPrimitive)
+                else
                 {
+                    size = Marshal.SizeOf(item);
                     var datagch = GCHandle.Alloc(item, GCHandleType.Pinned);
-                    kernel.SetArgument(i, new IntPtr(Marshal.SizeOf(item)), datagch.AddrOfPinnedObject());
+                    kernel.SetArgument(i, new IntPtr(size), datagch.AddrOfPinnedObject());
                 }
 
                 i++;

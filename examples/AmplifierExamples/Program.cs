@@ -32,7 +32,7 @@ namespace AmplifierExamples
 
 
             Console.WriteLine("---------------------Complex math with struct example---------------------------");
-            example = new ComplexMathEx();
+            example = new WithStructEx();
             example.Execute();
             Console.WriteLine("\n---------------------Complex math with struct example---------------------------");
 

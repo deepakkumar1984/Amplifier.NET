@@ -10,6 +10,11 @@ namespace Amplifier.OpenCL
     {
     }
 
+    [System.AttributeUsage(System.AttributeTargets.Parameter)]
+    public class StructAttribute : System.Attribute
+    {
+    }
+
     [System.AttributeUsage(System.AttributeTargets.Method)]
     public class OpenCLKernelAttribute : System.Attribute
     {

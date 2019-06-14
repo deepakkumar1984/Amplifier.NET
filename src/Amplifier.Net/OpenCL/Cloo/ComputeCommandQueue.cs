@@ -501,13 +501,14 @@ namespace Amplifier.OpenCL.Cloo
             CLEventHandle[] eventHandles = ComputeTools.ExtractHandles(events, out var eventWaitListSize);
             bool eventsWritable = events != null && !events.IsReadOnly;
             CLEventHandle[] newEventHandle = eventsWritable ? new CLEventHandle[1] : null;
-
             ComputeErrorCode error = CL12.EnqueueReadBuffer(Handle, source.Handle, blocking, new IntPtr(offset * sizeofT), new IntPtr(region * sizeofT), destination, eventWaitListSize, eventHandles, newEventHandle);
             ComputeException.ThrowOnError(error);
 
             if (eventsWritable)
                 events.Add(new ComputeEvent(newEventHandle[0], this));
         }
+
+      
 
         /// <summary>
         /// Enqueues a command to read a 2D or 3D region of elements from a buffer.

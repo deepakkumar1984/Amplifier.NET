@@ -27,7 +27,7 @@ namespace AmplifierExamples
             Array y = new float[9];
 
             //Get the execution engine
-            var exec = compiler.GetExec<float>();
+            var exec = compiler.GetExec();
 
             //Execute fill kernel method
             exec.Fill(y, 0.5f);

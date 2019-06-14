@@ -11,10 +11,10 @@ namespace AmplifierExamples
         public void Execute()
         {
             //Get the instance of the Simple Kernel build with Device 0 which is in my case is GPU
-            var dev0 = new SimpleKernels().Instance<float>(deviceId: 0);
+            var dev0 = new SimpleKernels()[deviceId: 0];
             
             //Get the instance of the neural activation Kernel build with Device 1 which is in my case is CPU
-            var dev1 = new NNActivationKernels().Instance<float>(deviceId: 1);
+            var dev1 = new NNActivationKernels()[1];
 
             Array x = new float[9];
             //Execute fill kernel method

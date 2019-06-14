@@ -110,7 +110,7 @@ namespace Amplifier
         {
             get
             {
-                return new Executer<double>(this);
+                return new Executer(this);
             }
         }
 
@@ -122,7 +122,7 @@ namespace Amplifier
         /// <param name="inputs">The inputs.</param>
         /// <param name="returnInputVariable">The return result.</param>
         /// <returns></returns>
-        public abstract void Execute<TSource>(string functionName, params object[] args) where TSource : struct;
+        public abstract void Execute(string functionName, params object[] args);
 
         /// <summary>
         /// Saves the compiler to a file.
@@ -141,9 +141,9 @@ namespace Amplifier
         /// Gets the execute.
         /// </summary>
         /// <returns></returns>
-        public dynamic GetExec<T>() where T : struct
+        public dynamic GetExec()
         {
-            return new Executer<T>(this);
+            return new Executer(this);
         }
 
         /// <summary>

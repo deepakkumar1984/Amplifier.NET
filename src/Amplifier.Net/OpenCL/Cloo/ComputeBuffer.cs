@@ -139,6 +139,7 @@ namespace Amplifier.OpenCL.Cloo
             return new ComputeBuffer<TDataType>(handle, context, flags);
         }
 
+
         #endregion
 
         /// <summary>

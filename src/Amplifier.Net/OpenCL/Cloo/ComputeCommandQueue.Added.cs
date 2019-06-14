@@ -31,6 +31,7 @@ OTHER DEALINGS IN THE SOFTWARE.
 
 namespace Amplifier.OpenCL.Cloo
 {
+    using Amplifier.OpenCL.Cloo.Bindings;
     using System;
     using System.Collections.Generic;
     using System.Runtime.InteropServices;
@@ -374,6 +375,23 @@ namespace Amplifier.OpenCL.Cloo
         public void ReadFromBuffer<T>(ComputeBufferBase<T> source, ref T[, ,] destination, bool blocking, SysIntX3 sourceOffset, SysIntX3 destinationOffset, SysIntX3 region, IList<ComputeEventBase> events) where T : struct
         {
             ReadFromBuffer(source, ref destination, blocking, sourceOffset, destinationOffset, region, 0, 0, 0, 0, events);
+        }
+
+        public void ReadFromMemory(GenericArrayMemory source, ref Array r, bool blocking, long offset, ICollection<ComputeEventBase> events)
+        {
+            var alloc = GCHandle.Alloc(r, GCHandleType.Pinned);
+            GCHandle destinationGCHandle = GCHandle.Alloc(r, GCHandleType.Pinned);
+            IntPtr destinationOffsetPtr = Marshal.UnsafeAddrOfPinnedArrayElement(r, 0);
+            int region = r.Length;
+            int size = (int)source.Size / region;
+            CLEventHandle[] eventHandles = ComputeTools.ExtractHandles(events, out var eventWaitListSize);
+            bool eventsWritable = events != null && !events.IsReadOnly;
+            CLEventHandle[] newEventHandle = eventsWritable ? new CLEventHandle[1] : null;
+            ComputeErrorCode error = CL12.EnqueueReadBuffer(Handle, new CLMemoryHandle(source.Handle.Value), blocking, new IntPtr(offset * size), new IntPtr(region * size), destinationOffsetPtr, eventWaitListSize, eventHandles, newEventHandle);
+            ComputeException.ThrowOnError(error);
+
+            if (eventsWritable)
+                events.Add(new ComputeEvent(newEventHandle[0], this));
         }
 
         /// <summary>

@@ -44,23 +44,7 @@ namespace Amplifier.Extensions
         {
             var arguments = args.ToList();
             arguments.Insert(0, x);
-
-            if (x.GetType().Name.StartsWith("Single"))
-            {
-                compiler.Execute<float>(kernelName, arguments.ToArray());
-            }
-            else if (x.GetType().Name.StartsWith("Double"))
-            {
-                compiler.Execute<double>(kernelName, arguments.ToArray());
-            }
-            else if (x.GetType().Name.StartsWith("Int32"))
-            {
-                compiler.Execute<int>(kernelName, arguments.ToArray());
-            }
-            else if (x.GetType().Name.StartsWith("Byte"))
-            {
-                compiler.Execute<byte>(kernelName, arguments.ToArray());
-            }
+            compiler.Execute(kernelName, arguments.ToArray());
         }
     }
 }

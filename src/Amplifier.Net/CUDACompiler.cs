@@ -47,7 +47,7 @@ namespace Amplifier
             throw new NotImplementedException();
         }
 
-        public override void Execute<TSource>(string functionName, params object[] args)
+        public override void Execute(string functionName, params object[] args)
         {
             throw new NotImplementedException();
         }

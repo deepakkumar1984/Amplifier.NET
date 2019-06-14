@@ -1,20 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Amplifier.OpenCL
+﻿namespace Amplifier.OpenCL
 {
+    /// <summary>
+    /// Open CL extension functions
+    /// </summary>
     public partial class OpenCLFunctions
     {
-        public dynamic Instance<T>(int deviceId = 0) where T : struct
+        /// <summary>
+        /// Get the instance of the kernel class comoiled with the specified device identifier.
+        /// </summary>
+        /// <value>
+        /// The <see cref="dynamic"/>.
+        /// </value>
+        /// <param name="deviceId">The device identifier.</param>
+        /// <returns></returns>
+        /// <typeparam name="T"></typeparam>
+        public dynamic this[int deviceId]
         {
-            var compiler = new OpenCLCompiler();
-            compiler.UseDevice(deviceId);
-            compiler.CompileKernel(this.GetType());
+            get
+            {
+                var compiler = new OpenCLCompiler();
+                compiler.UseDevice(deviceId);
+                compiler.CompileKernel(this.GetType());
 
-            return compiler.GetExec<T>();
+                return compiler.GetExec();
+            }
         }
     }
 }

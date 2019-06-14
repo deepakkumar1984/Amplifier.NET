@@ -30,10 +30,8 @@ namespace Amplifier
     /// <summary>
     /// Execution engine for the kernels
     /// </summary>
-    /// <typeparam name="T"></typeparam>
     /// <seealso cref="System.Dynamic.DynamicObject" />
-    public class Executer<T> : System.Dynamic.DynamicObject
-        where T : struct
+    public class Executer : System.Dynamic.DynamicObject
     {
         /// <summary>
         /// The compiler
@@ -66,7 +64,7 @@ namespace Amplifier
                 if (!Compiler.Kernels.Contains(binder.Name))
                     throw new ExecutionException(string.Format("Method {0} not found!", binder.Name));
 
-                Compiler.Execute<T>(binder.Name, args);
+                Compiler.Execute(binder.Name, args);
                 result = args[args.Length - 1];
                 return true;
             }
