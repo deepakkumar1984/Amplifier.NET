@@ -16,7 +16,7 @@ namespace AmplifierExamples
             compiler1.UseDevice(0);
 
             var compiler2 = new OpenCLCompiler();
-            compiler1.UseDevice(1);
+            compiler2.UseDevice(1);
 
             compiler1.CompileKernel(typeof(NNActivationKernels));
             compiler2.CompileKernel(typeof(NNActivationKernels));
