@@ -30,6 +30,10 @@ namespace AmplifierExamples
             example.Execute();
             Console.WriteLine("\n--------------------Save and load example-------------------");
 
+            Console.WriteLine("--------------------Compiler execute example-------------------");
+            example = new CompilerExecuteEx();
+            example.Execute();
+            Console.WriteLine("\n--------------------Compiler execute example-------------------");
 
             Console.WriteLine("---------------------Complex math with struct example---------------------------");
             example = new WithStructEx();
