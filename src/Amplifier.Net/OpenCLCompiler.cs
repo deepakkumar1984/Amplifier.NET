@@ -228,8 +228,6 @@ namespace Amplifier
                     commands.ReadFromMemory(buffers[i], ref r, true, 0, null);
                     buffers[i].Dispose();
                 }
-
-                commands.Finish();
             }
             catch (Exception ex)
             {
@@ -237,6 +235,7 @@ namespace Amplifier
             }
             finally
             {
+                commands.Finish();
                 commands.Dispose();
             }
         }
