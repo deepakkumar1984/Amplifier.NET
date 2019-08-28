@@ -23,7 +23,7 @@ SOFTWARE.
 */
 namespace Amplifier
 {
-    using ICSharpCode.Decompiler.TypeSystem;
+    using Amplifier.Decompiler.TypeSystem;
     using System;
     using System.Collections.Generic;
 

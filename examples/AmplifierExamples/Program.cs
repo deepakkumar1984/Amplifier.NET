@@ -15,32 +15,49 @@ namespace AmplifierExamples
             //example.Execute();
             //Console.WriteLine("\n---------------------Basic example---------------------------");
 
-            //Console.WriteLine("---------------------Array Loop example---------------------");
-            //example = new ArrayForLoopEx();
-            //example.Execute();
-            //Console.WriteLine("\n---------------------Array Loop example---------------------");
+            PrintThreeEmptyLines();
 
-            //Console.WriteLine("--------------------Simple kernel calls----------------------");
-            //example = new SimpleKernelCalls();
-            //example.Execute();
-            //Console.WriteLine("\n--------------------Simple kernel calls----------------------");
+            Console.WriteLine("---------------------Array Loop example---------------------");
+            example = new ArrayForLoopEx();
+            example.Execute();
+            Console.WriteLine("\n---------------------Array Loop example---------------------");
 
-            //Console.WriteLine("--------------------Save and load example-------------------");
-            //example = new SaveAndLoadEx();
-            //example.Execute();
-            //Console.WriteLine("\n--------------------Save and load example-------------------");
+            PrintThreeEmptyLines();
 
+            Console.WriteLine("--------------------Simple kernel calls----------------------");
+            example = new SimpleKernelCalls();
+            example.Execute();
+            Console.WriteLine("\n--------------------Simple kernel calls----------------------");
 
-            //Console.WriteLine("---------------------Complex math with struct example---------------------------");
-            //example = new WithStructEx();
-            //example.Execute();
-            //Console.WriteLine("\n---------------------Complex math with struct example---------------------------");
+            PrintThreeEmptyLines();
 
-            example = new ImageExampleCalls();
+            Console.WriteLine("--------------------Save and load example-------------------");
+            example = new SaveAndLoadEx();
+            example.Execute();
+            Console.WriteLine("\n--------------------Save and load example-------------------");
+
+            PrintThreeEmptyLines();
+
+            Console.WriteLine("--------------------Compiler execute example-------------------");
+            example = new CompilerExecuteEx();
+            example.Execute();
+            Console.WriteLine("\n--------------------Compiler execute example-------------------");
+
+            PrintThreeEmptyLines();
+
+            Console.WriteLine("---------------------Complex math with struct example---------------------------");
+            example = new WithStructEx();
             example.Execute();
 
 
             Console.ReadLine();
+        }
+
+        private static void PrintThreeEmptyLines()
+        {
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine();
         }
     }
 }

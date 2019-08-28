@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using ICSharpCode.Decompiler.TypeSystem;
+using Amplifier.Decompiler.TypeSystem;
 
 namespace Amplifier.OpenCL
 {

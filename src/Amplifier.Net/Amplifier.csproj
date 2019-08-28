@@ -8,14 +8,15 @@
     <Company>Tech Quantum</Company>
     <Description>Amplifier allows .NET developers to easily run complex applications with intensive mathematical computation on Intel CPU/GPU, NVIDIA, AMD without writing any additional C kernel code. Write your function in .NET and Amplifier will take care of running it on your favorite hardware.</Description>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
-    <PackageProjectUrl>https://github.com/tech-quantum/Amplifier.NET</PackageProjectUrl>
+    <PackageProjectUrl>https://tech-quantum.github.io/Amplifier.NET/</PackageProjectUrl>
     <RepositoryUrl>https://github.com/tech-quantum/Amplifier.NET</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>OpenCL, Kernel, .NET GPU, CSharp GPU</PackageTags>
     <PackageIconUrl>https://raw.githubusercontent.com/tech-quantum/Amplifier.NET/master/icon_32.png</PackageIconUrl>
     <PackageId>Amplifier.NET</PackageId>
-    <TargetFrameworks>net46;netstandard2.0</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0</TargetFrameworks>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net46|AnyCPU'">
@@ -29,20 +30,52 @@
 
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DefineConstants>TRACE;DEBUG;NETSTANDARD;NETSTANDARD2_0</DefineConstants>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="ICSharpCode.Decompiler" Version="4.0.0.4521" />
+    <PackageReference Include="Humanizer.Core" Version="2.6.2" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
     <PackageReference Include="Newtonsoft.Json.Bson" Version="1.0.2" />
+    <PackageReference Include="System.Collections.Immutable" Version="1.5.0" />
+    <PackageReference Include="System.Reflection.Metadata" Version="1.6.0" />
+    <PackageReference Include="System.ValueTuple" Version="4.5.0" />
   </ItemGroup>
 
   <ItemGroup>
     <None Update="Amplifier.dll.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="Decompiler\IL\Instructions.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Instructions.cs</LastGenOutput>
+    </None>
+    <None Update="Decompiler\Metadata\ILOpCodes.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ILOpCodes.cs</LastGenOutput>
+    </None>
     <None Include="..\..\LICENSE">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Decompiler\IL\Instructions.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Instructions.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Decompiler\Metadata\ILOpCodes.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ILOpCodes.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
 </Project>
