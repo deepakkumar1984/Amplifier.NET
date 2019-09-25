@@ -22,32 +22,32 @@ namespace AmplifierExamples
             example.Execute();
             Console.WriteLine("\n---------------------Array Loop example---------------------");
 
-            PrintThreeEmptyLines();
+            //PrintThreeEmptyLines();
 
-            Console.WriteLine("--------------------Simple kernel calls----------------------");
-            example = new SimpleKernelCalls();
-            example.Execute();
-            Console.WriteLine("\n--------------------Simple kernel calls----------------------");
+            //Console.WriteLine("--------------------Simple kernel calls----------------------");
+            //example = new SimpleKernelCalls();
+            //example.Execute();
+            //Console.WriteLine("\n--------------------Simple kernel calls----------------------");
 
-            PrintThreeEmptyLines();
+            //PrintThreeEmptyLines();
 
-            Console.WriteLine("--------------------Save and load example-------------------");
-            example = new SaveAndLoadEx();
-            example.Execute();
-            Console.WriteLine("\n--------------------Save and load example-------------------");
+            //Console.WriteLine("--------------------Save and load example-------------------");
+            //example = new SaveAndLoadEx();
+            //example.Execute();
+            //Console.WriteLine("\n--------------------Save and load example-------------------");
 
-            PrintThreeEmptyLines();
+            //PrintThreeEmptyLines();
 
-            Console.WriteLine("--------------------Compiler execute example-------------------");
-            example = new CompilerExecuteEx();
-            example.Execute();
-            Console.WriteLine("\n--------------------Compiler execute example-------------------");
+            //Console.WriteLine("--------------------Compiler execute example-------------------");
+            //example = new CompilerExecuteEx();
+            //example.Execute();
+            //Console.WriteLine("\n--------------------Compiler execute example-------------------");
 
-            PrintThreeEmptyLines();
+            //PrintThreeEmptyLines();
 
-            Console.WriteLine("---------------------Complex math with struct example---------------------------");
-            example = new WithStructEx();
-            example.Execute();
+            //Console.WriteLine("---------------------Complex math with struct example---------------------------");
+            //example = new WithStructEx();
+            //example.Execute();
 
 
             Console.ReadLine();

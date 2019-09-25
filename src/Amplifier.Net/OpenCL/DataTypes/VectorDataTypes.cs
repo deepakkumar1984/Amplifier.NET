@@ -52,7 +52,7 @@ namespace Amplifier.OpenCL
 
     public struct int2
     {
-        public static implicit operator int2((uint, uint) d)
+        public static implicit operator int2((int, int) d)
         {
             return new int2();
         }
