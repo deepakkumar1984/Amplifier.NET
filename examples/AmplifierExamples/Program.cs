@@ -31,10 +31,10 @@ namespace AmplifierExamples
 
             //PrintThreeEmptyLines();
 
-            //Console.WriteLine("--------------------Save and load example-------------------");
-            //example = new SaveAndLoadEx();
-            //example.Execute();
-            //Console.WriteLine("\n--------------------Save and load example-------------------");
+            Console.WriteLine("--------------------Save and load example-------------------");
+            example = new SaveAndLoadEx();
+            example.Execute();
+            Console.WriteLine("\n--------------------Save and load example-------------------");
 
             //PrintThreeEmptyLines();
 
