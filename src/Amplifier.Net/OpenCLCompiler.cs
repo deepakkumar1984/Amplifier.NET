@@ -220,16 +220,22 @@ namespace Amplifier
                 var ndobject = (Array)args.FirstOrDefault(x => (x.GetType().IsArray));
                 long length = ndobject != null ? ndobject.Length : 1;
 
-                var buffers = BuildKernelArguments(args, kernel, length);
+                var method = KernelFunctions.FirstOrDefault(x => (x.Name == functionName));
+
+                var buffers = BuildKernelArguments(method, args, kernel, length);
                 commands.Execute(kernel, null, new long[] { length }, null, null);
 
-                for(int i=0;i<args.Length;i++)
+                for (int i = 0; i < args.Length; i++)
                 {
                     if (!args[i].GetType().IsArray)
                         continue;
 
-                    Array r = (Array)args[i];
-                    commands.ReadFromMemory(buffers[i], ref r, true, 0, null);
+                    var ioMode = method.Parameters.ElementAt(i).Value.IOMode;
+                    if (ioMode == IOMode.InOut || ioMode == IOMode.Out)
+                    {
+                        Array r = (Array)args[i];
+                        commands.ReadFromMemory(buffers[i], ref r, true, 0, null);
+                    }
                     buffers[i].Dispose();
                 }
             }
@@ -277,11 +283,11 @@ namespace Amplifier
 
                 if (args[i].GetType().IsPrimitive)
                 {
-                    args[i] = Convert.ChangeType(args[i], Type.GetType(parameter.Value));
+                    args[i] = Convert.ChangeType(args[i], Type.GetType(parameter.Value.TypeName));
                 }
                 else if (args[i].GetType().IsArray)
                 {
-                    if (parameter.Value != args[i].GetType().FullName)
+                    if (parameter.Value.TypeName != args[i].GetType().FullName)
                         throw new ExecutionException(string.Format("Data type mismatch for parameter {0}. Expected is {1} but got {2}",
                                                         parameter.Key,
                                                         (parameter.Value,
@@ -417,7 +423,20 @@ namespace Amplifier
                 var k = new KernelFunction() { Name = item.Name };
                 foreach (var p in item.Parameters)
                 {
-                    k.Parameters.Add(p.Name, p.Type.FullName);
+                    var isInput = p.GetAttributes().Any(x => x.AttributeType.Name == "InputAttribute");
+                    var isOutput = p.GetAttributes().Any(x => x.AttributeType.Name == "OutputAttribute");
+                    var mode = IOMode.InOut;
+                    if (isInput)
+                        mode = IOMode.In;
+                    if (isOutput)
+                        mode = IOMode.Out;
+                    if (isInput && isOutput)
+                        mode = IOMode.InOut;
+                    k.Parameters.Add(p.Name, new FunctionParameter
+                    {
+                        TypeName = p.Type.FullName,
+                        IOMode = mode
+                    });
                 }
 
                 KernelFunctions.Add(k);
@@ -469,12 +488,13 @@ namespace Amplifier
         /// Builds the kernel arguments.
         /// </summary>
         /// <typeparam name="TSource">The type of the source.</typeparam>
+        /// <param name="method">The method.</param>
         /// <param name="inputs">The inputs.</param>
         /// <param name="kernel">The kernel.</param>
         /// <param name="length">The length.</param>
         /// <param name="returnInputVariable">The return result.</param>
         /// <returns></returns>
-        private Dictionary<int, GenericArrayMemory> BuildKernelArguments(object[] inputs, ComputeKernel kernel, long length, int? returnInputVariable = null)
+        private Dictionary<int, GenericArrayMemory> BuildKernelArguments(KernelFunction method, object[] inputs, ComputeKernel kernel, long length, int? returnInputVariable = null)
         {
             int i = 0;
             Dictionary<int, GenericArrayMemory> result = new Dictionary<int, GenericArrayMemory>();
@@ -484,9 +504,13 @@ namespace Amplifier
                 int size = 0;
                 if(item.GetType().IsArray)
                 {
-                    
-                    var datagch = GCHandle.Alloc(item, GCHandleType.Pinned);
-                    GenericArrayMemory mem = new GenericArrayMemory(_context, ComputeMemoryFlags.ReadWrite | ComputeMemoryFlags.CopyHostPointer, item);
+                    var mode = method.Parameters.ElementAt(i).Value.IOMode;
+                    var flag = ComputeMemoryFlags.ReadWrite;
+                    if (mode == IOMode.Out)
+                        flag |= ComputeMemoryFlags.AllocateHostPointer;
+                    else
+                        flag |= ComputeMemoryFlags.CopyHostPointer;
+                    GenericArrayMemory mem = new GenericArrayMemory(_context, flag, item);
                     kernel.SetMemoryArgument(i, mem);
                     result.Add(i, mem);
                 }

@@ -23,9 +23,14 @@ namespace Amplifier.OpenCL.Cloo
                 return;
 
             int size = Marshal.SizeOf(array.GetValue(0).GetType()) * array.Length;
-            var datagch = GCHandle.Alloc(obj, GCHandleType.Pinned);
+            var hostPtr = IntPtr.Zero;
+            if ((flags & (ComputeMemoryFlags.CopyHostPointer | ComputeMemoryFlags.UseHostPointer)) != ComputeMemoryFlags.None)
+            {
+                var datagch = GCHandle.Alloc(obj, GCHandleType.Pinned);
+                hostPtr = datagch.AddrOfPinnedObject();
+            }
             ComputeErrorCode error = ComputeErrorCode.Success;
-            var handle = CL12.CreateBuffer(context.Handle, ComputeMemoryFlags.ReadWrite | ComputeMemoryFlags.CopyHostPointer, new IntPtr(size), datagch.AddrOfPinnedObject(), out error);
+            var handle = CL12.CreateBuffer(context.Handle, flags, new IntPtr(size), hostPtr, out error);
             
             this.Size = size;
             this.Handle = handle;

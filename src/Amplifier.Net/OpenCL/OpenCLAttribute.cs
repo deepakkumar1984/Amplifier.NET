@@ -11,6 +11,16 @@ namespace Amplifier.OpenCL
     }
 
     [System.AttributeUsage(System.AttributeTargets.Parameter)]
+    public class InputAttribute : System.Attribute
+    {
+    }
+
+    [System.AttributeUsage(System.AttributeTargets.Parameter)]
+    public class OutputAttribute : System.Attribute
+    {
+    }
+
+    [System.AttributeUsage(System.AttributeTargets.Parameter)]
     public class StructAttribute : System.Attribute
     {
     }
