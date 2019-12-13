@@ -1,4 +1,5 @@
 ﻿using Amplifier;
+using Amplifier.OpenCL;
 using AmplifierExamples.Kernels;
 using System;
 using System.Collections.Generic;
@@ -34,9 +35,9 @@ namespace AmplifierExamples
             }
 
             //Create variable a, b and r
-            Array x = new float[] { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-            Array y = new float[9];
-            Array z = new float[9];
+            var x = new float[] { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+            var y = new float[9];
+            var z = new float[9];
 
             //Get the execution engine
             var exec = compiler.GetExec();
@@ -46,6 +47,12 @@ namespace AmplifierExamples
 
             //Execute AddData kernel method
             exec.AddData(x, y, z);
+
+            //Execute AddHalf kernel method
+            var xhalf = Array.ConvertAll(x, v => (half)v);
+            var yhalf = Array.ConvertAll(y, v => (half)v);
+            exec.AddHalf(xhalf, yhalf);
+            z = Array.ConvertAll(yhalf, v => (float)v);
 
             //Execuete SAXPY kernel method
             exec.SAXPY(x, y, 2f);
