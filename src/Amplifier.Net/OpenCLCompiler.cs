@@ -141,6 +141,8 @@ namespace Amplifier
             source.AppendLine("#pragma OPENCL EXTENSION cl_khr_fp64 : enable");
             source.AppendLine("#endif");
             source.AppendLine("#define NELEMS(x)  (sizeof(x) / sizeof((x)[0]))");
+            source.AppendLine("typedef unsigned char byte;");
+            source.AppendLine("typedef char sbyte;");
             if (_compiledInstances.Contains(cls))
                 throw new CompileException(string.Format("{0} is already compiled", cls.FullName));
 
@@ -170,6 +172,8 @@ namespace Amplifier
             source.AppendLine("#pragma OPENCL EXTENSION cl_khr_fp64 : enable");
             source.AppendLine("#endif");
             source.AppendLine("#define NELEMS(x)  (sizeof(x) / sizeof((x)[0]))");
+            source.AppendLine("typedef unsigned char byte;");
+            source.AppendLine("typedef char sbyte;");
             foreach (var cls in classes)
             {
                 if (_compiledInstances.Contains(cls))
