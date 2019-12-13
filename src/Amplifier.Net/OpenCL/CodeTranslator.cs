@@ -30,6 +30,8 @@ namespace Amplifier.OpenCL
                     .Replace("[OpenCLKernel]", "__kernel")
                     .Replace("[Global]", "global")
                     .Replace("[Struct]", "struct")
+                    .Replace("[Input]", "")
+                    .Replace("[Output]", "")
                     .Replace("@", "v_");
 
             foreach (var item in replaceEmptyList)

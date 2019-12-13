@@ -16,7 +16,7 @@ namespace Amplifier
         /// </summary>
         public KernelFunction()
         {
-            Parameters = new Dictionary<string, string>();
+            Parameters = new Dictionary<string, FunctionParameter>();
         }
 
         /// <summary>
@@ -33,6 +33,32 @@ namespace Amplifier
         /// <value>
         /// The parameters.
         /// </value>
-        public Dictionary<string, string> Parameters { get; set; }
+        public Dictionary<string, FunctionParameter> Parameters { get; set; }
+    }
+
+    /// <summary>
+    /// Class to hold the parameter of kernel method info
+    /// </summary>
+    public class FunctionParameter
+    {
+        /// <summary>
+        /// Gets or sets the type name.
+        /// </summary>
+        public string TypeName { get; set; }
+
+        /// <summary>
+        /// Gets or sets the IO mode.
+        /// </summary>
+        public IOMode IOMode { get; set; }
+    }
+
+    /// <summary>
+    /// The parameter of kernel method is input or output
+    /// </summary>
+    public enum IOMode
+    {
+        InOut = 0,
+        In,
+        Out
     }
 }

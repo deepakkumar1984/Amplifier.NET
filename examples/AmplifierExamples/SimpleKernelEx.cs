@@ -36,12 +36,16 @@ namespace AmplifierExamples
             //Create variable a, b and r
             Array x = new float[] { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
             Array y = new float[9];
+            Array z = new float[9];
 
             //Get the execution engine
             var exec = compiler.GetExec();
 
             //Execute fill kernel method
             exec.Fill(y, 0.5f);
+
+            //Execute AddData kernel method
+            exec.AddData(x, y, z);
 
             //Execuete SAXPY kernel method
             exec.SAXPY(x, y, 2f);

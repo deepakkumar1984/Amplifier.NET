@@ -8,11 +8,12 @@ namespace AmplifierExamples.Kernels
     class SimpleKernels : OpenCLFunctions
     {
         [OpenCLKernel]
-        void AddData([Global]float[] a, [Global] float[] b, [Global]float[] r)
+        void AddData([Global, Input]float[] a, [Global] float[] b, [Global, Output]float[] r)
         {
             int i = get_global_id(0);
             b[i] = 0.5f * b[i];
             r[i] = a[i] + b[i];
+            a[i] += 2; // result will not copy out
         }
 
         [OpenCLKernel]
