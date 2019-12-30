@@ -3,7 +3,7 @@
   <PropertyGroup>
     <AssemblyName>Amplifier</AssemblyName>
     <RootNamespace>Amplifier</RootNamespace>
-    <Version>0.4.8</Version>
+    <Version>0.5.0</Version>
     <Authors>Deepak Battini</Authors>
     <Company>Tech Quantum</Company>
     <Description>Amplifier allows .NET developers to easily run complex applications with intensive mathematical computation on Intel CPU/GPU, NVIDIA, AMD without writing any additional C kernel code. Write your function in .NET and Amplifier will take care of running it on your favorite hardware.</Description>
