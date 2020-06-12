@@ -24,8 +24,8 @@ namespace AmplifierExamples
             int N = 30;
             int K = 20;
 
-            var x = new XArray(new long[] { M, K }, DType.Float32);
-            var y = new XArray(new long[] { K, M }, DType.Float32);
+            var x = new InArray(new long[] { M, K }, DType.Float32);
+            var y = new InArray(new long[] { K, M }, DType.Float32);
             var z = new OutArray(new long[] { M, N }, DType.Float32) { IsElementWise = false };
 
             //Get the execution engine
