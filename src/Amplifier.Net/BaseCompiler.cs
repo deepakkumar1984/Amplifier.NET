@@ -101,6 +101,12 @@ namespace Amplifier
         public abstract void CompileKernel(params Type[] classes);
 
         /// <summary>
+        /// Compiles the kernel directly from the source.
+        /// </summary>
+        /// <param name="cls">The CLS.</param>
+        public abstract void CompileKernel(string source);
+
+        /// <summary>
         /// Gets the default executer with float as base data type.
         /// </summary>
         /// <value>

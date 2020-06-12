@@ -198,6 +198,16 @@ namespace Amplifier
         }
 
         /// <summary>
+        /// Compiles the kernel directly from the source.
+        /// </summary>
+        /// <param name="source">The source code.</param>
+        public override void CompileKernel(string source)
+        {
+            CreateKernels(source);
+            SourceCode = source;
+        }
+
+        /// <summary>
         /// Executes the specified kernel function name.
         /// </summary>
         /// <typeparam name="TSource">The type of the source.</typeparam>
@@ -594,6 +604,8 @@ namespace Amplifier
 
             return result;
         }
+
+       
         #endregion
     }
 }
