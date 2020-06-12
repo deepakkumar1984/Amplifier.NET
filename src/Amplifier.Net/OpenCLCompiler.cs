@@ -217,26 +217,73 @@ namespace Amplifier
 
             try
             {
-                var ndobject = (Array)args.FirstOrDefault(x => (x.GetType().IsArray));
-                long length = ndobject != null ? ndobject.Length : 1;
+                Array ndobject = (Array)args.FirstOrDefault(x => (x.GetType().IsArray));
+                List<long> length = new List<long>();
+                long totalLength = 0;
+                if (ndobject == null)
+                {
+                    var xarrayList = args.Where(x => (x.GetType().Name == "XArray" || x.GetType().BaseType.Name == "XArray")).ToList();
+                    foreach (var item in xarrayList)
+                    {
+                        var xarrayobj = (XArray)item;
+                        if (xarrayobj.Direction == Direction.Output)
+                        {
+                            totalLength = xarrayobj.Count;
+                            if (!xarrayobj.IsElementWise)
+                                length = xarrayobj.Sizes.ToList();
+                            else
+                                length.Add(totalLength);
+                        }
+                    }
+                   
+                    if(totalLength == 0)
+                    {
+                        var xarrayobj = (XArray)xarrayList[0];
+                        totalLength = xarrayobj.Count;
+                        if (!xarrayobj.IsElementWise)
+                            length = xarrayobj.Sizes.ToList();
+                        else
+                            length.Add(totalLength);
+                    }
+                }
+                else
+                {
+                    totalLength = ndobject.Length;
+                    for (int i = 0; i < ndobject.Rank; i++)
+                    {
+                        length.Add(ndobject.GetLength(i));
+                    }
+                }
 
                 var method = KernelFunctions.FirstOrDefault(x => (x.Name == functionName));
 
-                var buffers = BuildKernelArguments(method, args, kernel, length);
-                commands.Execute(kernel, null, new long[] { length }, null, null);
+                var buffers = BuildKernelArguments(method, args, kernel, totalLength);
+                commands.Execute(kernel, null, length.ToArray(), null, null);
 
                 for (int i = 0; i < args.Length; i++)
                 {
-                    if (!args[i].GetType().IsArray)
-                        continue;
-
-                    var ioMode = method.Parameters.ElementAt(i).Value.IOMode;
-                    if (ioMode == IOMode.InOut || ioMode == IOMode.Out)
+                    if (args[i].GetType().IsArray)
                     {
-                        Array r = (Array)args[i];
-                        commands.ReadFromMemory(buffers[i], ref r, true, 0, null);
+                        var ioMode = method.Parameters.ElementAt(i).Value.IOMode;
+                        if (ioMode == IOMode.InOut || ioMode == IOMode.Out)
+                        {
+                            Array r = (Array)args[i];
+                            commands.ReadFromMemory(buffers[i], ref r, true, 0, null);
+                        }
+
+                        buffers[i].Dispose();
                     }
-                    buffers[i].Dispose();
+                    else if (args[i].GetType().Name == "XArray" || args[i].GetType().BaseType.Name == "XArray")
+                    {
+                        var ioMode = method.Parameters.ElementAt(i).Value.IOMode;
+                        if (ioMode == IOMode.InOut || ioMode == IOMode.Out)
+                        {
+                            XArray r = (XArray)args[i];
+                            commands.ReadFromMemory(buffers[i], ref r, true, 0, null);
+                        }
+
+                        buffers[i].Dispose();
+                    }
                 }
             }
             catch (Exception ex)
@@ -292,6 +339,15 @@ namespace Amplifier
                                                         parameter.Key,
                                                         (parameter.Value,
                                                         args[i].GetType().FullName)));
+                }
+                else if (args[i].GetType().Name == "XArray" || args[i].GetType().BaseType.Name == "XArray")
+                {
+                    XArray array = (XArray)args[i];
+                    if (!parameter.Value.TypeName.Contains(array.DataType.ToCLRType().Name))
+                        throw new ExecutionException(string.Format("Data type mismatch for parameter {0}. Expected is {1} but got {2}",
+                                                        parameter.Key,
+                                                        (parameter.Value,
+                                                        array.DataType.ToCLRType().Name)));
                 }
             }
         }
@@ -413,7 +469,7 @@ namespace Amplifier
                     continue;
 
                 if (item.GetAttributes().FirstOrDefault(x => (x.AttributeType.Name == "OpenCLKernelAttribute")) == null)
-                {
+                { 
                     nonKernelMethods.Add(item);
                     continue;
                 }
@@ -510,7 +566,19 @@ namespace Amplifier
                         flag |= ComputeMemoryFlags.AllocateHostPointer;
                     else
                         flag |= ComputeMemoryFlags.CopyHostPointer;
-                    GenericArrayMemory mem = new GenericArrayMemory(_context, flag, item);
+                    GenericArrayMemory mem = new GenericArrayMemory(_context, flag, (Array)item);
+                    kernel.SetMemoryArgument(i, mem);
+                    result.Add(i, mem);
+                }
+                else if (item.GetType().Name == "XArray" || item.GetType().BaseType.Name == "XArray")
+                {
+                    var mode = method.Parameters.ElementAt(i).Value.IOMode;
+                    var flag = ComputeMemoryFlags.ReadWrite;
+                    if (mode == IOMode.Out)
+                        flag |= ComputeMemoryFlags.AllocateHostPointer;
+                    else
+                        flag |= ComputeMemoryFlags.CopyHostPointer;
+                    GenericArrayMemory mem = new GenericArrayMemory(_context, flag, (XArray)item);
                     kernel.SetMemoryArgument(i, mem);
                     result.Add(i, mem);
                 }

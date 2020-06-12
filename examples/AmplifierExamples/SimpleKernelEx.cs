@@ -35,33 +35,33 @@ namespace AmplifierExamples
             }
 
             //Create variable a, b and r
-            var x = new float[] { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-            var y = new float[9];
-            var z = new float[9];
+            var x = new XArray(new float[] { 1, 2, 3, 4, 5, 6, 7, 8, 9 }).Reshape(3, 3);
+            var y = new XArray(new long[] { 3, 3 });
+            var z = new XArray(new long[] { 3, 3 }, DType.Float32);
 
             //Get the execution engine
             var exec = compiler.GetExec();
 
             //Execute fill kernel method
             exec.Fill(y, 0.5f);
-
+            var r = y.ToArray();
             //Execute AddData kernel method
-            exec.AddData(x, y, z);
-
+            exec.AddTensor(x, y, z);
+            r = z.ToArray();
             //Execute AddHalf kernel method
-            var xhalf = Array.ConvertAll(x, v => (half)v);
-            var yhalf = Array.ConvertAll(y, v => (half)v);
-            exec.AddHalf(xhalf, yhalf);
-            z = Array.ConvertAll(yhalf, v => (float)v);
+            //var xhalf = Array.ConvertAll(x, v => (half)v);
+            //var yhalf = Array.ConvertAll(y, v => (half)v);
+            //exec.AddHalf(xhalf, yhalf);
+            //z = Array.ConvertAll(yhalf, v => (float)v);
 
             //Execuete SAXPY kernel method
             exec.SAXPY(x, y, 2f);
 
             //Print the result
             Console.WriteLine("\nResult----");
-            for (int i = 0; i < y.Length; i++)
+            for (int i = 0; i < y.Count; i++)
             {
-                Console.Write(y.GetValue(i) + " ");
+                Console.Write(y[i] + " ");
             }
         }
     }

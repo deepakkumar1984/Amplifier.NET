@@ -394,6 +394,21 @@ namespace Amplifier.OpenCL.Cloo
                 events.Add(new ComputeEvent(newEventHandle[0], this));
         }
 
+        public void ReadFromMemory(GenericArrayMemory source, ref XArray r, bool blocking, long offset, ICollection<ComputeEventBase> events)
+        {
+            IntPtr destinationOffsetPtr = r.NativePtr;
+            long region = r.Count;
+            long size = source.Size / region;
+            CLEventHandle[] eventHandles = ComputeTools.ExtractHandles(events, out var eventWaitListSize);
+            bool eventsWritable = events != null && !events.IsReadOnly;
+            CLEventHandle[] newEventHandle = eventsWritable ? new CLEventHandle[1] : null;
+            ComputeErrorCode error = CL12.EnqueueReadBuffer(Handle, new CLMemoryHandle(source.Handle.Value), blocking, new IntPtr(offset * size), new IntPtr(region * size), destinationOffsetPtr, eventWaitListSize, eventHandles, newEventHandle);
+            ComputeException.ThrowOnError(error);
+
+            if (eventsWritable)
+                events.Add(new ComputeEvent(newEventHandle[0], this));
+        }
+
         /// <summary>
         /// Enqueues a command to read data from a buffer.
         /// </summary>

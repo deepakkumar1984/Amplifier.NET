@@ -13,14 +13,14 @@ namespace AmplifierExamples
             //Console.WriteLine("---------------------Basic example---------------------------");
             //example = new SimpleKernelEx();
             //example.Execute();
-            //Console.WriteLine("\n---------------------Basic example---------------------------");
+            Console.WriteLine("\n---------------------Basic example---------------------------");
 
-            PrintThreeEmptyLines();
+            //PrintThreeEmptyLines();
 
-            Console.WriteLine("---------------------Array Loop example---------------------");
-            example = new ArrayForLoopEx();
-            example.Execute();
-            Console.WriteLine("\n---------------------Array Loop example---------------------");
+            //Console.WriteLine("---------------------Array Loop example---------------------");
+            //example = new ArrayForLoopEx();
+            //example.Execute();
+            //Console.WriteLine("\n---------------------Array Loop example---------------------");
 
             //PrintThreeEmptyLines();
 
@@ -31,10 +31,10 @@ namespace AmplifierExamples
 
             //PrintThreeEmptyLines();
 
-            Console.WriteLine("--------------------Save and load example-------------------");
-            example = new SaveAndLoadEx();
-            example.Execute();
-            Console.WriteLine("\n--------------------Save and load example-------------------");
+            //Console.WriteLine("--------------------Save and load example-------------------");
+            //example = new SaveAndLoadEx();
+            //example.Execute();
+            //Console.WriteLine("\n--------------------Save and load example-------------------");
 
             //PrintThreeEmptyLines();
 
@@ -49,6 +49,9 @@ namespace AmplifierExamples
             //example = new WithStructEx();
             //example.Execute();
 
+            Console.WriteLine("---------------------Matrix multiplication example---------------------------");
+            example = new MatrixMulExample();
+            example.Execute();
 
             Console.ReadLine();
         }
