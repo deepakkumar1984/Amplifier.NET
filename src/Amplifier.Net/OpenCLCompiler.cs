@@ -354,10 +354,9 @@ namespace Amplifier
                 {
                     XArray array = (XArray)args[i];
                     if (!parameter.Value.TypeName.Contains(array.DataType.ToCLRType().Name))
-                        throw new ExecutionException(string.Format("Data type mismatch for parameter {0}. Expected is {1} but got {2}",
-                                                        parameter.Key,
-                                                        (parameter.Value,
-                                                        array.DataType.ToCLRType().Name)));
+                        throw new ExecutionException(
+                            string.Format($"Data type mismatch for parameter {parameter.Key}. " +
+                            $"Expected is {parameter.Value.TypeName.Replace("[]", "")} but got {array.DataType.ToCLRType().FullName}"));
                 }
             }
         }

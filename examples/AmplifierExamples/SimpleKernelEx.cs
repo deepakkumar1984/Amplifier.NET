@@ -36,8 +36,8 @@ namespace AmplifierExamples
 
             //Create variable a, b and r
             var x = new XArray(new float[] { 1, 2, 3, 4, 5, 6, 7, 8, 9 }).Reshape(3, 3);
-            var y = new XArray(new long[] { 3, 3 });
-            var z = new XArray(new long[] { 3, 3 }, DType.Float32);
+            var y = new XArray(new int[] { 3, 3 });
+            var z = new XArray(new float[] { 3, 3 });
 
             //Get the execution engine
             var exec = compiler.GetExec();
