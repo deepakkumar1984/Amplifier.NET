@@ -203,8 +203,18 @@ namespace Amplifier
         /// <param name="source">The source code.</param>
         public override void CompileKernel(string source)
         {
-            CreateKernels(source);
-            SourceCode = source;
+            KernelFunctions.Clear();
+            StringBuilder src = new StringBuilder();
+            src.AppendLine("#ifdef cl_khr_fp64");
+            src.AppendLine("#pragma OPENCL EXTENSION cl_khr_fp64 : enable");
+            src.AppendLine("#endif");
+            src.AppendLine("#define NELEMS(x)  (sizeof(x) / sizeof((x)[0]))");
+            src.AppendLine("typedef unsigned char byte;");
+            src.AppendLine("typedef char sbyte;");
+            src.AppendLine(source);
+
+            CreateKernels(src.ToString());
+            SourceCode = src.ToString();
         }
 
         /// <summary>
