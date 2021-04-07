@@ -16,13 +16,13 @@ namespace DarknetOpencl
 
         public override XArray Backward(XArray x, XArray delta, params XArray[] args)
         {
-            amp.exec.activate_array_kernel(x, 0, x.Count, Get<Activations>("ActType"));
+            activate_array_kernel(x, 0, (int)x.Count, Get<Activations>("ActType"));
             return x;
         }
 
         public override XArray Forward(XArray x, params XArray[] args)
         {
-            amp.exec.activate_array_kernel(x, 0, x.Count, Get<Activations>("ActType"));
+            activate_array_kernel(x, 0, (int)x.Count, Get<Activations>("ActType"));
             return x;
         }
     }

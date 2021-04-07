@@ -1,21 +1,39 @@
 ﻿using Amplifier;
-using DarknetOpencl.kernels;
 using System;
 using System.IO;
+using System.Text;
 
 namespace DarknetOpencl
 {
     public class amp
     {
-        public static OpenCLCompiler compiler = new OpenCLCompiler();
+        private static OpenCLCompiler compiler = new OpenCLCompiler();
 
-        public static dynamic exec;
+        private static dynamic exec;
+
+        public static dynamic Ops
+        {
+            get
+            {
+                if(exec == null)
+                    LoadKernels();
+
+                return exec;
+            }
+        }
 
         public static void LoadKernels()
          {
             compiler.UseDevice(0);
-            string activation_kernels = File.ReadAllText("./kernels/activation_kernels.cl");
-            compiler.CompileKernel(typeof(Activations), typeof(ActivationKernels));
+            var clfiles = new DirectoryInfo("./kernels").GetFiles();
+            StringBuilder sb = new StringBuilder();
+            foreach (var f in clfiles)
+            {
+                sb.AppendLine(File.ReadAllText(f.FullName));
+                sb.AppendLine();
+            }
+
+            compiler.CompileKernel(sb.ToString());
             exec = compiler.GetExec();
         }
     }

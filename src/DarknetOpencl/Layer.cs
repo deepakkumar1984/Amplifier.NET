@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DarknetOpencl
 {
-    public abstract class Layer
+    public abstract class Layer : kernel_ops
     {
         public Dictionary<string, object> Parameters { get; set; }
 
