@@ -8,14 +8,15 @@ namespace Amplifier
     {
         Float32 = 0,
         Float64 = 1,
-        //Int8 = 2,
-        //Int16 = 3,
+        Int8 = 2,
+        Int16 = 3,
         Int32 = 4,
-        //Int64 = 5,
+        Int64 = 5,
         UInt8 = 6,
-        //UInt16 = 7,
-        //UInt32 = 8,
-        //UInt64 = 8
+        UInt16 = 7,
+        UInt32 = 8,
+        UInt64 = 9,
+        Bool = 10
     }
 
     /// <summary>

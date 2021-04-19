@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Kernels\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Amplifier.Net\Amplifier.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -9,9 +9,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AmplifierExamples", "exampl
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "doc-gen", "doc-gen\doc-gen.csproj", "{93053BBF-534D-4EBA-A5BD-177DEDB1D34F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DarknetOpencl", "src\DarknetOpencl\DarknetOpencl.csproj", "{FF91D8E9-F107-48F0-B334-01BBF1022192}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DarknetOpencl", "src\DarknetOpencl\DarknetOpencl.csproj", "{FF91D8E9-F107-48F0-B334-01BBF1022192}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DarknetTest", "DarknetTest\DarknetTest.csproj", "{4DD5F8E0-6A32-4733-8066-6ACB36874894}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DarknetTest", "DarknetTest\DarknetTest.csproj", "{4DD5F8E0-6A32-4733-8066-6ACB36874894}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Siya", "src\Siya\Siya.csproj", "{9DE04239-604C-44A6-A9A8-6D89F6F6AA41}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SiyaBasicTest", "examples\SiyaBasicTest\SiyaBasicTest.csproj", "{25A57532-6C20-40C9-9E01-464E97AC077A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,6 +41,14 @@ Global
 		{4DD5F8E0-6A32-4733-8066-6ACB36874894}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4DD5F8E0-6A32-4733-8066-6ACB36874894}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4DD5F8E0-6A32-4733-8066-6ACB36874894}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9DE04239-604C-44A6-A9A8-6D89F6F6AA41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DE04239-604C-44A6-A9A8-6D89F6F6AA41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DE04239-604C-44A6-A9A8-6D89F6F6AA41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DE04239-604C-44A6-A9A8-6D89F6F6AA41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25A57532-6C20-40C9-9E01-464E97AC077A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25A57532-6C20-40C9-9E01-464E97AC077A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25A57532-6C20-40C9-9E01-464E97AC077A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25A57532-6C20-40C9-9E01-464E97AC077A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
