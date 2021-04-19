@@ -276,15 +276,19 @@ namespace Amplifier
                 }
 
                 var method = KernelFunctions.FirstOrDefault(x => (x.Name == functionName));
+                Dictionary<int, GenericArrayMemory> buffers = null;
+                if (method != null)
+                    buffers = BuildKernelArguments(method, args, kernel, totalLength);
+                else
+                    buffers = BuildKernelArguments(args, kernel, totalLength);
 
-                var buffers = BuildKernelArguments(method, args, kernel, totalLength);
                 commands.Execute(kernel, null, length.ToArray(), null, null);
 
                 for (int i = 0; i < args.Length; i++)
                 {
                     if (args[i].GetType().IsArray)
                     {
-                        var ioMode = method.Parameters.ElementAt(i).Value.IOMode;
+                        var ioMode = method != null ? method.Parameters.ElementAt(i).Value.IOMode : IOMode.InOut;
                         if (ioMode == IOMode.InOut || ioMode == IOMode.Out)
                         {
                             Array r = (Array)args[i];
@@ -295,7 +299,7 @@ namespace Amplifier
                     }
                     else if (args[i].GetType().Name == "XArray" || args[i].GetType().BaseType.Name == "XArray")
                     {
-                        var ioMode = method.Parameters.ElementAt(i).Value.IOMode;
+                        var ioMode = method != null ? method.Parameters.ElementAt(i).Value.IOMode : IOMode.InOut;
                         if (ioMode == IOMode.InOut || ioMode == IOMode.Out)
                         {
                             XArray r = (XArray)args[i];
@@ -343,7 +347,8 @@ namespace Amplifier
         private void ValidateArgs(string functionName, object[] args)
         {
             var method = KernelFunctions.FirstOrDefault(x => (x.Name == functionName));
-
+            if (method == null)
+                return;
             for (int i = 0; i < args.Length; i++)
             {
                 var parameter = method.Parameters.ElementAt(i);
@@ -614,7 +619,42 @@ namespace Amplifier
             return result;
         }
 
-       
+        private Dictionary<int, GenericArrayMemory> BuildKernelArguments(object[] inputs, ComputeKernel kernel, long length, int? returnInputVariable = null)
+        {
+            int i = 0;
+            Dictionary<int, GenericArrayMemory> result = new Dictionary<int, GenericArrayMemory>();
+
+            foreach (var item in inputs)
+            {
+                int size = 0;
+                if (item.GetType().IsArray)
+                {
+                    var flag = ComputeMemoryFlags.ReadWrite;
+                    flag |= ComputeMemoryFlags.CopyHostPointer;
+                    GenericArrayMemory mem = new GenericArrayMemory(_context, flag, (Array)item);
+                    kernel.SetMemoryArgument(i, mem);
+                    result.Add(i, mem);
+                }
+                else if (item.GetType().Name == "XArray" || item.GetType().BaseType.Name == "XArray")
+                {
+                    var flag = ComputeMemoryFlags.ReadWrite;
+                    flag |= ComputeMemoryFlags.CopyHostPointer;
+                    GenericArrayMemory mem = new GenericArrayMemory(_context, flag, (XArray)item);
+                    kernel.SetMemoryArgument(i, mem);
+                    result.Add(i, mem);
+                }
+                else
+                {
+                    size = Marshal.SizeOf(item);
+                    var datagch = GCHandle.Alloc(item, GCHandleType.Pinned);
+                    kernel.SetArgument(i, new IntPtr(size), datagch.AddrOfPinnedObject());
+                }
+
+                i++;
+            }
+
+            return result;
+        }
         #endregion
     }
 }
