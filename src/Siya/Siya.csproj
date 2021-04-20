@@ -5,11 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Kernels\" />
+    <ProjectReference Include="..\Amplifier.Net\Amplifier.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Amplifier.Net\Amplifier.csproj" />
+    <None Update="Kernels\template_elementwise_kernels.cu">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

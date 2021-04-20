@@ -37,6 +37,7 @@ namespace Amplifier
                 case DType.Float32: return 4;
                 case DType.Float64: return 8;
                 case DType.Int32: return 4;
+                case DType.Int64: return 8;
                 case DType.UInt8: return 1;
                 //case DType.Int8: return 1;
                 //case DType.UInt32: return 4;
@@ -62,6 +63,7 @@ namespace Amplifier
                 case DType.Float32: return typeof(float);
                 case DType.Float64: return typeof(double);
                 case DType.Int32: return typeof(int);
+                case DType.Int64: return typeof(long);
                 case DType.UInt8: return typeof(byte);
                 //case DType.Int8: return typeof(sbyte);
                 //case DType.UInt32: return typeof(uint);
@@ -92,6 +94,7 @@ namespace Amplifier
             else if (type.Name.Contains("Double")) return DType.Float64;
             else if (type.Name.Contains("Int32")) return DType.Int32;
             else if (type.Name.Contains("Byte")) return DType.UInt8;
+            else if (type.Name.Contains("Int64")) return DType.Int64;
             else
                 throw new NotSupportedException("No corresponding DType value for CLR type " + type);
         }

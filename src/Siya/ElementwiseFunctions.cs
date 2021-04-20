@@ -8,13 +8,13 @@ namespace Siya
 {
     public partial class sx
     {
-        public static NDArray abs(NDArray x) => throw new NotImplementedException();
+        public static NDArray abs(NDArray x) => unary_exec(x, "abs");
 
         public static NDArray acos(NDArray x) => throw new NotImplementedException();
 
         public static NDArray acosh(NDArray x) => throw new NotImplementedException();
 
-        public static NDArray add(NDArray x1, NDArray x2) => throw new NotImplementedException();
+        public static NDArray add(NDArray x1, NDArray x2) => binary_exec(x1, x2, "add");
 
         public static NDArray asin(NDArray x) => throw new NotImplementedException();
 
@@ -52,7 +52,7 @@ namespace Siya
 
         public static NDArray floor(NDArray x) => throw new NotImplementedException();
 
-        public static NDArray floor_divide(NDArray x) => throw new NotImplementedException();
+        public static NDArray floor_divide(NDArray x1, NDArray x2) => throw new NotImplementedException();
 
         public static NDArray greater(NDArray x1, NDArray x2) => throw new NotImplementedException();
 

@@ -8,8 +8,12 @@ namespace SiyaBasicTest
     {
         static void Main(string[] args)
         {
-            NDArray x = new NDArray(shape: (3, 3));
+            sx.use_device(DeviceType.CPU, 0);
+            NDArray x = new NDArray(new long[] { 1, 1, 1, 1, 1, 1, 1, 1, 1 });
+            NDArray y = new NDArray(new long[] { 3, 3, 3, 3, 3, 3, 3, 3, 3 });
 
+            var r = sx.add(x, y);
+            r = sx.abs(r);
         }
     }
 }
