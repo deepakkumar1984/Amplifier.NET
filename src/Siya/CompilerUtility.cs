@@ -64,6 +64,13 @@ namespace Siya
             return r;
         }
 
+        internal static NDArray full_exec(double fill_value, NDArray x)
+        {
+            var (dtype, dtype_str) = check_and_get_dtype(new NDArray[] { x });
+            compiler.Execute($"{dtype_str}_full", fill_value, x);
+            return x;
+        }
+
         private static (DType, string) check_and_get_dtype(NDArray[] arrays)
         {
             int size = arrays[0].dtype.Size();

@@ -94,22 +94,28 @@ __kernel void <DTYPE_NAME>_noteq(__global <DTYPE_NAME> *x, __global <DTYPE_NAME>
     }
 }
 
-__kernel void <DTYPE_NAME>_bitwise_and(__global <DTYPE_NAME> *x, __global <DTYPE_NAME> *y, __global <DTYPE_NAME> *r)
+__kernel void <DTYPE_NAME>_bitwise_and(__global int *x, __global int *y, __global <DTYPE_NAME> *r)
 {
     int i = get_global_id(0);
     r[i] = x[i] & y[i];
 }
 
-__kernel void <DTYPE_NAME>_bitwise_or(__global <DTYPE_NAME> *x, __global <DTYPE_NAME> *y, __global <DTYPE_NAME> *r)
+__kernel void <DTYPE_NAME>_bitwise_or(__global int *x, __global int *y, __global <DTYPE_NAME> *r)
 {
     int i = get_global_id(0);
     r[i] = x[i] | y[i];
 }
 
-__kernel void <DTYPE_NAME>_bitwise_xor(__global <DTYPE_NAME> *x, __global <DTYPE_NAME> *y, __global <DTYPE_NAME> *r)
+__kernel void <DTYPE_NAME>_bitwise_xor(__global int *x, __global int *y, __global <DTYPE_NAME> *r)
 {
     int i = get_global_id(0);
     r[i] = x[i] ^ y[i];
+}
+
+__kernel void <DTYPE_NAME>_bitwise_not(__global int* x, __global <DTYPE_NAME>* r)
+{
+    int i = get_global_id(0);
+    r[i] = ~x[i];
 }
 
 __kernel void <DTYPE_NAME>_logical_and(__global <DTYPE_NAME> *x, __global <DTYPE_NAME> *y, __global <DTYPE_NAME> *r)
@@ -124,19 +130,21 @@ __kernel void <DTYPE_NAME>_logical_or(__global <DTYPE_NAME> *x, __global <DTYPE_
     r[i] = x[i] || y[i];
 }
 
+/*
 __kernel void <DTYPE_NAME>_logical_xor(__global <DTYPE_NAME> *x, __global <DTYPE_NAME> *y, __global <DTYPE_NAME> *r)
 {
     int i = get_global_id(0);
-    r[i] = x[i] ^^ y[i];
+    r[i] = x[i] ^ y[i];
 }
+*/
 
-__kernel void <DTYPE_NAME>_left_shift(__global <DTYPE_NAME> *x, __global <DTYPE_NAME> *y, __global <DTYPE_NAME> *r)
+__kernel void <DTYPE_NAME>_left_shift(__global int* x, __global int *y, __global <DTYPE_NAME> *r)
 {
     int i = get_global_id(0);
     r[i] = x[i] << y[i];
 }
 
-__kernel void <DTYPE_NAME>_left_shift(__global <DTYPE_NAME> *x, __global <DTYPE_NAME> *y, __global <DTYPE_NAME> *r)
+__kernel void <DTYPE_NAME>_right_shift(__global int *x, __global int *y, __global <DTYPE_NAME> *r)
 {
     int i = get_global_id(0);
     r[i] = x[i] >> y[i];
@@ -151,7 +159,7 @@ __kernel void <DTYPE_NAME>_floor_divide(__global <DTYPE_NAME> *x, __global <DTYP
 __kernel void <DTYPE_NAME>_logaddexp(__global <DTYPE_NAME> *x, __global <DTYPE_NAME> *y, __global <DTYPE_NAME> *r)
 {
     int i = get_global_id(0);
-    r[i] = log(exp(x[i]) + exp([i]));
+    r[i] = log(exp(x[i]) + exp(y[i]));
 }
 
 __kernel void <DTYPE_NAME>_abs(__global <DTYPE_NAME> *x, __global <DTYPE_NAME> *r)
@@ -280,12 +288,6 @@ __kernel void <DTYPE_NAME>_log10(__global <DTYPE_NAME> *x, __global <DTYPE_NAME>
     r[i] = log10(x[i]);
 }
 
-__kernel void <DTYPE_NAME>_log2(__global <DTYPE_NAME> *x, __global <DTYPE_NAME> *r)
-{
-    int i = get_global_id(0);
-    r[i] = log2(x[i]);
-}
-
 __kernel void <DTYPE_NAME>_negative(__global <DTYPE_NAME> *x, __global <DTYPE_NAME> *r)
 {
     int i = get_global_id(0);
@@ -336,7 +338,7 @@ __kernel void <DTYPE_NAME>_sin(__global <DTYPE_NAME> *x, __global <DTYPE_NAME> *
 __kernel void <DTYPE_NAME>_square(__global <DTYPE_NAME> *x, __global <DTYPE_NAME> *r)
 {
     int i = get_global_id(0);
-    r[i] = square(x[i]);
+    r[i] = pown(x[i], 2);
 }
 
 __kernel void <DTYPE_NAME>_sqrt(__global <DTYPE_NAME> *x, __global <DTYPE_NAME> *r)

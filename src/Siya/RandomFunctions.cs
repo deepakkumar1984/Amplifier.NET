@@ -14,32 +14,32 @@ namespace Siya
 
     public class RandomFunctions
     {
-        public NDArray randint(int low, int? high= null, Shape size= null, DType dtype= DType.Float32, Device device= null, NDArray @out= null)
+        public NDArray randint(int low, int? high= null, Shape size= null, DType dtype= DType.Float32, NDArray @out= null)
         {
             throw new NotImplementedException();
         }
 
-        public NDArray uniform(float low = 0, float high = 1, Shape size = null, DType dtype = DType.Float32, Device device = null)
+        public NDArray uniform(float low = 0, float high = 1, Shape size = null, DType dtype = DType.Float32)
         {
             throw new NotImplementedException();
         }
 
-        public NDArray normal(float loc = 0, float scale = 1, Shape size = null, DType dtype = DType.Float32, Device device = null)
+        public NDArray normal(float loc = 0, float scale = 1, Shape size = null, DType dtype = DType.Float32)
         {
             throw new NotImplementedException();
         }
 
-        public NDArray lognormal(float mean = 0, float sigma = 1, Shape size = null, DType dtype = DType.Float32, Device device = null)
+        public NDArray lognormal(float mean = 0, float sigma = 1, Shape size = null, DType dtype = DType.Float32)
         {
             throw new NotImplementedException();
         }
 
-        public NDArray logistic(float loc = 0, float scale = 1, Shape size = null, DType dtype = DType.Float32, Device device = null)
+        public NDArray logistic(float loc = 0, float scale = 1, Shape size = null, DType dtype = DType.Float32)
         {
             throw new NotImplementedException();
         }
 
-        public NDArray gumbel(float loc = 0, float scale = 1, Shape size = null, DType dtype = DType.Float32, Device device = null)
+        public NDArray gumbel(float loc = 0, float scale = 1, Shape size = null, DType dtype = DType.Float32)
         {
             throw new NotImplementedException();
         }
@@ -54,12 +54,12 @@ namespace Siya
             throw new NotImplementedException();
         }
 
-        public NDArray choice(NDArray a, Shape size= null, bool replace= true, NDArray p= null, Device device= null, NDArray @out= null)
+        public NDArray choice(NDArray a, Shape size= null, bool replace= true, NDArray p= null, NDArray @out= null)
         {
             throw new NotImplementedException();
         }
 
-        public NDArray rayleigh(float scale = 1, Shape size = null, DType dtype = DType.Float32, Device device = null)
+        public NDArray rayleigh(float scale = 1, Shape size = null, DType dtype = DType.Float32)
         {
             throw new NotImplementedException();
         }
@@ -69,37 +69,37 @@ namespace Siya
             throw new NotImplementedException();
         }
 
-        public NDArray exponential(float scale = 1, Shape size = null, DType dtype = DType.Float32, Device device = null)
+        public NDArray exponential(float scale = 1, Shape size = null, DType dtype = DType.Float32)
         {
             throw new NotImplementedException();
         }
 
-        public NDArray weibull(float a, Shape size = null, DType dtype = DType.Float32, Device device = null)
+        public NDArray weibull(float a, Shape size = null, DType dtype = DType.Float32)
         {
             throw new NotImplementedException();
         }
 
-        public NDArray weibull(NDArray a, Shape size = null, DType dtype = DType.Float32, Device device = null)
+        public NDArray weibull(NDArray a, Shape size = null, DType dtype = DType.Float32)
         {
             throw new NotImplementedException();
         }
 
-        public NDArray pareto(float a, Shape size = null, DType dtype = DType.Float32, Device device = null)
+        public NDArray pareto(float a, Shape size = null, DType dtype = DType.Float32)
         {
             throw new NotImplementedException();
         }
 
-        public NDArray pareto(NDArray a, Shape size = null, DType dtype = DType.Float32, Device device = null)
+        public NDArray pareto(NDArray a, Shape size = null, DType dtype = DType.Float32)
         {
             throw new NotImplementedException();
         }
 
-        public NDArray power(float a, Shape size = null, DType dtype = DType.Float32, Device device = null)
+        public NDArray power(float a, Shape size = null, DType dtype = DType.Float32)
         {
             throw new NotImplementedException();
         }
 
-        public NDArray power(NDArray a, Shape size = null, DType dtype = DType.Float32, Device device = null)
+        public NDArray power(NDArray a, Shape size = null, DType dtype = DType.Float32)
         {
             throw new NotImplementedException();
         }
@@ -109,42 +109,42 @@ namespace Siya
             throw new NotImplementedException();
         }
 
-        public NDArray gamma(float shape, float scale=1, Shape size = null, DType dtype = DType.Float32, Device device = null)
+        public NDArray gamma(float shape, float scale=1, Shape size = null, DType dtype = DType.Float32)
         {
             throw new NotImplementedException();
         }
 
-        public NDArray gamma(NDArray shape, NDArray scale, Shape size = null, DType dtype = DType.Float32, Device device = null)
+        public NDArray gamma(NDArray shape, NDArray scale, Shape size = null, DType dtype = DType.Float32)
         {
             throw new NotImplementedException();
         }
 
-        public NDArray beta(float a, float b, Shape size = null, DType dtype = DType.Float32, Device device = null)
+        public NDArray beta(float a, float b, Shape size = null, DType dtype = DType.Float32)
         {
             throw new NotImplementedException();
         }
 
-        public NDArray beta(NDArray a, NDArray b, Shape size = null, DType dtype = DType.Float32, Device device = null)
+        public NDArray beta(NDArray a, NDArray b, Shape size = null, DType dtype = DType.Float32)
         {
             throw new NotImplementedException();
         }
 
-        public NDArray f(float dfnum, float dfden, Shape size = null, Device device = null)
+        public NDArray f(float dfnum, float dfden, Shape size = null)
         {
             throw new NotImplementedException();
         }
 
-        public NDArray f(NDArray dfnum, NDArray dfden, Shape size = null, Device device = null)
+        public NDArray f(NDArray dfnum, NDArray dfden, Shape size = null)
         {
             throw new NotImplementedException();
         }
 
-        public NDArray chisquare(float df, Shape size = null, DType dtype = DType.Float32, Device device = null)
+        public NDArray chisquare(float df, Shape size = null, DType dtype = DType.Float32)
         {
             throw new NotImplementedException();
         }
 
-        public NDArray chisquare(NDArray df, Shape size = null, DType dtype = DType.Float32, Device device = null)
+        public NDArray chisquare(NDArray df, Shape size = null, DType dtype = DType.Float32)
         {
             throw new NotImplementedException();
         }
@@ -154,7 +154,7 @@ namespace Siya
             throw new NotImplementedException();
         }
 
-        public NDArray laplace(float loc = 0, float scale = 1, Shape size = null, DType dtype = DType.Float32, Device device = null)
+        public NDArray laplace(float loc = 0, float scale = 1, Shape size = null, DType dtype = DType.Float32)
         {
             throw new NotImplementedException();
         }

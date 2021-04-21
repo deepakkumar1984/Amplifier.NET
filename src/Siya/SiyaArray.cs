@@ -21,14 +21,26 @@ namespace Siya
 
         public long len => Sizes[0];
 
+        public Array data => ToArray();
+
         public NDArray T => throw new NotImplementedException();
 
-        public NDArray(Array data, Device device = null) : base(data, Direction.Input)
+        public NDArray(Array data) : base(data, Direction.Input)
         {
         }
 
-        public NDArray(Shape shape, DType dtype = DType.Float32, Device device = null) : base(shape.Data.ToArray(), dtype, Direction.Input)
+        public NDArray(Shape shape, DType dtype = DType.Float32) : base(shape.Data.ToArray(), dtype, Direction.Input)
         {
+        }
+
+        internal NDArray(IntPtr ptr, Shape shape, DType dtype = DType.Float32) : base(ptr, shape.Data.ToArray(), dtype)
+        {
+        }
+
+        public NDArray reshape(Shape shape)
+        {
+            var xarray = Reshape(shape.Data.ToArray());
+            return new NDArray(xarray.NativePtr, new Shape(xarray.Sizes), xarray.DataType);
         }
 
         public static NDArray operator +(NDArray lhs, NDArray rhs) => throw new NotImplementedException();

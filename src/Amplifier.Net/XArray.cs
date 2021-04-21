@@ -94,6 +94,15 @@ namespace Amplifier
             Direction = direction;
         }
 
+        public XArray(IntPtr ptr, long[] sizes, DType dtype)
+        {
+            Sizes = sizes;
+            this.dtype = dtype;
+            strides = GetContiguousStride(Sizes);
+            long byteSize = dtype.Size() * Count;
+            NativePtr = ptr;
+        }
+
         internal XArray(long[] sizes, long[] strides, IntPtr ptr, DType dtype)
         {
             this.Sizes = sizes;
@@ -151,7 +160,7 @@ namespace Amplifier
             Marshal.FreeHGlobal(NativePtr);
         }
 
-        private XArray View(params long[] sizes)
+        public XArray View(params long[] sizes)
         {
             if (!this.IsContiguous()) throw new InvalidOperationException("Cannot use View on a non-contiguous tensor");
 

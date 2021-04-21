@@ -9,11 +9,11 @@ namespace SiyaBasicTest
         static void Main(string[] args)
         {
             sx.use_device(DeviceType.CPU, 0);
-            NDArray x = new NDArray(new long[] { 1, 1, 1, 1, 1, 1, 1, 1, 1 });
-            NDArray y = new NDArray(new long[] { 3, 3, 3, 3, 3, 3, 3, 3, 3 });
-
+            NDArray x = new NDArray(new float[] { 1, 1, 1, 1, 1, 1, 1, 1, 1 });
+            NDArray y = new NDArray(new float[] { 3, 3, 3, 3, 3, 3, 3, 3, 3 });
+            var z = sx.ones_like(x);
             var r = sx.add(x, y);
-            r = sx.abs(r);
+            var arr = sx.sqrt(r).ToArray();
         }
     }
 }
