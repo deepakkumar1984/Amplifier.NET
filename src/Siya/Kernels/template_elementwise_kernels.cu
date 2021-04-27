@@ -28,6 +28,12 @@ __kernel void <DTYPE_NAME>_remainder(__global <DTYPE_NAME> *x1, __global <DTYPE_
     r[i] = remainder(x1[i], x2[i]);
 }
 
+__kernel void <DTYPE_NAME>_mod(__global <DTYPE_NAME>* x1, __global <DTYPE_NAME>* x2, __global <DTYPE_NAME>* r)
+{
+    int i = get_global_id(0);
+    r[i] = fmod(x1[i], x2[i]);
+}
+
 __kernel void <DTYPE_NAME>_gt(__global <DTYPE_NAME> *x, __global <DTYPE_NAME> *y, __global <DTYPE_NAME> *r)
 {
     int i = get_global_id(0);

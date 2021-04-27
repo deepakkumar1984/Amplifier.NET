@@ -88,6 +88,8 @@ namespace Siya
 
         public static NDArray multiply(NDArray x1, NDArray x2) => binary_exec(x1, x2, "multiply");
 
+        public static NDArray divide(NDArray x1, NDArray x2) => binary_exec(x1, x2, "divide");
+
         public static NDArray negative(NDArray x) => unary_exec(x, "negative");
 
         public static NDArray not_equal(NDArray x1, NDArray x2) => binary_exec(x1, x2, "noteq");
@@ -97,6 +99,8 @@ namespace Siya
         public static NDArray power(NDArray x1, NDArray x2) => binary_exec(x1, x2, "power");
 
         public static NDArray remainder(NDArray x1, NDArray x2) => binary_exec(x1, x2, "remainder");
+
+        public static NDArray mod(NDArray x1, NDArray x2) => binary_exec(x1, x2, "mod");
 
         public static NDArray round(NDArray x) => unary_exec(x, "round");
 

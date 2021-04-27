@@ -26,7 +26,18 @@ namespace Siya
 
         public static NDArray empty_like(NDArray obj, DType? dtype = null) => new NDArray(obj.shape, dtype != null ? dtype.Value : obj.dtype);
 
-        public static NDArray eye(int N, int? M = null, int k = 0, DType dtype = DType.Float32) => throw new NotImplementedException();
+        public static NDArray eye(int N, int? M = null, int k = 0, DType dtype = DType.Float32)
+        {
+            if (M == null)
+                M = N;
+
+            var ret = zeros(new Shape(N, M.Value), dtype);
+            ret = sx.diagonal(ret, k);
+            ret[":"] = 1;
+            return ret;
+        }
+
+        public static NDArray identity(int N, DType dtype = DType.Float32) => eye(N, dtype: dtype);
 
         public static NDArray full(Shape shape, double fill_value, DType dtype = DType.Float32)
         {
@@ -47,5 +58,10 @@ namespace Siya
         public static NDArray zeros(Shape shape, DType dtype = DType.Float32) => full(shape, 0, dtype);
 
         public static NDArray zeros_like(NDArray obj, DType dtype = DType.Float32) => full_like(obj, 0, dtype);
+
+        public static NDArray diagonal(NDArray x, int k = 0)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -11,7 +11,7 @@ namespace Siya
     public partial class sx
     {
         internal static dynamic exec = null;
-        public static void use_device(DeviceType type, int id)
+        public static void use_device(int id = 0)
         {
             compiler.UseDevice(id);
             compiler.CompileKernel(get_source());
@@ -73,6 +73,9 @@ namespace Siya
 
         private static (DType, string) check_and_get_dtype(NDArray[] arrays)
         {
+            if (exec == null)
+                use_device();
+
             int size = arrays[0].dtype.Size();
             DType finalDtype = arrays[0].dtype;
             foreach (var item in arrays)

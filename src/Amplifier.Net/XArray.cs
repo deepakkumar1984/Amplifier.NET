@@ -65,8 +65,9 @@ namespace Amplifier
         {
             get;
             set;
-
         }
+
+        
 
         public XArray(Array data, Direction direction = Direction.Input)
         {

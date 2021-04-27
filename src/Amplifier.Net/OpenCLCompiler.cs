@@ -589,7 +589,7 @@ namespace Amplifier
                     if (mode == IOMode.Out)
                         flag |= ComputeMemoryFlags.AllocateHostPointer;
                     else
-                        flag |= ComputeMemoryFlags.CopyHostPointer;
+                        flag |= ComputeMemoryFlags.UseHostPointer;
                     GenericArrayMemory mem = new GenericArrayMemory(_context, flag, (Array)item);
                     kernel.SetMemoryArgument(i, mem);
                     result.Add(i, mem);
@@ -601,7 +601,7 @@ namespace Amplifier
                     if (mode == IOMode.Out)
                         flag |= ComputeMemoryFlags.AllocateHostPointer;
                     else
-                        flag |= ComputeMemoryFlags.CopyHostPointer;
+                        flag |= ComputeMemoryFlags.UseHostPointer;
                     GenericArrayMemory mem = new GenericArrayMemory(_context, flag, (XArray)item);
                     kernel.SetMemoryArgument(i, mem);
                     result.Add(i, mem);
@@ -630,7 +630,7 @@ namespace Amplifier
                 if (item.GetType().IsArray)
                 {
                     var flag = ComputeMemoryFlags.ReadWrite;
-                    flag |= ComputeMemoryFlags.CopyHostPointer;
+                    flag |= ComputeMemoryFlags.UseHostPointer;
                     GenericArrayMemory mem = new GenericArrayMemory(_context, flag, (Array)item);
                     kernel.SetMemoryArgument(i, mem);
                     result.Add(i, mem);
@@ -638,7 +638,7 @@ namespace Amplifier
                 else if (item.GetType().Name == "XArray" || item.GetType().BaseType.Name == "XArray")
                 {
                     var flag = ComputeMemoryFlags.ReadWrite;
-                    flag |= ComputeMemoryFlags.CopyHostPointer;
+                    flag |= ComputeMemoryFlags.UseHostPointer;
                     GenericArrayMemory mem = new GenericArrayMemory(_context, flag, (XArray)item);
                     kernel.SetMemoryArgument(i, mem);
                     result.Add(i, mem);
