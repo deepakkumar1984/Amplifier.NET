@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Siya
 {
-    public partial class sx
+    public partial class nd
     {
         internal static dynamic exec = null;
         public static void use_device(int id = 0)
@@ -71,7 +71,7 @@ namespace Siya
             return x;
         }
 
-        private static (DType, string) check_and_get_dtype(NDArray[] arrays)
+        internal static (DType, string) check_and_get_dtype(NDArray[] arrays)
         {
             if (exec == null)
                 use_device();

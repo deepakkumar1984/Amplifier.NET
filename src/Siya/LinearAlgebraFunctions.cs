@@ -7,21 +7,21 @@ using System.Threading.Tasks;
 
 namespace Siya
 {
-    public partial class sx
+    public partial class nd
     {
         public static LinearAlgebraFunctions linalg = new LinearAlgebraFunctions();
 
-        public NDArray matmul(NDArray x1, NDArray x2)
+        public static NDArray matmul(NDArray x1, NDArray x2)
         {
             return linalg.matmul(x1, x2);
         }
 
-        public NDArray cross(NDArray x1, NDArray x2)
+        public static NDArray cross(NDArray x1, NDArray x2)
         {
             return linalg.cross(x1, x2);
         }
 
-        public NDArray dot(NDArray a, NDArray b)
+        public static NDArray dot(NDArray a, NDArray b)
         {
             return linalg.dot(a, b);
         }
@@ -74,9 +74,26 @@ namespace Siya
             throw new NotImplementedException();
         }
 
-        public NDArray matmul(NDArray x1, NDArray x2)
+        public NDArray matmul(NDArray a, NDArray b)
         {
-            throw new NotImplementedException();
+            var (dtype, dtype_str) = nd.check_and_get_dtype(new NDArray[] { a, b });
+            if (a.ndim != 2 && b.ndim != 2)
+            {
+                throw new ArgumentException("Dot products works with 2 dimensional array");
+            }
+
+            long M = a.shape[0];
+            long N = b.shape[1];
+            long K = a.shape[1];
+
+            var r = nd.zeros(new Shape(M, N), dtype);
+
+            using (new ExecuteOptions(null, (M, N), null))
+            {
+                nd.compiler.Execute($"{dtype_str}_matmul", M, N, K, a, b, r);
+            }
+
+            return r;
         }
 
         public NDArray cross(NDArray x1, NDArray x2)
@@ -86,7 +103,24 @@ namespace Siya
 
         public NDArray dot(NDArray a, NDArray b)
         {
-            throw new NotImplementedException();
+            var (dtype, dtype_str) = nd.check_and_get_dtype(new NDArray[] { a, b });
+            if (a.ndim != 2 && b.ndim != 2)
+            {
+                throw new ArgumentException("Dot products works with 2 dimensional array");
+            }
+
+            long M = a.shape[0];
+            long N = b.shape[1];
+            long K = a.shape[1];
+
+            var r = nd.zeros(new Shape(M, N), dtype);
+
+            using (new ExecuteOptions(null, (M, N), null))
+            {
+                nd.compiler.Execute($"{dtype_str}_matmul", M, N, K, a, b, r);
+            }
+
+            return r;
         }
 
         public NDArray vdot(NDArray a, NDArray b)

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Siya
 {
-    public partial class sx
+    public partial class nd
     {
         public static double e = 2.71828182845904523536028747135266249775724709369995;
         public static double pi = 3.1415926535897932384626433;

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Siya
 {
-    public partial class sx
+    public partial class nd
     {
         internal static OpenCLCompiler compiler = new OpenCLCompiler();
 

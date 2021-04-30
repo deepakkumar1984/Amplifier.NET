@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Siya
 {
-    public partial class sx
+    public partial class nd
     {
         public static NDArray arange(float start, float stop, float step, DType dtype = DType.Float32) => throw new NotImplementedException();
 
@@ -16,10 +16,10 @@ namespace Siya
             if(copy.HasValue && copy.Value)
             {
                 Array newArray = (Array)obj.Clone();
-                return sx.astype(new NDArray(newArray), dtype);
+                return nd.astype(new NDArray(newArray), dtype);
             }
 
-            return sx.astype(new NDArray(obj), dtype);
+            return nd.astype(new NDArray(obj), dtype);
         }
 
         public static NDArray empty(Shape shape, DType dtype = DType.Float32) => new NDArray(shape, dtype);
@@ -32,7 +32,7 @@ namespace Siya
                 M = N;
 
             var ret = zeros(new Shape(N, M.Value), dtype);
-            ret = sx.diagonal(ret, k);
+            ret = nd.diagonal(ret, k);
             ret[":"] = 1;
             return ret;
         }

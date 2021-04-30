@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Siya
 {
-    public partial class sx
+    public partial class nd
     {
         public static NDArray argmax(NDArray x, int? axis = null, bool keepdims = false) => throw new NotImplementedException();
 

@@ -8,13 +8,18 @@ namespace SiyaBasicTest
     {
         static void Main(string[] args)
         {
-            sx.use_device(0);
+            nd.use_device(1);
             DateTime start = DateTime.Now;
-            NDArray x = sx.full(new Shape(3000, 3000), 3);
-            NDArray y = sx.full(new Shape(3000, 3000), 3);
-            var z = 0.5 * sx.sqrt(x) + sx.sin(y) * sx.log(x) - sx.exp(y);
-            var data = z.ToArray().GetValue(0, 0);
-            Console.WriteLine($"{data} -> {(DateTime.Now - start).TotalMilliseconds / 1000} sec");
+            //NDArray x = nd.full(new Shape(30000, 9000), 3);
+            //NDArray y = nd.full(new Shape(30000, 9000), 3);
+            //var z = 0.5 * nd.sqrt(x) + nd.sin(y) * nd.log(x) - nd.exp(y);
+            //var data = z.ToArray().GetValue(0, 0);
+            //Console.WriteLine($"{data} -> {(DateTime.Now - start).TotalMilliseconds / 1000} sec");
+
+            var x = new NDArray(new float[] { 1, 2, 3, 3, 2, 1 }).reshape((3, 2));
+            var y = new NDArray(new float[] { 1, 2, 3, 3, 2, 1 }).reshape((2, 3));
+            var z = nd.dot(x, y);
+            var data = z.data;
         }
     }
 }

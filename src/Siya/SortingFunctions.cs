@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Siya
 {
-    public partial class sx
+    public partial class nd
     {
         public static NDArray argsort(NDArray x, int axis = -1, bool descending = false, bool stable = true) => throw new NotImplementedException();
 

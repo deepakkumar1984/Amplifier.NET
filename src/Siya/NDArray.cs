@@ -55,97 +55,97 @@ namespace Siya
             }
         }
 
-        public static NDArray operator +(NDArray lhs, NDArray rhs) => sx.add(lhs, rhs);
+        public static NDArray operator +(NDArray lhs, NDArray rhs) => nd.add(lhs, rhs);
 
-        public static NDArray operator +(NDArray lhs, double rhs) => sx.add(lhs, sx.full_like(lhs, rhs));
+        public static NDArray operator +(NDArray lhs, double rhs) => nd.add(lhs, nd.full_like(lhs, rhs));
 
-        public static NDArray operator +(double lhs, NDArray rhs) => sx.add(sx.full_like(rhs, lhs), rhs);
+        public static NDArray operator +(double lhs, NDArray rhs) => nd.add(nd.full_like(rhs, lhs), rhs);
 
-        public static NDArray operator -(NDArray lhs, NDArray rhs) => sx.subtract(lhs, rhs);
+        public static NDArray operator -(NDArray lhs, NDArray rhs) => nd.subtract(lhs, rhs);
 
-        public static NDArray operator -(NDArray lhs, double rhs) => sx.subtract(lhs, sx.full_like(lhs, rhs));
+        public static NDArray operator -(NDArray lhs, double rhs) => nd.subtract(lhs, nd.full_like(lhs, rhs));
 
-        public static NDArray operator -(double lhs, NDArray rhs) => sx.subtract(sx.full_like(rhs, lhs), rhs);
+        public static NDArray operator -(double lhs, NDArray rhs) => nd.subtract(nd.full_like(rhs, lhs), rhs);
 
-        public static NDArray operator *(NDArray lhs, NDArray rhs) => sx.multiply(lhs, rhs);
+        public static NDArray operator *(NDArray lhs, NDArray rhs) => nd.multiply(lhs, rhs);
 
-        public static NDArray operator *(NDArray lhs, double rhs) => sx.multiply(lhs, sx.full_like(lhs, rhs));
+        public static NDArray operator *(NDArray lhs, double rhs) => nd.multiply(lhs, nd.full_like(lhs, rhs));
 
-        public static NDArray operator *(double lhs, NDArray rhs) => sx.multiply(sx.full_like(rhs, lhs), rhs);
+        public static NDArray operator *(double lhs, NDArray rhs) => nd.multiply(nd.full_like(rhs, lhs), rhs);
 
-        public static NDArray operator /(NDArray lhs, NDArray rhs) => sx.divide(lhs, rhs);
+        public static NDArray operator /(NDArray lhs, NDArray rhs) => nd.divide(lhs, rhs);
 
-        public static NDArray operator /(NDArray lhs, double rhs) => sx.divide(lhs, sx.full_like(lhs, rhs));
+        public static NDArray operator /(NDArray lhs, double rhs) => nd.divide(lhs, nd.full_like(lhs, rhs));
 
-        public static NDArray operator /(double lhs, NDArray rhs) => sx.divide(sx.full_like(rhs, lhs), rhs);
+        public static NDArray operator /(double lhs, NDArray rhs) => nd.divide(nd.full_like(rhs, lhs), rhs);
 
-        public static NDArray operator >(NDArray lhs, NDArray rhs) => sx.greater(lhs, rhs);
+        public static NDArray operator >(NDArray lhs, NDArray rhs) => nd.greater(lhs, rhs);
 
-        public static NDArray operator >(NDArray lhs, double rhs) => sx.greater(lhs, sx.full_like(lhs, rhs));
+        public static NDArray operator >(NDArray lhs, double rhs) => nd.greater(lhs, nd.full_like(lhs, rhs));
 
-        public static NDArray operator >(double lhs, NDArray rhs) => sx.greater(sx.full_like(rhs, lhs), rhs);
+        public static NDArray operator >(double lhs, NDArray rhs) => nd.greater(nd.full_like(rhs, lhs), rhs);
 
-        public static NDArray operator <(NDArray lhs, NDArray rhs) => sx.less(lhs, rhs);
+        public static NDArray operator <(NDArray lhs, NDArray rhs) => nd.less(lhs, rhs);
 
-        public static NDArray operator <(NDArray lhs, double rhs) => sx.less(lhs, sx.full_like(lhs, rhs));
+        public static NDArray operator <(NDArray lhs, double rhs) => nd.less(lhs, nd.full_like(lhs, rhs));
 
-        public static NDArray operator <(double lhs, NDArray rhs) => sx.less(sx.full_like(rhs, lhs), rhs);
+        public static NDArray operator <(double lhs, NDArray rhs) => nd.less(nd.full_like(rhs, lhs), rhs);
 
-        public static NDArray operator >=(NDArray lhs, NDArray rhs) => sx.greater_equal(lhs, rhs);
+        public static NDArray operator >=(NDArray lhs, NDArray rhs) => nd.greater_equal(lhs, rhs);
 
-        public static NDArray operator >=(NDArray lhs, double rhs) => sx.greater_equal(lhs, sx.full_like(lhs, rhs));
+        public static NDArray operator >=(NDArray lhs, double rhs) => nd.greater_equal(lhs, nd.full_like(lhs, rhs));
 
-        public static NDArray operator >=(double lhs, NDArray rhs) => sx.greater_equal(sx.full_like(rhs, lhs), rhs);
+        public static NDArray operator >=(double lhs, NDArray rhs) => nd.greater_equal(nd.full_like(rhs, lhs), rhs);
 
-        public static NDArray operator <=(NDArray lhs, NDArray rhs) => sx.less_equal(lhs, rhs);
+        public static NDArray operator <=(NDArray lhs, NDArray rhs) => nd.less_equal(lhs, rhs);
 
-        public static NDArray operator <=(NDArray lhs, double rhs) => sx.less_equal(lhs, sx.full_like(lhs, rhs));
+        public static NDArray operator <=(NDArray lhs, double rhs) => nd.less_equal(lhs, nd.full_like(lhs, rhs));
 
-        public static NDArray operator <=(double lhs, NDArray rhs) => sx.less_equal(sx.full_like(rhs, lhs), rhs);
+        public static NDArray operator <=(double lhs, NDArray rhs) => nd.less_equal(nd.full_like(rhs, lhs), rhs);
 
-        public static NDArray operator ==(NDArray lhs, NDArray rhs) => sx.equal(lhs, rhs);
+        public static NDArray operator ==(NDArray lhs, NDArray rhs) => nd.equal(lhs, rhs);
 
-        public static NDArray operator ==(NDArray lhs, double rhs) => sx.equal(lhs, sx.full_like(lhs, rhs));
+        public static NDArray operator ==(NDArray lhs, double rhs) => nd.equal(lhs, nd.full_like(lhs, rhs));
 
-        public static NDArray operator ==(double lhs, NDArray rhs) => sx.equal(sx.full_like(rhs, lhs), rhs);
+        public static NDArray operator ==(double lhs, NDArray rhs) => nd.equal(nd.full_like(rhs, lhs), rhs);
 
-        public static NDArray operator !=(NDArray lhs, NDArray rhs) => sx.not_equal(lhs, rhs);
+        public static NDArray operator !=(NDArray lhs, NDArray rhs) => nd.not_equal(lhs, rhs);
 
-        public static NDArray operator !=(NDArray lhs, double rhs) => sx.not_equal(lhs, sx.full_like(lhs, rhs));
+        public static NDArray operator !=(NDArray lhs, double rhs) => nd.not_equal(lhs, nd.full_like(lhs, rhs));
 
-        public static NDArray operator !=(double lhs, NDArray rhs) => sx.not_equal(sx.full_like(rhs, lhs), rhs);
+        public static NDArray operator !=(double lhs, NDArray rhs) => nd.not_equal(nd.full_like(rhs, lhs), rhs);
 
-        public static NDArray operator -(NDArray x) => sx.negative(x);
+        public static NDArray operator -(NDArray x) => nd.negative(x);
 
-        public static NDArray operator ~(NDArray x) => sx.abs(x);
+        public static NDArray operator ~(NDArray x) => nd.abs(x);
 
-        public static NDArray operator %(NDArray lhs, NDArray rhs) => sx.mod(lhs, rhs);
+        public static NDArray operator %(NDArray lhs, NDArray rhs) => nd.mod(lhs, rhs);
 
-        public static NDArray operator %(NDArray lhs, double rhs) => sx.mod(lhs, sx.full_like(lhs, rhs));
+        public static NDArray operator %(NDArray lhs, double rhs) => nd.mod(lhs, nd.full_like(lhs, rhs));
 
-        public static NDArray operator %(double lhs, NDArray rhs) => sx.mod(sx.full_like(rhs, lhs), rhs);
+        public static NDArray operator %(double lhs, NDArray rhs) => nd.mod(nd.full_like(rhs, lhs), rhs);
 
-        public static NDArray operator ^(NDArray lhs, NDArray rhs) => sx.logical_xor(lhs, rhs);
+        public static NDArray operator ^(NDArray lhs, NDArray rhs) => nd.logical_xor(lhs, rhs);
 
-        public static NDArray operator ^(NDArray lhs, double rhs) => sx.logical_xor(lhs, sx.full_like(lhs, rhs));
+        public static NDArray operator ^(NDArray lhs, double rhs) => nd.logical_xor(lhs, nd.full_like(lhs, rhs));
 
-        public static NDArray operator ^(double lhs, NDArray rhs) => sx.logical_xor(sx.full_like(rhs, lhs), rhs);
+        public static NDArray operator ^(double lhs, NDArray rhs) => nd.logical_xor(nd.full_like(rhs, lhs), rhs);
 
-        public static NDArray operator &(NDArray lhs, NDArray rhs) => sx.bitwise_and(lhs, rhs);
+        public static NDArray operator &(NDArray lhs, NDArray rhs) => nd.bitwise_and(lhs, rhs);
 
-        public static NDArray operator &(NDArray lhs, double rhs) => sx.bitwise_and(lhs, sx.full_like(lhs, rhs));
+        public static NDArray operator &(NDArray lhs, double rhs) => nd.bitwise_and(lhs, nd.full_like(lhs, rhs));
 
-        public static NDArray operator &(double lhs, NDArray rhs) => sx.bitwise_and(sx.full_like(rhs, lhs), rhs);
+        public static NDArray operator &(double lhs, NDArray rhs) => nd.bitwise_and(nd.full_like(rhs, lhs), rhs);
 
-        public static NDArray operator |(NDArray lhs, NDArray rhs) => sx.bitwise_or(lhs, rhs);
+        public static NDArray operator |(NDArray lhs, NDArray rhs) => nd.bitwise_or(lhs, rhs);
 
-        public static NDArray operator |(NDArray lhs, double rhs) => sx.bitwise_or(lhs, sx.full_like(lhs, rhs));
+        public static NDArray operator |(NDArray lhs, double rhs) => nd.bitwise_or(lhs, nd.full_like(lhs, rhs));
 
-        public static NDArray operator |(double lhs, NDArray rhs) => sx.bitwise_or(sx.full_like(rhs, lhs), rhs);
+        public static NDArray operator |(double lhs, NDArray rhs) => nd.bitwise_or(nd.full_like(rhs, lhs), rhs);
 
-        public static NDArray operator >>(NDArray lhs, int rhs) => sx.bitwise_right_shift(lhs, sx.full_like(lhs, rhs));
+        public static NDArray operator >>(NDArray lhs, int rhs) => nd.bitwise_right_shift(lhs, nd.full_like(lhs, rhs));
 
-        public static NDArray operator <<(NDArray lhs, int rhs) => sx.bitwise_left_shift(lhs, sx.full_like(lhs, rhs));
+        public static NDArray operator <<(NDArray lhs, int rhs) => nd.bitwise_left_shift(lhs, nd.full_like(lhs, rhs));
 
         public override bool Equals(object obj)
         {

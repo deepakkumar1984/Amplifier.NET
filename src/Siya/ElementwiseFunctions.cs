@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Siya
 {
-    public partial class sx
+    public partial class nd
     {
         public static NDArray abs(NDArray x) => unary_exec(x, "abs");
 

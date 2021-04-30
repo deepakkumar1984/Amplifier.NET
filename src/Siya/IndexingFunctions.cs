@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Siya
 {
-    public partial class sx
+    public partial class nd
     {
         internal static NDArray single_axis_indexing(int index) => throw new NotImplementedException();
 

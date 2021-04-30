@@ -282,7 +282,10 @@ namespace Amplifier
                 else
                     buffers = BuildKernelArguments(args, kernel, totalLength);
 
-                commands.Execute(kernel, null, length.ToArray(), null, null);
+                if(OpenCLVars.Enabled)
+                    commands.Execute(kernel, OpenCLVars.GlobalWorkOffset, OpenCLVars.GlobalWorkSize, OpenCLVars.LocalWorkSize, null);
+                else
+                    commands.Execute(kernel, null, length.ToArray(), null, null);
 
                 for (int i = 0; i < args.Length; i++)
                 {

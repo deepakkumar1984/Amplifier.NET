@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Siya
 {
-    public partial class sx
+    public partial class nd
     {
         public static NDArray concat(NDArray[] arrays, int axis = 0) => throw new NotImplementedException();
 
