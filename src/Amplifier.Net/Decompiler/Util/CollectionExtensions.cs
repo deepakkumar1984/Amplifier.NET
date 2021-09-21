@@ -51,12 +51,12 @@ namespace Amplifier.Decompiler.Util
 			}
 		}
 
-		public static HashSet<T> ToHashSet<T>(this IEnumerable<T> input)
-		{
-			return new HashSet<T>(input);
-		}
+        //public static HashSet<T> ToHashSet<T>(this IEnumerable<T> input)
+        //{
+        //    return new HashSet<T>(input);
+        //}
 
-		public static IEnumerable<T> SkipLast<T>(this IReadOnlyCollection<T> input, int count)
+        public static IEnumerable<T> SkipLast<T>(this IReadOnlyCollection<T> input, int count)
 		{
 			return input.Take(input.Count - count);
 		}

@@ -488,10 +488,10 @@ namespace Amplifier.Decompiler.IL
 			var blockBuilder = new BlockBuilder(body, variableByExceptionHandler);
 			blockBuilder.CreateBlocks(mainContainer, instructionBuilder, isBranchTarget, cancellationToken);
 			var function = new ILFunction(this.method, body.GetCodeSize(), this.genericContext, mainContainer);
-			CollectionExtensions.AddRange(function.Variables, parameterVariables);
-			CollectionExtensions.AddRange(function.Variables, localVariables);
-			CollectionExtensions.AddRange(function.Variables, stackVariables);
-			CollectionExtensions.AddRange(function.Variables, variableByExceptionHandler.Values);
+			Util.CollectionExtensions.AddRange(function.Variables, parameterVariables);
+            Util.CollectionExtensions.AddRange(function.Variables, localVariables);
+			Util.CollectionExtensions.AddRange(function.Variables, stackVariables);
+			Util.CollectionExtensions.AddRange(function.Variables, variableByExceptionHandler.Values);
 			function.AddRef(); // mark the root node
 			foreach (var c in function.Descendants.OfType<BlockContainer>()) {
 				c.SortBlocks();

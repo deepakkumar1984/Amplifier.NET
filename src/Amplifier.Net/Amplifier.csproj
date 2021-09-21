@@ -14,7 +14,7 @@
     <PackageTags>OpenCL, Kernel, .NET GPU, CSharp GPU</PackageTags>
     <PackageIconUrl>https://raw.githubusercontent.com/tech-quantum/Amplifier.NET/master/icon_32.png</PackageIconUrl>
     <PackageId>Amplifier.NET</PackageId>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>netstandard2.1</TargetFramework>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <PackageReleaseNotes>1.0.8-------------------
@@ -60,7 +60,7 @@
     <Compile Remove="CUDACompiler.cs" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Humanizer.Core" Version="2.8.26" />
+    <PackageReference Include="Humanizer.Core" Version="2.11.10" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="Newtonsoft.Json.Bson" Version="1.0.2" />
     <PackageReference Include="System.Collections.Immutable" Version="5.0.0" />
