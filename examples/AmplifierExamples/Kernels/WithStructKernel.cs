@@ -6,7 +6,7 @@ namespace AmplifierExamples.Kernels
     class WithStructKernel : OpenCLFunctions
     {
         [OpenCLKernel]
-        void Fill([Amplifier.OpenCL.Global][Amplifier.OpenCL.Struct] SampleStruct[] x, float value)
+        void Fill([Global][Struct] SampleStruct[] x, float value)
         {
             int i = get_global_id(0);
             x[i].VarA = value;
@@ -23,6 +23,13 @@ namespace AmplifierExamples.Kernels
         private float GetVar(float v)
         {
             return v * 2;
+        }
+
+        [OpenCLKernel]
+        public void Compute([Global][Struct] Vecter3D[] x, [Global] double[] y, double a)
+        {
+            int i = get_global_id(0);
+            y[i] = a * x[i].x + a * x[i].y + a * x[i].z;
         }
     }
 }

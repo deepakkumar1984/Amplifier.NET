@@ -10,10 +10,10 @@ namespace AmplifierExamples
         {
             IExample example = null;
 
-            Console.WriteLine("---------------------Basic example---------------------------");
-            example = new SimpleKernelEx();
-            example.Execute();
-            Console.WriteLine("\n---------------------Basic example---------------------------");
+            //Console.WriteLine("---------------------Basic example---------------------------");
+            //example = new SimpleKernelEx();
+            //example.Execute();
+            //Console.WriteLine("\n---------------------Basic example---------------------------");
 
             //PrintThreeEmptyLines();
 
@@ -45,13 +45,13 @@ namespace AmplifierExamples
 
             //PrintThreeEmptyLines();
 
-            //Console.WriteLine("---------------------Complex math with struct example---------------------------");
-            //example = new WithStructEx();
-            //example.Execute();
-
-            Console.WriteLine("---------------------Matrix multiplication example---------------------------");
-            example = new MatrixMulExample();
+            Console.WriteLine("---------------------Complex math with struct example---------------------------");
+            example = new WithStructEx();
             example.Execute();
+
+            //Console.WriteLine("---------------------Matrix multiplication example---------------------------");
+            //example = new MatrixMulExample();
+            //example.Execute();
 
             Console.ReadLine();
         }
