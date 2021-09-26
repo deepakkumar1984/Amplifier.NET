@@ -36,7 +36,7 @@ namespace AmplifierExamples
 
             //Create variable a, b and r
             var x = new XArray(new float[] { 1, 2, 3, 4, 5, 6, 7, 8, 9 }).Reshape(3, 3);
-            var y = new XArray(new int[] { 3, 3 });
+            var y = new XArray(new float[] { 3, 3 });
             var z = new XArray(new float[] { 3, 3 });
 
             //Get the execution engine
@@ -45,8 +45,9 @@ namespace AmplifierExamples
             //Execute fill kernel method
             exec.Fill(y, 0.5f);
             var r = y.ToArray();
+
             //Execute AddData kernel method
-            exec.AddTensor(x, y, z);
+            exec.AddData(x, y, z);
             r = z.ToArray();
             //Execute AddHalf kernel method
             //var xhalf = Array.ConvertAll(x, v => (half)v);

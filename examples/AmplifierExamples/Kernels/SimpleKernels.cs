@@ -12,7 +12,7 @@ namespace AmplifierExamples.Kernels
         {
             int i = get_global_id(0);
             b[i] = 0.5f * b[i];
-            r[i] = a[i] + b[i];
+            r[i] = a[i] + b[i] + M_PI;
             a[i] += 2; // result will not copy out
         }
 
