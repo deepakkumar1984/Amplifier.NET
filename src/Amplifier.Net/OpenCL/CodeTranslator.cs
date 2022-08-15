@@ -29,6 +29,8 @@ namespace Amplifier.OpenCL
             code = code
                     .Replace("[OpenCLKernel]", "__kernel")
                     .Replace("[Global]", "global")
+                    .Replace("[Local]", "local")
+                    .Replace("[Constant]", "constant")
                     .Replace("[Struct]", "struct")
                     .Replace("[Input]", "")
                     .Replace("[Output]", "")

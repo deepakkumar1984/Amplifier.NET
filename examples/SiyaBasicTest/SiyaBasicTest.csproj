@@ -6,8 +6,4 @@
     <Platforms>AnyCPU;x64</Platforms>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\src\Siya\Siya.csproj" />
-  </ItemGroup>
-
 </Project>

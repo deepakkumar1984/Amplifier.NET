@@ -11,8 +11,8 @@ namespace AmplifierExamples
             IExample example = null;
 
             //Console.WriteLine("---------------------Basic example---------------------------");
-            //example = new SimpleKernelEx();
-            //example.Execute();
+            example = new SimpleKernelEx();
+            example.Execute();
             //Console.WriteLine("\n---------------------Basic example---------------------------");
 
             //PrintThreeEmptyLines();
