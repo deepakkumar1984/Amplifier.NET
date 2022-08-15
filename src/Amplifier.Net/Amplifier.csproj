@@ -3,13 +3,13 @@
   <PropertyGroup>
     <AssemblyName>Amplifier</AssemblyName>
     <RootNamespace>Amplifier</RootNamespace>
-    <Version>1.0.8</Version>
+    <Version>1.1.0</Version>
     <Authors>Deepak Battini</Authors>
     <Company>Tech Quantum</Company>
     <Description>Amplifier allows .NET developers to easily run complex applications with intensive mathematical computation on Intel CPU/GPU, NVIDIA, AMD without writing any additional C kernel code. Write your function in .NET and Amplifier will take care of running it on your favorite hardware.</Description>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
-    <PackageProjectUrl>https://tech-quantum.github.io/Amplifier.NET/</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/tech-quantum/Amplifier.NET</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/deepakkumar1984/Amplifier.NET</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/deepakkumar1984/Amplifier.NET</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>OpenCL, Kernel, .NET GPU, CSharp GPU</PackageTags>
     <PackageIconUrl>https://raw.githubusercontent.com/tech-quantum/Amplifier.NET/master/icon_32.png</PackageIconUrl>
