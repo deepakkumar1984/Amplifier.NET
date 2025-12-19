@@ -45,8 +45,14 @@ namespace AmplifierExamples
 
             //PrintThreeEmptyLines();
 
-            Console.WriteLine("---------------------Complex math with struct example---------------------------");
-            example = new WithStructEx();
+            //Console.WriteLine("---------------------Complex math with struct example---------------------------");
+            //example = new WithStructEx();
+            //example.Execute();
+
+            //PrintThreeEmptyLines();
+
+            Console.WriteLine("---------------------OpenCL 3.0 Comprehensive Test---------------------------");
+            example = new OpenCL3Example();
             example.Execute();
 
             //Console.WriteLine("---------------------Matrix multiplication example---------------------------");

@@ -71,15 +71,19 @@ namespace Amplifier.OpenCL
                 code = code.Replace(item, "");
             }
 
-            Regex floatRegEx = new Regex(@"(\d+)(\.\d+)*f]?");
-            var matches = floatRegEx.Matches(code);
-            foreach (Match match in matches)
-            {
-                code = code.Replace(match.Value, match.Value.Replace("f", ""));
-            }
+            // Replace C# float constants with OpenCL-compatible values
+            code = code.Replace("float.MinValue", "(-3.4028234e+38f)");
+            code = code.Replace("float.MaxValue", "(3.4028234e+38f)");
 
-            floatRegEx = new Regex(@"(\d+)(\.\d+)*u]?");
-            matches = floatRegEx.Matches(code);
+            // The decompiler may add 'f' suffix to integer literals which is invalid in OpenCL C
+            // Remove 'f' suffix from integer literals (numbers without decimal point)
+            // e.g., "2f" -> "2", but keep "2.0f" as is
+            Regex intFloatRegEx = new Regex(@"(\d+)f(?!\.)");
+            code = intFloatRegEx.Replace(code, "$1");
+
+            // Handle unsigned suffix (just remove 'u')
+            Regex uintRegEx = new Regex(@"(\d+)u\b");
+            var matches = uintRegEx.Matches(code);
             foreach (Match match in matches)
             {
                 code = code.Replace(match.Value, match.Value.Replace("u", ""));
