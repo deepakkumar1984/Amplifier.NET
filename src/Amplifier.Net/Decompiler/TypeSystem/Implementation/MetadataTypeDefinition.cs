@@ -160,8 +160,8 @@ namespace Amplifier.Decompiler.TypeSystem.Implementation
 				var fieldCollection = metadata.GetTypeDefinition(handle).GetFields();
 				var fieldList = new List<IField>(fieldCollection.Count);
 				foreach (FieldDefinitionHandle h in fieldCollection) {
-					var field = metadata.GetFieldDefinition(h);
-					var attr = field.Attributes;
+					var fieldDef = metadata.GetFieldDefinition(h);
+					var attr = fieldDef.Attributes;
 					if (module.IsVisible(attr)) {
 						fieldList.Add(module.GetDefinition(h));
 					}
