@@ -169,9 +169,9 @@ namespace Amplifier
         public override void CompileKernel(params Type[] classes)
         {
             StringBuilder source = new StringBuilder();
-            source.AppendLine("#ifdef cl_khr_fp64");
+            //source.AppendLine("#ifdef cl_khr_fp64");
             source.AppendLine("#pragma OPENCL EXTENSION cl_khr_fp64 : enable");
-            source.AppendLine("#endif");
+            //source.AppendLine("#endif");
             source.AppendLine("#define NELEMS(x)  (sizeof(x) / sizeof((x)[0]))");
             source.AppendLine("typedef unsigned char byte;");
             source.AppendLine("typedef char sbyte;");
@@ -206,9 +206,9 @@ namespace Amplifier
         {
             KernelFunctions.Clear();
             StringBuilder src = new StringBuilder();
-            src.AppendLine("#ifdef cl_khr_fp64");
+            //src.AppendLine("#ifdef cl_khr_fp64");
             src.AppendLine("#pragma OPENCL EXTENSION cl_khr_fp64 : enable");
-            src.AppendLine("#endif");
+            //src.AppendLine("#endif");
             src.AppendLine("#define NELEMS(x)  (sizeof(x) / sizeof((x)[0]))");
             src.AppendLine("typedef unsigned char byte;");
             src.AppendLine("typedef char sbyte;");

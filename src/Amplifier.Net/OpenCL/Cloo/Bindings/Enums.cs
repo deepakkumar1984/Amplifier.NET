@@ -136,6 +136,24 @@ namespace Amplifier.OpenCL.Cloo
         InvalidMipLevel = -62,
         /// <summary> </summary>
         InvalidGlobalWorkSize = -63,
+        /// <summary> OpenCL 2.0: Invalid property </summary>
+        InvalidProperty = -64,
+        /// <summary> OpenCL 2.0: Invalid image descriptor </summary>
+        InvalidImageDescriptor = -65,
+        /// <summary> OpenCL 2.0: Invalid compiler options </summary>
+        InvalidCompilerOptions = -66,
+        /// <summary> OpenCL 2.0: Invalid linker options </summary>
+        InvalidLinkerOptions = -67,
+        /// <summary> OpenCL 2.0: Invalid device partition count </summary>
+        InvalidDevicePartitionCount = -68,
+        /// <summary> OpenCL 2.0: Invalid pipe size </summary>
+        InvalidPipeSize = -69,
+        /// <summary> OpenCL 2.0: Invalid device queue </summary>
+        InvalidDeviceQueue = -70,
+        /// <summary> OpenCL 2.2: Invalid spec ID </summary>
+        InvalidSpecId = -71,
+        /// <summary> OpenCL 2.2: Max size restriction exceeded </summary>
+        MaxSizeRestrictionExceeded = -72,
         /// <summary> </summary>
         CL_INVALID_GL_SHAREGROUP_REFERENCE_KHR = -1000,
         /// <summary> </summary>
@@ -154,9 +172,19 @@ namespace Amplifier.OpenCL.Cloo
     internal enum OpenCLVersion : int
     {
         /// <summary> </summary>
-        Version_1_0 = 1,
+        Version_1_0 = 100,
         /// <summary> </summary>
-        Version_1_1 = 1
+        Version_1_1 = 110,
+        /// <summary> </summary>
+        Version_1_2 = 120,
+        /// <summary> </summary>
+        Version_2_0 = 200,
+        /// <summary> </summary>
+        Version_2_1 = 210,
+        /// <summary> </summary>
+        Version_2_2 = 220,
+        /// <summary> </summary>
+        Version_3_0 = 300
     }
 
     /// <summary>
@@ -337,6 +365,100 @@ namespace Amplifier.OpenCL.Cloo
         NativeVectorWidthHalf = 0x103C,
         /// <summary> </summary>
         OpenCLCVersion = 0x103D,
+        /// <summary> OpenCL 1.2 </summary>
+        LinkerAvailable = 0x103E,
+        /// <summary> OpenCL 1.2 </summary>
+        BuiltInKernels = 0x103F,
+        /// <summary> OpenCL 1.2 </summary>
+        ImageMaxBufferSize = 0x1040,
+        /// <summary> OpenCL 1.2 </summary>
+        ImageMaxArraySize = 0x1041,
+        /// <summary> OpenCL 1.2 </summary>
+        ParentDevice = 0x1042,
+        /// <summary> OpenCL 1.2 </summary>
+        PartitionMaxSubDevices = 0x1043,
+        /// <summary> OpenCL 1.2 </summary>
+        PartitionProperties = 0x1044,
+        /// <summary> OpenCL 1.2 </summary>
+        PartitionAffinityDomain = 0x1045,
+        /// <summary> OpenCL 1.2 </summary>
+        PartitionType = 0x1046,
+        /// <summary> OpenCL 1.2 </summary>
+        ReferenceCount = 0x1047,
+        /// <summary> OpenCL 1.2 </summary>
+        PreferredInteropUserSync = 0x1048,
+        /// <summary> OpenCL 1.2 </summary>
+        PrintfBufferSize = 0x1049,
+        /// <summary> OpenCL 2.0 </summary>
+        ImagePitchAlignment = 0x104A,
+        /// <summary> OpenCL 2.0 </summary>
+        ImageBaseAddressAlignment = 0x104B,
+        /// <summary> OpenCL 2.0 </summary>
+        MaxReadWriteImageArgs = 0x104C,
+        /// <summary> OpenCL 2.0 </summary>
+        MaxGlobalVariableSize = 0x104D,
+        /// <summary> OpenCL 2.0 </summary>
+        QueueOnDeviceProperties = 0x104E,
+        /// <summary> OpenCL 2.0 </summary>
+        QueueOnDevicePreferredSize = 0x104F,
+        /// <summary> OpenCL 2.0 </summary>
+        QueueOnDeviceMaxSize = 0x1050,
+        /// <summary> OpenCL 2.0 </summary>
+        MaxOnDeviceQueues = 0x1051,
+        /// <summary> OpenCL 2.0 </summary>
+        MaxOnDeviceEvents = 0x1052,
+        /// <summary> OpenCL 2.0 </summary>
+        SVMCapabilities = 0x1053,
+        /// <summary> OpenCL 2.0 </summary>
+        GlobalVariablePreferredTotalSize = 0x1054,
+        /// <summary> OpenCL 2.0 </summary>
+        MaxPipeArgs = 0x1055,
+        /// <summary> OpenCL 2.0 </summary>
+        PipeMaxActiveReservations = 0x1056,
+        /// <summary> OpenCL 2.0 </summary>
+        PipeMaxPacketSize = 0x1057,
+        /// <summary> OpenCL 2.0 </summary>
+        PreferredPlatformAtomicAlignment = 0x1058,
+        /// <summary> OpenCL 2.0 </summary>
+        PreferredGlobalAtomicAlignment = 0x1059,
+        /// <summary> OpenCL 2.0 </summary>
+        PreferredLocalAtomicAlignment = 0x105A,
+        /// <summary> OpenCL 2.1 </summary>
+        ILVersion = 0x105B,
+        /// <summary> OpenCL 2.1 </summary>
+        MaxNumSubGroups = 0x105C,
+        /// <summary> OpenCL 2.1 </summary>
+        SubGroupIndependentForwardProgress = 0x105D,
+        /// <summary> OpenCL 3.0 </summary>
+        NumericVersion = 0x105E,
+        /// <summary> OpenCL 3.0 </summary>
+        ExtensionsWithVersion = 0x1060,
+        /// <summary> OpenCL 3.0 </summary>
+        ILsWithVersion = 0x1061,
+        /// <summary> OpenCL 3.0 </summary>
+        BuiltInKernelsWithVersion = 0x1062,
+        /// <summary> OpenCL 3.0 </summary>
+        AtomicMemoryCapabilities = 0x1063,
+        /// <summary> OpenCL 3.0 </summary>
+        AtomicFenceCapabilities = 0x1064,
+        /// <summary> OpenCL 3.0 </summary>
+        NonUniformWorkGroupSupport = 0x1065,
+        /// <summary> OpenCL 3.0 </summary>
+        OpenCLCAllVersions = 0x1066,
+        /// <summary> OpenCL 3.0 </summary>
+        PreferredWorkGroupSizeMultiple = 0x1067,
+        /// <summary> OpenCL 3.0 </summary>
+        WorkGroupCollectiveFunctionsSupport = 0x1068,
+        /// <summary> OpenCL 3.0 </summary>
+        GenericAddressSpaceSupport = 0x1069,
+        /// <summary> OpenCL 3.0 </summary>
+        OpenCLCFeatures = 0x106F,
+        /// <summary> OpenCL 3.0 </summary>
+        DeviceEnqueueCapabilities = 0x1070,
+        /// <summary> OpenCL 3.0 </summary>
+        PipeSupport = 0x1071,
+        /// <summary> OpenCL 3.0 </summary>
+        LatestConformanceVersionPassed = 0x1072,
         /// <summary> </summary>
         CL_DEVICE_PARENT_DEVICE_EXT = 0x4054,
         /// <summary> </summary>
@@ -1034,5 +1156,208 @@ namespace Amplifier.OpenCL.Cloo
         GetGLTextureInfo,
         EnqueueAcquireGLObjects,
         EnqueueReleaseGLObjects,
+        // OpenCL 2.0+
+        CreateCommandQueueWithProperties,
+        CreatePipe,
+        GetPipeInfo,
+        SVMAlloc,
+        SVMFree,
+        EnqueueSVMFree,
+        EnqueueSVMMemcpy,
+        EnqueueSVMMemFill,
+        EnqueueSVMMap,
+        EnqueueSVMUnmap,
+        CreateSamplerWithProperties,
+        SetKernelArgSVMPointer,
+        SetKernelExecInfo,
+        // OpenCL 2.1
+        CloneKernel,
+        CreateProgramWithIL,
+        EnqueueSVMMigrateMem,
+        GetDeviceAndHostTimer,
+        GetHostTimer,
+        GetKernelSubGroupInfo,
+        SetDefaultDeviceCommandQueue,
+        // OpenCL 2.2
+        SetProgramReleaseCallback,
+        SetProgramSpecializationConstant,
+        // OpenCL 3.0
+        CreateBufferWithProperties,
+        CreateImageWithProperties,
+        SetContextDestructorCallback,
     }
+
+    #region OpenCL 2.0+ Enums
+
+    /// <summary>
+    /// SVM memory flags for OpenCL 2.0+.
+    /// </summary>
+    [Flags]
+    internal enum ComputeSVMMemFlags : long
+    {
+        /// <summary> Default </summary>
+        None = 0,
+        /// <summary> Read and write access </summary>
+        ReadWrite = 1 << 0,
+        /// <summary> Write only access </summary>
+        WriteOnly = 1 << 1,
+        /// <summary> Read only access </summary>
+        ReadOnly = 1 << 2,
+        /// <summary> Fine grain buffer </summary>
+        FineGrainBuffer = 1 << 10,
+        /// <summary> Atomics support </summary>
+        Atomics = 1 << 11
+    }
+
+    /// <summary>
+    /// SVM capabilities for OpenCL 2.0+.
+    /// </summary>
+    [Flags]
+    internal enum ComputeSVMCapabilities : long
+    {
+        /// <summary> No SVM support </summary>
+        None = 0,
+        /// <summary> Coarse grain buffer </summary>
+        CoarseGrainBuffer = 1 << 0,
+        /// <summary> Fine grain buffer </summary>
+        FineGrainBuffer = 1 << 1,
+        /// <summary> Fine grain system </summary>
+        FineGrainSystem = 1 << 2,
+        /// <summary> Atomics </summary>
+        Atomics = 1 << 3
+    }
+
+    /// <summary>
+    /// Pipe info query symbols for OpenCL 2.0+.
+    /// </summary>
+    internal enum ComputePipeInfo : int
+    {
+        /// <summary> Pipe packet size </summary>
+        PacketSize = 0x1120,
+        /// <summary> Max packets </summary>
+        MaxPackets = 0x1121
+    }
+
+    /// <summary>
+    /// Kernel exec info for OpenCL 2.0+.
+    /// </summary>
+    internal enum ComputeKernelExecInfo : int
+    {
+        /// <summary> SVM pointers </summary>
+        SVMPtrs = 0x11B6,
+        /// <summary> SVM fine grain system </summary>
+        SVMFineGrainSystem = 0x11B7
+    }
+
+    /// <summary>
+    /// Kernel sub-group info for OpenCL 2.1+.
+    /// </summary>
+    internal enum ComputeKernelSubGroupInfo : int
+    {
+        /// <summary> Max sub-group size for NDRANGE </summary>
+        MaxSubGroupSizeForNDRange = 0x2033,
+        /// <summary> Sub-group count for NDRANGE </summary>
+        SubGroupCountForNDRange = 0x2034,
+        /// <summary> Local size for sub-group count </summary>
+        LocalSizeForSubGroupCount = 0x11B8
+    }
+
+    /// <summary>
+    /// Memory migration flags for OpenCL 2.1+.
+    /// </summary>
+    [Flags]
+    internal enum ComputeMemMigrationFlags : long
+    {
+        /// <summary> No flags </summary>
+        None = 0,
+        /// <summary> Migrate to host </summary>
+        Host = 1 << 0,
+        /// <summary> Content undefined </summary>
+        ContentUndefined = 1 << 1
+    }
+
+    /// <summary>
+    /// Command queue properties for OpenCL 2.0+.
+    /// </summary>
+    internal enum ComputeCommandQueueProperties : long
+    {
+        /// <summary> Queue properties </summary>
+        Properties = 0x1093,
+        /// <summary> Queue size </summary>
+        Size = 0x1094,
+        /// <summary> Device default </summary>
+        DeviceDefault = 0x1095
+    }
+
+    /// <summary>
+    /// Platform info for OpenCL 3.0.
+    /// </summary>
+    internal enum ComputePlatformInfo30 : int
+    {
+        /// <summary> Numeric version </summary>
+        NumericVersion = 0x0906,
+        /// <summary> Extensions with version </summary>
+        ExtensionsWithVersion = 0x0907
+    }
+
+    /// <summary>
+    /// Memory object types for OpenCL 1.2+.
+    /// </summary>
+    internal enum ComputeMemoryType12 : int
+    {
+        /// <summary> Buffer </summary>
+        Buffer = 0x10F0,
+        /// <summary> 2D Image </summary>
+        Image2D = 0x10F1,
+        /// <summary> 3D Image </summary>
+        Image3D = 0x10F2,
+        /// <summary> 2D Image Array </summary>
+        Image2DArray = 0x10F3,
+        /// <summary> 1D Image </summary>
+        Image1D = 0x10F4,
+        /// <summary> 1D Image Array </summary>
+        Image1DArray = 0x10F5,
+        /// <summary> 1D Image Buffer </summary>
+        Image1DBuffer = 0x10F6,
+        /// <summary> Pipe (OpenCL 2.0) </summary>
+        Pipe = 0x10F7
+    }
+
+    /// <summary>
+    /// Atomic memory capabilities for OpenCL 3.0.
+    /// </summary>
+    [Flags]
+    internal enum ComputeAtomicCapabilities : long
+    {
+        /// <summary> Order relaxed </summary>
+        OrderRelaxed = 1 << 0,
+        /// <summary> Order acquire/release </summary>
+        OrderAcqRel = 1 << 1,
+        /// <summary> Order sequentially consistent </summary>
+        OrderSeqCst = 1 << 2,
+        /// <summary> Scope work item </summary>
+        ScopeWorkItem = 1 << 3,
+        /// <summary> Scope work group </summary>
+        ScopeWorkGroup = 1 << 4,
+        /// <summary> Scope device </summary>
+        ScopeDevice = 1 << 5,
+        /// <summary> Scope all devices </summary>
+        ScopeAllDevices = 1 << 6
+    }
+
+    /// <summary>
+    /// Device enqueue capabilities for OpenCL 3.0.
+    /// </summary>
+    [Flags]
+    internal enum ComputeDeviceEnqueueCapabilities : long
+    {
+        /// <summary> No support </summary>
+        None = 0,
+        /// <summary> Supported </summary>
+        Supported = 1 << 0,
+        /// <summary> Replaceable default </summary>
+        ReplaceableDefault = 1 << 1
+    }
+
+    #endregion
 }
