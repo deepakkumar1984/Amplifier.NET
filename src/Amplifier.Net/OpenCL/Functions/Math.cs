@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Amplifier.Decompiler.IL;
 
 namespace Amplifier.OpenCL
 {

@@ -1,5 +1,4 @@
 ﻿using Amplifier.OpenCL.Cloo.Bindings;
-using Amplifier.Decompiler.TypeSystem;
 using System;
 using System.Collections.Generic;
 using System.Linq;

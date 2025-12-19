@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir /s /b \"c:\\\\Work\\\\git\\\\Amplifier.NET\")",
+      "Bash(xxd:*)",
+      "Bash(cat:*)",
+      "Bash(dotnet build:*)"
+    ]
+  }
+}
