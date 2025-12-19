@@ -3,9 +3,9 @@
   <PropertyGroup>
     <AssemblyName>Amplifier</AssemblyName>
     <RootNamespace>Amplifier</RootNamespace>
-    <Version>1.1.0</Version>
+    <Version>2.0.0</Version>
     <Authors>Deepak Battini</Authors>
-    <Company>Tech Quantum</Company>
+    <Company>Deesha Tech</Company>
     <Description>Amplifier allows .NET developers to easily run complex applications with intensive mathematical computation on Intel CPU/GPU, NVIDIA, AMD without writing any additional C kernel code. Write your function in .NET and Amplifier will take care of running it on your favorite hardware.</Description>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageProjectUrl>https://github.com/deepakkumar1984/Amplifier.NET</PackageProjectUrl>
@@ -17,10 +17,17 @@
     <TargetFramework>netstandard2.1</TargetFramework>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <PackageReleaseNotes>1.0.8-------------------
-* XArray with InArray and OutArray which is advance and powerful than standard .NET Array with shaping and transposing.
-* SGEMM mat multiplication example</PackageReleaseNotes>
+    <PackageReleaseNotes>Amplifier.NET 2.0 Release Notes
+December 2024
+OpenCL 3.0 Support — Added complete bindings for OpenCL 2.0, 2.1, 2.2, and 3.0, including Shared Virtual Memory (SVM), Pipes, SPIR-V program loading, and subgroup operations
+Improved C# 10 Compatibility — Fixed code translator to properly handle file-scoped namespaces (namespace Foo.Bar;), preventing malformed OpenCL kernel output
+Enhanced Code Translation — Fixed struct generation issues including globalstruct spacing, StructLayout attribute removal, and proper handling of float.MinValue/float.MaxValue constants
+Decompiler Stability — Fixed NullReferenceException in DynamicCallSiteTransform that occurred when processing certain dynamic call sites
+Comprehensive Test Suite — Added 35+ example kernels covering vector math, matrix operations, particle physics, image processing, neural network operations, and parallel reductions
+New Struct Types — Introduced 8 new struct examples (Float3, Matrix4x4F, Particle, ColorRGBA, ComplexF, BoundingBox, HistogramBin, NeuronWeights) demonstrating complex GPU data patterns
+Backward Compatible — No breaking changes; existing 1.x code works without modification</PackageReleaseNotes>
     <Platforms>AnyCPU;x64</Platforms>
+    <PackageReadmeFile></PackageReadmeFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net46|AnyCPU'">
