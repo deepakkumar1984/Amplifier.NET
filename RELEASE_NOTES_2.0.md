@@ -1,6 +1,6 @@
 # Amplifier.NET 2.0 Release Notes
 
-**Release Date:** December 2024
+**Release Date:** December 2025
 
 We are excited to announce Amplifier.NET 2.0, a major release that brings full OpenCL 3.0 support, significant improvements to the C#-to-OpenCL code translator, and a comprehensive test suite demonstrating advanced GPU computing patterns.
 
